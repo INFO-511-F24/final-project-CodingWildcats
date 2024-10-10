@@ -6,7 +6,7 @@ editor: visual
 
 This project was developed by **\[Coding Wildcats\]** For [INFO 511 - Fundamentals of Data Science](https://datasciaz.netlify.app/) at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.
 
--   Rohit Vatsava Kalakala: 2nd year MS in Data Science
+-   Rohit Vatsava Kalakala: 2nd year MS in Data Science
 
 -   Kai - 2nd year, Data Science
 
