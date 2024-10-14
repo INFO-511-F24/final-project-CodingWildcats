@@ -1,30 +1,40 @@
 Team Project Contract
-Project Title: [Title of the final project]
+Project Title: Coding Wildcats Data Analysis
 Team Members:
 
-    [Name, Contact Information]
-    [Name, Contact Information]
-    [Name, Contact Information]
-    [Name, Contact Information]
+    Rohit Kalakala, rohit-vatsava
+    Sahand Motameni, Sahand1997
+    Kai Shuen Neo, neoooks
+    Erika Kirkpatrick, elk1arizona
+    Danielle Stea, DMStea
+
 
 Project Overview
 
-    Project Description: [A brief overview of the project, including the main objectives and purpose.]
-    Expected Deliverables: [List of specific outputs, such as final visualizations, reports, presentations.]
+    Project Description: The purpose of this project is to use Python to perform data analysis on a data set and create visualizations to answer questions about the dataset.
+    Expected Deliverables: Exact visualizations and questions will be determined after the dataset has been chosen by a majority vote. Other deliverables include a project writeup (that will include an introduction, methodology, results, and discussion) and a presentation (that will include a title slide, and introduction to the topic and motivation, introduction to the data, highlights from EDA, inferences/modeling/other analysis and conclusions).
 
 Team Goals
 
-    Project Goals: [A few bullet points outlining what the team aims to achieve.]
-    Learning Objectives: [What skills or knowledge each team member hopes to develop.]
+    Project Goals: 
+    •	Use the visualization skills we learned in this class to create meaningful graphs of our data
+    •	Use the data analysis skills we learned in this class to be able to interpret the results of our tests.
+    •   Present meaningfully concise and informative answers to our research questions
+    Learning Objectives:
+    •   Learn more detailed visualization techniques with Python
+    •   Utilize modeling to make predictions
+    •   Learn more about our datasets and the data collection Process
+    •   Learning how make an efficient data cleaning using python
 
 Team Roles and Responsibilities
 
     Roles (change as needed):
 
-    Project Manager: [Name] – Ensures timelines are met, organizes meetings, and manages communications.
-    Data Analyst: [Name] – Responsible for data cleaning, analysis, and exploratory visualizations.
-    Visualization Specialist: [Name] – Designs the final visualizations and makes aesthetic choices.
-    Documentation Lead: [Name] – Keeps detailed notes, ensures all project decisions are documented, and handles the final report.
+    Project Manager: Erika – Ensures timelines are met, organizes meetings, and manages communications.
+    Data Analyst: Danielle + Kai – Responsible for data cleaning, analysis, and exploratory visualizations.
+    Modeling: Sahand + Rohit - Developing appropriate models for the dataset
+    Visualization Specialist: Sahand + Rohit – Designs the final visualizations and makes aesthetic choices.
+    Documentation Lead: Danielle – Keeps detailed notes, ensures all project decisions are documented, and handles the final report.
 
     Responsibilities:
     General Responsibilities: Each team member is responsible for:
@@ -36,20 +46,22 @@ Team Roles and Responsibilities
 
 Communication Plan
 
-    Meeting Schedule: Weekly on [Day] at [Time] via [platform].
-    Primary Communication Platform: [Platform, e.g., Slack].
+    Meeting Schedule: Weekly on Friday at 2pm (AZ time) via Zoom.
+    Primary Communication Platform: Slack, Zoom.
     Decision-Making Process: Decisions will be made by consensus; if a consensus cannot be reached, a vote will be taken.
 
 Work Plan and Timeline
 
     Milestones:
 
-    Data Collection and Cleaning: Completed by [Date].
-    Exploratory Data Analysis: Completed by [Date].
-    Design of Visualizations: Completed by [Date].
-    Final Presentation and Report: Completed by [Date].
+    Data Collection and Cleaning: Completed by November 15th.
+    Exploratory Data Analysis: Completed by November 22nd.
+    Design of Visualizations: Completed by November 29th.
+    Final Presentation and Report: Completed by December 13th.
 
-    Task Assignments: [Use a table to assign tasks to team members with due dates.]
+    Task Assignments: 
+    1. Finish proposal/Finalize datasets: 11 November - Full team
+    2. Data Cleaning: Completed by November 15th - Danielle & Kai
 
 Accountability and Expectations
 
@@ -68,8 +80,8 @@ Conflict Resolution Plan
 Signatures
 By signing below, each team member agrees to the terms of this contract and commits to working together effectively and respectfully.
 
-    [Name]: ________________________ Date: ___________
-    [Name]: ________________________ Date: ___________
+    [Name]: Danielle Stea Date: 10/14/24
+    [Name]: Erika Kirkpatrick Date: 10/14/24
     [Name]: ________________________ Date: ___________
     [Name]: ________________________ Date: ___________
 
