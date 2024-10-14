@@ -16,7 +16,7 @@ Project Overview
 
 Team Goals
 
-    Project Goals: 
+    Project Goals:
     •	Use the visualization skills we learned in this class to create meaningful graphs of our data
     •	Use the data analysis skills we learned in this class to be able to interpret the results of our tests.
     •   Present meaningfully concise and informative answers to our research questions
@@ -59,7 +59,7 @@ Work Plan and Timeline
     Design of Visualizations: Completed by November 29th.
     Final Presentation and Report: Completed by December 13th.
 
-    Task Assignments: 
+    Task Assignments:
     1. Finish proposal/Finalize datasets: 11 November - Full team
     2. Data Cleaning: Completed by November 15th - Danielle & Kai
 
@@ -87,6 +87,6 @@ By signing below, each team member agrees to the terms of this contract and comm
 =======
     [Name]: Kai Shuen Neo Date: 10/14/24
 >>>>>>> 02f2d2f856f371171e6b0ad1506fdf7ec0927789
-    [Name]: ________________________ Date: ___________
+    [Name]: Rohit vatsava kalakala Date: 10/14/24
 
 This template ensures that everyone understands their roles, responsibilities, and the expectations for the project. It can help prevent misunderstandings and promote effective teamwork throughout the project.
