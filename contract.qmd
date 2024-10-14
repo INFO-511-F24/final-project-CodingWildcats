@@ -82,7 +82,11 @@ By signing below, each team member agrees to the terms of this contract and comm
 
     [Name]: Danielle Stea Date: 10/14/24
     [Name]: Erika Kirkpatrick Date: 10/14/24
+<<<<<<< HEAD
     [Name]: Sahand Motameni Date:  10/14/24
+=======
+    [Name]: Kai Shuen Neo Date: 10/14/24
+>>>>>>> 02f2d2f856f371171e6b0ad1506fdf7ec0927789
     [Name]: ________________________ Date: ___________
 
 This template ensures that everyone understands their roles, responsibilities, and the expectations for the project. It can help prevent misunderstandings and promote effective teamwork throughout the project.
