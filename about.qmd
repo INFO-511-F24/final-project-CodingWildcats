@@ -6,12 +6,14 @@ editor: visual
 
 This project was developed by **\[Coding Wildcats\]** For [INFO 511 - Fundamentals of Data Science](https://datasciaz.netlify.app/) at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.
 
--   Rohit Vatsava Kalakala: 2nd year MS in Data Science
+<<<<<<< HEAD
+-   Sahand: One sentence description of Team member 1 (e.g., year, major, etc.).
+=======
+-  Rohit: One sentence description of Team member 1 (e.g., year, major, etc.).
+>>>>>>> 80c1deabb0755f74b7117764f1f30f928c031eb3
 
--   Kai - 2nd year, Data Science
+-   Team member 2: One sentence description of Team member 2 (e.g., year, major, etc.).
 
--   Sahand, 2nd year, Data Science
+-   Team member 3: One sentence description of Team member 3 (e.g., year, major, etc.).
 
--   Danielle Stea - 2nd year, Data Science
-
--   Erika Kirkpatrick: I am doing my Masters in Data Science and I am in my final semester.
+-   Team member 4: One sentence description of Team member 4 (e.g., year, major, etc.).
