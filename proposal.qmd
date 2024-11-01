@@ -1,8 +1,8 @@
 ---
-title: "Proposal title"
+title: "Coding Wildcats 2024 Project"
 subtitle: "Proposal"
 author: 
-  - name: "Team Name"
+  - name: "Coding Wildcats"
     affiliations:
       - name: "School of Information, University of Arizona"
 description: "Project description"
@@ -76,3 +76,36 @@ For each data set:
 ## Analysis plan
 
 -   A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).
+
+1. College Scorecard Dataset
+
+Source: https://collegescorecard.ed.gov/data/
+
+Data was collected from 1996-2023 by the Department of Education by institutional reporting from U.S. schools.
+
+Observations include geographic data for each school, admission rates, institutional characteristics, enrollment, student aid, costs, and student outcomes.
+
+No ethical concerns are present--data is collected from a department level, not individual and includes schools from across the country.
+
+Research Question:What relationships are there between institutional characteristics and student aid, school spending and student outcomes (graduation rate, degree level, etc)
+
+This question is important because student success is an important factor in determining their success in the workforce, as well as an indicator for future students for the quality of that education.
+
+Variables such as school expenditure, student debt and graduate income are quantitative while variables such as degree type, institution name and city are qualitative.
+
+
+```{python}
+
+```
+
+2. Massachusetts Public Schools 2017 Records
+
+Source: https://profiles.doe.mass.edu/
+
+This data was collected by the Massachusetts Department of Education in 2017 from school reports given by public elementary, middle and high schools.
+
+Observations include enrollment and graduation rates, class sizes, demographic and socioeconomic information of students, classes offered and AP testing records.
+
+No ethical concerns are present.
+
+Research Question:
