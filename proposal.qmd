@@ -87,7 +87,9 @@ Observations include geographic data for each school, admission rates, instituti
 
 No ethical concerns are present--data is collected from a department level, not individual and includes schools from across the country.
 
-Research Question:What relationships are there between institutional characteristics and student aid, school spending and student outcomes (graduation rate, degree level, etc)
+Research Question: What relationships are there between institutional characteristics and student aid, school spending and student outcomes (graduation rate, degree level, etc)?
+
+This question represents an overview of the higher education system and its effectiveness in the United States. We hypothesize that student aid and school spending are correlated with student outcomes.
 
 This question is important because student success is an important factor in determining their success in the workforce, as well as an indicator for future students for the quality of that education.
 
@@ -95,7 +97,10 @@ Variables such as school expenditure, student debt and graduate income are quant
 
 
 ```{python}
-
+import pandas as pd
+college = pd.read_csv("data/collge_data_tenative.csv")
+college.head()
+college.info()
 ```
 
 2. Massachusetts Public Schools 2017 Records
@@ -108,4 +113,17 @@ Observations include enrollment and graduation rates, class sizes, demographic a
 
 No ethical concerns are present.
 
-Research Question:
+Research Question: Is there a relationship between graduation rates and higher education preparation and a school's demographic makeup, funding and class size?
+
+This question is important because the education quality for elementary through high school aged children is an important factor in their success in higher education, their careers and overall quality of life.
+
+Variables such as school type, location, and evaluation are qualitative variables. Variables such as demographic makeup, enrollment numbers, class size and expenditure are quantitative variables.
+
+```{python}
+import pandas as pd
+MA_schools = pd.read_csv("data/MA_Public_Schools_2017.csv")
+MA_schools.head()
+MA_schools.info()
+```
+
+3. Heart Disease
