@@ -4,16 +4,14 @@ format: html
 editor: visual
 ---
 
-This project was developed by **\[Coding Wildcats\]** For [INFO 511 - Fundamentals of Data Science](https://datasciaz.netlify.app/) at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.
+This project was developed by **Coding Wildcats** for [INFO 511 - Fundamentals of Data Science](https://datasciaz.netlify.app/) at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.
 
-<<<<<<< HEAD
--   Sahand: One sentence description of Team member 1 (e.g., year, major, etc.).
-=======
--  Rohit: One sentence description of Team member 1 (e.g., year, major, etc.).
->>>>>>> 80c1deabb0755f74b7117764f1f30f928c031eb3
+-   Team member 1: Erika Kirkpatrick
 
--   Team member 2: One sentence description of Team member 2 (e.g., year, major, etc.).
+-   Team member 2: Danielle Stea
 
--   Team member 3: One sentence description of Team member 3 (e.g., year, major, etc.).
+-   Team member 3: Kai Shuen Neo
 
--   Team member 4: One sentence description of Team member 4 (e.g., year, major, etc.).
+-   Team member 4: Rohit Kalakala
+
+-   Team member 5: Sahand Motameni
