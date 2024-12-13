@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Coding Wildcats">
-<meta name="description" content="Project description">
 
-<title>College Characteristics and Student Success – Coding Wildcats</title>
+<title>Project Proposal – Coding Wildcats</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -4818,15 +4817,9 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">College Characteristics and Student Success</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
-<p class="subtitle lead">Proposal</p>
+<div class="quarto-title-block"><div><h1 class="title">Project Proposal</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
-<div>
-  <div class="description">
-    Project description
-  </div>
-</div>
 
 <div class="quarto-title-meta-author">
   <div class="quarto-title-meta-heading">Author</div>
@@ -4877,7 +4870,7 @@ vertical-align: -.125em;
 </section>
 <section id="glimpse-of-data" class="level2">
 <h2 class="anchored" data-anchor-id="glimpse-of-data">Glimpse of data</h2>
-<div id="4476b0e3" class="cell" data-execution_count="3">
+<div id="f2f32bc5" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2"><a href="#cb2-2"></a>college <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/collge_data_tenative.csv&quot;</span>)</span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="bu">print</span>(college.head())</span>
@@ -4943,7 +4936,7 @@ None</code></pre>
 </section>
 <section id="glimpse-of-data-1" class="level2">
 <h2 class="anchored" data-anchor-id="glimpse-of-data-1">Glimpse of data</h2>
-<div id="feaf2699" class="cell" data-execution_count="4">
+<div id="45b6d734" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>MA_schools <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/MA_Public_Schools_2017.csv&quot;</span>)</span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="bu">print</span>(MA_schools.head())</span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="bu">print</span>(MA_schools.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5057,7 +5050,7 @@ None</code></pre>
 </section>
 <section id="glimpse-of-data-2" class="level2">
 <h2 class="anchored" data-anchor-id="glimpse-of-data-2">Glimpse of data</h2>
-<div id="29c7300d" class="cell" data-execution_count="5">
+<div id="59969d6a" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>stroke <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/healthcare-dataset-stroke-data.csv&quot;</span>)</span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="bu">print</span>(stroke.head())</span>
 <span id="cb6-3"><a href="#cb6-3"></a><span class="bu">print</span>(stroke.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5398,7 +5391,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/INFO-511-F24\.github\.io\/final-project-CodingWildcats\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -5766,120 +5759,118 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class>
 <div class="sourceCode" id="cb8" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1"></a><span class="co">---</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="an">title:</span><span class="co"> &quot;College Characteristics and Student Success&quot;</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="an">subtitle:</span><span class="co"> &quot;Proposal&quot;</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="an">author:</span><span class="co"> </span></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="co">  - name: &quot;Coding Wildcats&quot;</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a><span class="co">    affiliations:</span></span>
-<span id="cb8-7"><a href="#cb8-7"></a><span class="co">      - name: &quot;School of Information, University of Arizona&quot;</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a><span class="an">description:</span><span class="co"> &quot;Project description&quot;</span></span>
-<span id="cb8-9"><a href="#cb8-9"></a><span class="an">format:</span></span>
-<span id="cb8-10"><a href="#cb8-10"></a><span class="co">  html:</span></span>
-<span id="cb8-11"><a href="#cb8-11"></a><span class="co">    code-tools: true</span></span>
-<span id="cb8-12"><a href="#cb8-12"></a><span class="co">    code-overflow: wrap</span></span>
-<span id="cb8-13"><a href="#cb8-13"></a><span class="co">    code-line-numbers: true</span></span>
-<span id="cb8-14"><a href="#cb8-14"></a><span class="co">    embed-resources: true</span></span>
-<span id="cb8-15"><a href="#cb8-15"></a><span class="an">editor:</span><span class="co"> visual</span></span>
-<span id="cb8-16"><a href="#cb8-16"></a><span class="an">code-annotations:</span><span class="co"> hover</span></span>
-<span id="cb8-17"><a href="#cb8-17"></a><span class="an">execute:</span></span>
-<span id="cb8-18"><a href="#cb8-18"></a><span class="co">  warning: false</span></span>
-<span id="cb8-19"><a href="#cb8-19"></a><span class="an">jupyter:</span><span class="co"> python3</span></span>
-<span id="cb8-20"><a href="#cb8-20"></a><span class="co">---</span></span>
-<span id="cb8-21"><a href="#cb8-21"></a></span>
-<span id="cb8-24"><a href="#cb8-24"></a><span class="in">```{python}</span></span>
-<span id="cb8-25"><a href="#cb8-25"></a><span class="co">#| label: load-pkgs</span></span>
-<span id="cb8-26"><a href="#cb8-26"></a><span class="co">#| message: false</span></span>
-<span id="cb8-27"><a href="#cb8-27"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb8-28"><a href="#cb8-28"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb8-29"><a href="#cb8-29"></a><span class="in">```</span></span>
-<span id="cb8-30"><a href="#cb8-30"></a></span>
-<span id="cb8-33"><a href="#cb8-33"></a><span class="in">```{python}</span></span>
-<span id="cb8-34"><a href="#cb8-34"></a><span class="co">#| label: load-dataset</span></span>
-<span id="cb8-35"><a href="#cb8-35"></a><span class="co">#| message: false</span></span>
-<span id="cb8-36"><a href="#cb8-36"></a><span class="in">```</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="an">title:</span><span class="co"> &quot;Project Proposal&quot;</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="an">author:</span><span class="co"> </span></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="co">  - name: &quot;Coding Wildcats&quot;</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="co">    affiliations:</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="co">      - name: &quot;School of Information, University of Arizona&quot;</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="an">format:</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="co">  html:</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="co">    code-tools: true</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="co">    code-overflow: wrap</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="co">    code-line-numbers: true</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a><span class="co">    embed-resources: true</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a><span class="an">code-annotations:</span><span class="co"> hover</span></span>
+<span id="cb8-15"><a href="#cb8-15"></a><span class="an">execute:</span></span>
+<span id="cb8-16"><a href="#cb8-16"></a><span class="co">  warning: false</span></span>
+<span id="cb8-17"><a href="#cb8-17"></a><span class="an">jupyter:</span><span class="co"> python3</span></span>
+<span id="cb8-18"><a href="#cb8-18"></a><span class="co">---</span></span>
+<span id="cb8-19"><a href="#cb8-19"></a></span>
+<span id="cb8-22"><a href="#cb8-22"></a><span class="in">```{python}</span></span>
+<span id="cb8-23"><a href="#cb8-23"></a><span class="co">#| label: load-pkgs</span></span>
+<span id="cb8-24"><a href="#cb8-24"></a><span class="co">#| message: false</span></span>
+<span id="cb8-25"><a href="#cb8-25"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-26"><a href="#cb8-26"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb8-27"><a href="#cb8-27"></a><span class="in">```</span></span>
+<span id="cb8-28"><a href="#cb8-28"></a></span>
+<span id="cb8-31"><a href="#cb8-31"></a><span class="in">```{python}</span></span>
+<span id="cb8-32"><a href="#cb8-32"></a><span class="co">#| label: load-dataset</span></span>
+<span id="cb8-33"><a href="#cb8-33"></a><span class="co">#| message: false</span></span>
+<span id="cb8-34"><a href="#cb8-34"></a><span class="in">```</span></span>
+<span id="cb8-35"><a href="#cb8-35"></a></span>
+<span id="cb8-36"><a href="#cb8-36"></a><span class="fu">## Analysis plan</span></span>
 <span id="cb8-37"><a href="#cb8-37"></a></span>
-<span id="cb8-38"><a href="#cb8-38"></a><span class="fu">## Analysis plan</span></span>
+<span id="cb8-38"><a href="#cb8-38"></a><span class="ss">1.  </span>College Scorecard Dataset</span>
 <span id="cb8-39"><a href="#cb8-39"></a></span>
-<span id="cb8-40"><a href="#cb8-40"></a><span class="ss">1.  </span>College Scorecard Dataset</span>
+<span id="cb8-40"><a href="#cb8-40"></a><span class="fu">## Introduction and data</span></span>
 <span id="cb8-41"><a href="#cb8-41"></a></span>
-<span id="cb8-42"><a href="#cb8-42"></a><span class="fu">## Introduction and data</span></span>
+<span id="cb8-42"><a href="#cb8-42"></a>Source: https://collegescorecard.ed.gov/data/</span>
 <span id="cb8-43"><a href="#cb8-43"></a></span>
-<span id="cb8-44"><a href="#cb8-44"></a>Source: https://collegescorecard.ed.gov/data/</span>
+<span id="cb8-44"><a href="#cb8-44"></a>Data was collected from 1996-2023 by the Department of Education by institutional reporting from U.S. schools. The dataset used for this project has been modified to be uploaded to GitHub.</span>
 <span id="cb8-45"><a href="#cb8-45"></a></span>
-<span id="cb8-46"><a href="#cb8-46"></a>Data was collected from 1996-2023 by the Department of Education by institutional reporting from U.S. schools. The dataset used for this project has been modified to be uploaded to GitHub.</span>
+<span id="cb8-46"><a href="#cb8-46"></a>Observations include geographic data for each school, admission rates, institutional characteristics, enrollment, student aid, costs, and student outcomes.</span>
 <span id="cb8-47"><a href="#cb8-47"></a></span>
-<span id="cb8-48"><a href="#cb8-48"></a>Observations include geographic data for each school, admission rates, institutional characteristics, enrollment, student aid, costs, and student outcomes.</span>
+<span id="cb8-48"><a href="#cb8-48"></a>No ethical concerns are present--data is collected from a department level, not individual and includes schools from across the country.</span>
 <span id="cb8-49"><a href="#cb8-49"></a></span>
-<span id="cb8-50"><a href="#cb8-50"></a>No ethical concerns are present--data is collected from a department level, not individual and includes schools from across the country.</span>
+<span id="cb8-50"><a href="#cb8-50"></a>Research Question: What relationships are there between institutional characteristics and student aid, school spending and student outcomes (graduation rate, degree level, etc)?</span>
 <span id="cb8-51"><a href="#cb8-51"></a></span>
-<span id="cb8-52"><a href="#cb8-52"></a>Research Question: What relationships are there between institutional characteristics and student aid, school spending and student outcomes (graduation rate, degree level, etc)?</span>
+<span id="cb8-52"><a href="#cb8-52"></a>This question represents an overview of the higher education system and its effectiveness in the United States. We hypothesize that student aid and school spending are correlated with student outcomes.</span>
 <span id="cb8-53"><a href="#cb8-53"></a></span>
-<span id="cb8-54"><a href="#cb8-54"></a>This question represents an overview of the higher education system and its effectiveness in the United States. We hypothesize that student aid and school spending are correlated with student outcomes.</span>
+<span id="cb8-54"><a href="#cb8-54"></a>This question is important because student success is an important factor in determining their success in the workforce, as well as an indicator for future students for the quality of that education.</span>
 <span id="cb8-55"><a href="#cb8-55"></a></span>
-<span id="cb8-56"><a href="#cb8-56"></a>This question is important because student success is an important factor in determining their success in the workforce, as well as an indicator for future students for the quality of that education.</span>
+<span id="cb8-56"><a href="#cb8-56"></a>Variables such as school expenditure, student debt and graduate income are quantitative while variables such as degree type, institution name and city are qualitative.</span>
 <span id="cb8-57"><a href="#cb8-57"></a></span>
-<span id="cb8-58"><a href="#cb8-58"></a>Variables such as school expenditure, student debt and graduate income are quantitative while variables such as degree type, institution name and city are qualitative.</span>
+<span id="cb8-58"><a href="#cb8-58"></a><span class="fu">## Glimpse of data</span></span>
 <span id="cb8-59"><a href="#cb8-59"></a></span>
-<span id="cb8-60"><a href="#cb8-60"></a><span class="fu">## Glimpse of data</span></span>
-<span id="cb8-61"><a href="#cb8-61"></a></span>
-<span id="cb8-64"><a href="#cb8-64"></a><span class="in">```{python}</span></span>
-<span id="cb8-65"><a href="#cb8-65"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb8-66"><a href="#cb8-66"></a>college <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/collge_data_tenative.csv&quot;</span>)</span>
-<span id="cb8-67"><a href="#cb8-67"></a><span class="bu">print</span>(college.head())</span>
-<span id="cb8-68"><a href="#cb8-68"></a><span class="bu">print</span>(college.info())</span>
-<span id="cb8-69"><a href="#cb8-69"></a><span class="in">```</span></span>
+<span id="cb8-62"><a href="#cb8-62"></a><span class="in">```{python}</span></span>
+<span id="cb8-63"><a href="#cb8-63"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb8-64"><a href="#cb8-64"></a>college <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/collge_data_tenative.csv&quot;</span>)</span>
+<span id="cb8-65"><a href="#cb8-65"></a><span class="bu">print</span>(college.head())</span>
+<span id="cb8-66"><a href="#cb8-66"></a><span class="bu">print</span>(college.info())</span>
+<span id="cb8-67"><a href="#cb8-67"></a><span class="in">```</span></span>
+<span id="cb8-68"><a href="#cb8-68"></a></span>
+<span id="cb8-69"><a href="#cb8-69"></a><span class="ss">2.  </span>Massachusetts Public Schools 2017 Records</span>
 <span id="cb8-70"><a href="#cb8-70"></a></span>
-<span id="cb8-71"><a href="#cb8-71"></a><span class="ss">2.  </span>Massachusetts Public Schools 2017 Records</span>
+<span id="cb8-71"><a href="#cb8-71"></a><span class="fu">## Introduction and data</span></span>
 <span id="cb8-72"><a href="#cb8-72"></a></span>
-<span id="cb8-73"><a href="#cb8-73"></a><span class="fu">## Introduction and data</span></span>
+<span id="cb8-73"><a href="#cb8-73"></a>Source: https://profiles.doe.mass.edu/</span>
 <span id="cb8-74"><a href="#cb8-74"></a></span>
-<span id="cb8-75"><a href="#cb8-75"></a>Source: https://profiles.doe.mass.edu/</span>
+<span id="cb8-75"><a href="#cb8-75"></a>This data was collected by the Massachusetts Department of Education in 2017 from school reports given by public elementary, middle and high schools.</span>
 <span id="cb8-76"><a href="#cb8-76"></a></span>
-<span id="cb8-77"><a href="#cb8-77"></a>This data was collected by the Massachusetts Department of Education in 2017 from school reports given by public elementary, middle and high schools.</span>
+<span id="cb8-77"><a href="#cb8-77"></a>Observations include enrollment and graduation rates, class sizes, demographic and socioeconomic information of students, classes offered and AP testing records.</span>
 <span id="cb8-78"><a href="#cb8-78"></a></span>
-<span id="cb8-79"><a href="#cb8-79"></a>Observations include enrollment and graduation rates, class sizes, demographic and socioeconomic information of students, classes offered and AP testing records.</span>
+<span id="cb8-79"><a href="#cb8-79"></a>No ethical concerns are present.</span>
 <span id="cb8-80"><a href="#cb8-80"></a></span>
-<span id="cb8-81"><a href="#cb8-81"></a>No ethical concerns are present.</span>
+<span id="cb8-81"><a href="#cb8-81"></a>Research Question: Is there a relationship between graduation rates and higher education preparation and a school&#39;s demographic makeup, funding and class size?</span>
 <span id="cb8-82"><a href="#cb8-82"></a></span>
-<span id="cb8-83"><a href="#cb8-83"></a>Research Question: Is there a relationship between graduation rates and higher education preparation and a school&#39;s demographic makeup, funding and class size?</span>
+<span id="cb8-83"><a href="#cb8-83"></a>This question is important because the education quality for elementary through high school aged children is an important factor in their success in higher education, their careers and overall quality of life.</span>
 <span id="cb8-84"><a href="#cb8-84"></a></span>
-<span id="cb8-85"><a href="#cb8-85"></a>This question is important because the education quality for elementary through high school aged children is an important factor in their success in higher education, their careers and overall quality of life.</span>
+<span id="cb8-85"><a href="#cb8-85"></a>Variables such as school type, location, and evaluation are qualitative variables. Variables such as demographic makeup, enrollment numbers, class size and expenditure are quantitative variables.</span>
 <span id="cb8-86"><a href="#cb8-86"></a></span>
-<span id="cb8-87"><a href="#cb8-87"></a>Variables such as school type, location, and evaluation are qualitative variables. Variables such as demographic makeup, enrollment numbers, class size and expenditure are quantitative variables.</span>
+<span id="cb8-87"><a href="#cb8-87"></a><span class="fu">## Glimpse of data</span></span>
 <span id="cb8-88"><a href="#cb8-88"></a></span>
-<span id="cb8-89"><a href="#cb8-89"></a><span class="fu">## Glimpse of data</span></span>
-<span id="cb8-90"><a href="#cb8-90"></a></span>
-<span id="cb8-93"><a href="#cb8-93"></a><span class="in">```{python}</span></span>
-<span id="cb8-94"><a href="#cb8-94"></a>MA_schools <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/MA_Public_Schools_2017.csv&quot;</span>)</span>
-<span id="cb8-95"><a href="#cb8-95"></a><span class="bu">print</span>(MA_schools.head())</span>
-<span id="cb8-96"><a href="#cb8-96"></a><span class="bu">print</span>(MA_schools.info())</span>
-<span id="cb8-97"><a href="#cb8-97"></a><span class="in">```</span></span>
+<span id="cb8-91"><a href="#cb8-91"></a><span class="in">```{python}</span></span>
+<span id="cb8-92"><a href="#cb8-92"></a>MA_schools <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/MA_Public_Schools_2017.csv&quot;</span>)</span>
+<span id="cb8-93"><a href="#cb8-93"></a><span class="bu">print</span>(MA_schools.head())</span>
+<span id="cb8-94"><a href="#cb8-94"></a><span class="bu">print</span>(MA_schools.info())</span>
+<span id="cb8-95"><a href="#cb8-95"></a><span class="in">```</span></span>
+<span id="cb8-96"><a href="#cb8-96"></a></span>
+<span id="cb8-97"><a href="#cb8-97"></a><span class="ss">3.  </span>Stroke Dataset</span>
 <span id="cb8-98"><a href="#cb8-98"></a></span>
-<span id="cb8-99"><a href="#cb8-99"></a><span class="ss">3.  </span>Stroke Dataset</span>
+<span id="cb8-99"><a href="#cb8-99"></a><span class="fu">## Introduction and data</span></span>
 <span id="cb8-100"><a href="#cb8-100"></a></span>
-<span id="cb8-101"><a href="#cb8-101"></a><span class="fu">## Introduction and data</span></span>
+<span id="cb8-101"><a href="#cb8-101"></a>Source: https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset</span>
 <span id="cb8-102"><a href="#cb8-102"></a></span>
-<span id="cb8-103"><a href="#cb8-103"></a>Source: https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset</span>
+<span id="cb8-103"><a href="#cb8-103"></a>This data comes from a study published in China in 2020: Pathan, Muhammad Salman &amp; Zhang, Jianbiao &amp; John, Deepu &amp; Nag, Avishek &amp; Dev, Soumyabrata. (2020). Identifying Stroke Indicators Using Rough Sets. IEEE Access. 8. 10.1109/ACCESS.2020.3039439.</span>
 <span id="cb8-104"><a href="#cb8-104"></a></span>
-<span id="cb8-105"><a href="#cb8-105"></a>This data comes from a study published in China in 2020: Pathan, Muhammad Salman &amp; Zhang, Jianbiao &amp; John, Deepu &amp; Nag, Avishek &amp; Dev, Soumyabrata. (2020). Identifying Stroke Indicators Using Rough Sets. IEEE Access. 8. 10.1109/ACCESS.2020.3039439.</span>
+<span id="cb8-105"><a href="#cb8-105"></a>Observations include demographic information such as age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc.</span>
 <span id="cb8-106"><a href="#cb8-106"></a></span>
-<span id="cb8-107"><a href="#cb8-107"></a>Observations include demographic information such as age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc.</span>
+<span id="cb8-107"><a href="#cb8-107"></a>A possible ethical concern is if personal health information (PHI) could be traced to individual participants. However, data has been de-identified.</span>
 <span id="cb8-108"><a href="#cb8-108"></a></span>
-<span id="cb8-109"><a href="#cb8-109"></a>A possible ethical concern is if personal health information (PHI) could be traced to individual participants. However, data has been de-identified.</span>
+<span id="cb8-109"><a href="#cb8-109"></a>Research Question: is it possible to predict the possibility of an individual having a stroke based on their demographic information and medical history?</span>
 <span id="cb8-110"><a href="#cb8-110"></a></span>
-<span id="cb8-111"><a href="#cb8-111"></a>Research Question: is it possible to predict the possibility of an individual having a stroke based on their demographic information and medical history?</span>
+<span id="cb8-111"><a href="#cb8-111"></a>This question is important because identifying key risk factors of a stroke can be used for prevention and more effective monitoring of patients.</span>
 <span id="cb8-112"><a href="#cb8-112"></a></span>
-<span id="cb8-113"><a href="#cb8-113"></a>This question is important because identifying key risk factors of a stroke can be used for prevention and more effective monitoring of patients.</span>
+<span id="cb8-113"><a href="#cb8-113"></a>Variables such as gender, smoking status, employment status, and marital status are qualitative. Variables such as age, BMI, and glucose index are all quantitative.</span>
 <span id="cb8-114"><a href="#cb8-114"></a></span>
-<span id="cb8-115"><a href="#cb8-115"></a>Variables such as gender, smoking status, employment status, and marital status are qualitative. Variables such as age, BMI, and glucose index are all quantitative.</span>
+<span id="cb8-115"><a href="#cb8-115"></a><span class="fu">## Glimpse of data</span></span>
 <span id="cb8-116"><a href="#cb8-116"></a></span>
-<span id="cb8-117"><a href="#cb8-117"></a><span class="fu">## Glimpse of data</span></span>
-<span id="cb8-118"><a href="#cb8-118"></a></span>
-<span id="cb8-121"><a href="#cb8-121"></a><span class="in">```{python}</span></span>
-<span id="cb8-122"><a href="#cb8-122"></a>stroke <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/healthcare-dataset-stroke-data.csv&quot;</span>)</span>
-<span id="cb8-123"><a href="#cb8-123"></a><span class="bu">print</span>(stroke.head())</span>
-<span id="cb8-124"><a href="#cb8-124"></a><span class="bu">print</span>(stroke.info())</span>
-<span id="cb8-125"><a href="#cb8-125"></a><span class="in">```</span></span>
+<span id="cb8-119"><a href="#cb8-119"></a><span class="in">```{python}</span></span>
+<span id="cb8-120"><a href="#cb8-120"></a>stroke <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/healthcare-dataset-stroke-data.csv&quot;</span>)</span>
+<span id="cb8-121"><a href="#cb8-121"></a><span class="bu">print</span>(stroke.head())</span>
+<span id="cb8-122"><a href="#cb8-122"></a><span class="bu">print</span>(stroke.info())</span>
+<span id="cb8-123"><a href="#cb8-123"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
