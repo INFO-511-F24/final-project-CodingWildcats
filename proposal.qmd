@@ -102,6 +102,12 @@ This question is important because identifying key risk factors of a stroke can 
 
 Variables such as gender, smoking status, employment status, and marital status are qualitative. Variables such as age, BMI, and glucose index are all quantitative.
 
+Analysis Plan:
+Step 1: correlation plot/sensitivity analysis, choose variables
+Step 2: model testing and selection
+Step 3: model visualization
+Step 4: presentation
+
 ### Glimpse of data
 
 ```{python}
