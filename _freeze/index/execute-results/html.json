@@ -1,10 +1,10 @@
 {
-  "hash": "420a7d310ddf70e2f91feb77d1c3ec52",
+  "hash": "bb8b43c94d3ad8a6f4e31375495062e0",
   "result": {
     "engine": "jupyter",
-    "markdown": "---\ntitle: \"College Characteristics and Student Success\"\nsubtitle: \"INFO 511 - Fall 2024 - Final Project\"\nauthor: \n  - name: \"Coding Wildcats\"\n    affiliations:\n      - name: \"School of Information, University of Arizona\"\ndescription: \"Project description\"\nformat:\n   html:\n    code-tools: true\n    code-overflow: wrap\n    embed-resources: true\neditor: visual\nexecute:\n  warning: false\n  echo: false\njupyter: python3\n---\n\n\n\n\n\n## Abstract\n\nAdd project abstract here.\n\n",
+    "markdown": "---\ntitle: \"College Characteristics and Student Success\"\nsubtitle: \"INFO 511 - Fall 2024 - Final Project\"\nauthor: \n  - name: \"Coding Wildcats\"\n    affiliations:\n      - name: \"School of Information, University of Arizona\"\nformat:\n   html:\n    code-tools: true\n    code-overflow: wrap\n    embed-resources: true\neditor: visual\nexecute:\n  warning: false\n  echo: false\njupyter: python3\n---\n\n\n\n\n## Abstract\n\nAdd project abstract here.\n\n## Introduction\n\nAdd introduction here.\n\n## Data\n\nAdd data here.\n\n## Methodology\n\nAdd methodology here.\n\n## Results\n\nAdd results here.\n\n## Discussion\n\nAdd discussion here.\n\n## References\n\nAdd references here.\n\n",
     "supporting": [
-      "index_files/figure-html"
+      "index_files"
     ],
     "filters": [],
     "includes": {}

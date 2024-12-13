@@ -1,5 +1,5 @@
 ---
-title: "Coding Wildcats 2024 Project"
+title: "College Characteristics and Student Success"
 subtitle: "Proposal"
 author: 
   - name: "Coding Wildcats"
