@@ -29,11 +29,11 @@ import seaborn as sns
 #| message: false
 ```
 
-## Analysis plan
+## Overview
 
-1.  College Scorecard Dataset
+We have selected 3 datasets - namely 1) College Scorecard Dataset, 2) Massachusetts Public Schools 2017 Records, and 3) Stroke Dataset. 
 
-## Introduction and data
+## 1. College Scorecard Dataset
 
 Source: https://collegescorecard.ed.gov/data/
 
@@ -51,7 +51,7 @@ This question is important because student success is an important factor in det
 
 Variables such as school expenditure, student debt and graduate income are quantitative while variables such as degree type, institution name and city are qualitative.
 
-## Glimpse of data
+### Glimpse of data
 
 ```{python}
 import pandas as pd
@@ -60,9 +60,8 @@ print(college.head())
 print(college.info())
 ```
 
-2.  Massachusetts Public Schools 2017 Records
 
-## Introduction and data
+## 2. Massachusetts Public Schools 2017 Records
 
 Source: https://profiles.doe.mass.edu/
 
@@ -78,7 +77,7 @@ This question is important because the education quality for elementary through 
 
 Variables such as school type, location, and evaluation are qualitative variables. Variables such as demographic makeup, enrollment numbers, class size and expenditure are quantitative variables.
 
-## Glimpse of data
+### Glimpse of data
 
 ```{python}
 MA_schools = pd.read_csv("data/MA_Public_Schools_2017.csv")
@@ -86,9 +85,8 @@ print(MA_schools.head())
 print(MA_schools.info())
 ```
 
-3.  Stroke Dataset
 
-## Introduction and data
+## 3. Stroke Dataset
 
 Source: https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset
 
@@ -104,7 +102,7 @@ This question is important because identifying key risk factors of a stroke can 
 
 Variables such as gender, smoking status, employment status, and marital status are qualitative. Variables such as age, BMI, and glucose index are all quantitative.
 
-## Glimpse of data
+### Glimpse of data
 
 ```{python}
 stroke = pd.read_csv("data/healthcare-dataset-stroke-data.csv")

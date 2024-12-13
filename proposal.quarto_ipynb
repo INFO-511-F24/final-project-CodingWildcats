@@ -1,0 +1,180 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Project Proposal\"\n",
+        "author: \n",
+        "  - name: \"Coding Wildcats\"\n",
+        "    affiliations:\n",
+        "      - name: \"School of Information, University of Arizona\"\n",
+        "format:\n",
+        "  html:\n",
+        "    code-tools: true\n",
+        "    code-overflow: wrap\n",
+        "    code-line-numbers: true\n",
+        "    embed-resources: true\n",
+        "editor: visual\n",
+        "code-annotations: hover\n",
+        "execute:\n",
+        "  warning: false\n",
+        "jupyter: python3\n",
+        "---"
+      ],
+      "id": "56034f81"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "message": false
+      },
+      "source": [
+        "#| label: load-pkgs\n",
+        "import numpy as np\n",
+        "import seaborn as sns"
+      ],
+      "id": "load-pkgs",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "message": false
+      },
+      "source": [
+        "#| label: load-dataset\n"
+      ],
+      "id": "load-dataset",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Overview\n",
+        "\n",
+        "We have selected 3 datasets - namely 1) College Scorecard Dataset, 2) Massachusetts Public Schools 2017 Records, and 3) Stroke Dataset. \n",
+        "\n",
+        "## 1. College Scorecard Dataset\n",
+        "\n",
+        "Source: https://collegescorecard.ed.gov/data/\n",
+        "\n",
+        "Data was collected from 1996-2023 by the Department of Education by institutional reporting from U.S. schools. The dataset used for this project has been modified to be uploaded to GitHub.\n",
+        "\n",
+        "Observations include geographic data for each school, admission rates, institutional characteristics, enrollment, student aid, costs, and student outcomes.\n",
+        "\n",
+        "No ethical concerns are present--data is collected from a department level, not individual and includes schools from across the country.\n",
+        "\n",
+        "Research Question: What relationships are there between institutional characteristics and student aid, school spending and student outcomes (graduation rate, degree level, etc)?\n",
+        "\n",
+        "This question represents an overview of the higher education system and its effectiveness in the United States. We hypothesize that student aid and school spending are correlated with student outcomes.\n",
+        "\n",
+        "This question is important because student success is an important factor in determining their success in the workforce, as well as an indicator for future students for the quality of that education.\n",
+        "\n",
+        "Variables such as school expenditure, student debt and graduate income are quantitative while variables such as degree type, institution name and city are qualitative.\n",
+        "\n",
+        "### Glimpse of data\n"
+      ],
+      "id": "47a8cdb6"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pandas as pd\n",
+        "college = pd.read_csv(\"data/collge_data_tenative.csv\")\n",
+        "print(college.head())\n",
+        "print(college.info())"
+      ],
+      "id": "71421c82",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## 2. Massachusetts Public Schools 2017 Records\n",
+        "\n",
+        "Source: https://profiles.doe.mass.edu/\n",
+        "\n",
+        "This data was collected by the Massachusetts Department of Education in 2017 from school reports given by public elementary, middle and high schools.\n",
+        "\n",
+        "Observations include enrollment and graduation rates, class sizes, demographic and socioeconomic information of students, classes offered and AP testing records.\n",
+        "\n",
+        "No ethical concerns are present.\n",
+        "\n",
+        "Research Question: Is there a relationship between graduation rates and higher education preparation and a school's demographic makeup, funding and class size?\n",
+        "\n",
+        "This question is important because the education quality for elementary through high school aged children is an important factor in their success in higher education, their careers and overall quality of life.\n",
+        "\n",
+        "Variables such as school type, location, and evaluation are qualitative variables. Variables such as demographic makeup, enrollment numbers, class size and expenditure are quantitative variables.\n",
+        "\n",
+        "### Glimpse of data\n"
+      ],
+      "id": "e8dfacf5"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "MA_schools = pd.read_csv(\"data/MA_Public_Schools_2017.csv\")\n",
+        "print(MA_schools.head())\n",
+        "print(MA_schools.info())"
+      ],
+      "id": "3d444a18",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## 3. Stroke Dataset\n",
+        "\n",
+        "Source: https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset\n",
+        "\n",
+        "This data comes from a study published in China in 2020: Pathan, Muhammad Salman & Zhang, Jianbiao & John, Deepu & Nag, Avishek & Dev, Soumyabrata. (2020). Identifying Stroke Indicators Using Rough Sets. IEEE Access. 8. 10.1109/ACCESS.2020.3039439.\n",
+        "\n",
+        "Observations include demographic information such as age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc.\n",
+        "\n",
+        "A possible ethical concern is if personal health information (PHI) could be traced to individual participants. However, data has been de-identified.\n",
+        "\n",
+        "Research Question: is it possible to predict the possibility of an individual having a stroke based on their demographic information and medical history?\n",
+        "\n",
+        "This question is important because identifying key risk factors of a stroke can be used for prevention and more effective monitoring of patients.\n",
+        "\n",
+        "Variables such as gender, smoking status, employment status, and marital status are qualitative. Variables such as age, BMI, and glucose index are all quantitative.\n",
+        "\n",
+        "### Glimpse of data\n"
+      ],
+      "id": "b2aaee2e"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "stroke = pd.read_csv(\"data/healthcare-dataset-stroke-data.csv\")\n",
+        "print(stroke.head())\n",
+        "print(stroke.info())"
+      ],
+      "id": "deaa69de",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/kaishuenneo/.pyenv/versions/3.8.1/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
