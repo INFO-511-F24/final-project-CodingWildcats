@@ -4802,13 +4802,19 @@ vertical-align: -.125em;
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#analysis-plan" id="toc-analysis-plan" class="nav-link active" data-scroll-target="#analysis-plan">Analysis plan</a></li>
-  <li><a href="#introduction-and-data" id="toc-introduction-and-data" class="nav-link" data-scroll-target="#introduction-and-data">Introduction and data</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#college-scorecard-dataset" id="toc-college-scorecard-dataset" class="nav-link" data-scroll-target="#college-scorecard-dataset">1. College Scorecard Dataset</a>
+  <ul class="collapse">
   <li><a href="#glimpse-of-data" id="toc-glimpse-of-data" class="nav-link" data-scroll-target="#glimpse-of-data">Glimpse of data</a></li>
-  <li><a href="#introduction-and-data-1" id="toc-introduction-and-data-1" class="nav-link" data-scroll-target="#introduction-and-data-1">Introduction and data</a></li>
+  </ul></li>
+  <li><a href="#massachusetts-public-schools-2017-records" id="toc-massachusetts-public-schools-2017-records" class="nav-link" data-scroll-target="#massachusetts-public-schools-2017-records">2. Massachusetts Public Schools 2017 Records</a>
+  <ul class="collapse">
   <li><a href="#glimpse-of-data-1" id="toc-glimpse-of-data-1" class="nav-link" data-scroll-target="#glimpse-of-data-1">Glimpse of data</a></li>
-  <li><a href="#introduction-and-data-2" id="toc-introduction-and-data-2" class="nav-link" data-scroll-target="#introduction-and-data-2">Introduction and data</a></li>
+  </ul></li>
+  <li><a href="#stroke-dataset" id="toc-stroke-dataset" class="nav-link" data-scroll-target="#stroke-dataset">3. Stroke Dataset</a>
+  <ul class="collapse">
   <li><a href="#glimpse-of-data-2" id="toc-glimpse-of-data-2" class="nav-link" data-scroll-target="#glimpse-of-data-2">Glimpse of data</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -4851,14 +4857,12 @@ vertical-align: -.125em;
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="analysis-plan" class="level2">
-<h2 class="anchored" data-anchor-id="analysis-plan">Analysis plan</h2>
-<ol type="1">
-<li>College Scorecard Dataset</li>
-</ol>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>We have selected 3 datasets - namely 1) College Scorecard Dataset, 2) Massachusetts Public Schools 2017 Records, and 3) Stroke Dataset.</p>
 </section>
-<section id="introduction-and-data" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-and-data">Introduction and data</h2>
+<section id="college-scorecard-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="college-scorecard-dataset">1. College Scorecard Dataset</h2>
 <p>Source: https://collegescorecard.ed.gov/data/</p>
 <p>Data was collected from 1996-2023 by the Department of Education by institutional reporting from U.S. schools. The dataset used for this project has been modified to be uploaded to GitHub.</p>
 <p>Observations include geographic data for each school, admission rates, institutional characteristics, enrollment, student aid, costs, and student outcomes.</p>
@@ -4867,10 +4871,9 @@ vertical-align: -.125em;
 <p>This question represents an overview of the higher education system and its effectiveness in the United States. We hypothesize that student aid and school spending are correlated with student outcomes.</p>
 <p>This question is important because student success is an important factor in determining their success in the workforce, as well as an indicator for future students for the quality of that education.</p>
 <p>Variables such as school expenditure, student debt and graduate income are quantitative while variables such as degree type, institution name and city are qualitative.</p>
-</section>
-<section id="glimpse-of-data" class="level2">
-<h2 class="anchored" data-anchor-id="glimpse-of-data">Glimpse of data</h2>
-<div id="f2f32bc5" class="cell" data-execution_count="3">
+<section id="glimpse-of-data" class="level3">
+<h3 class="anchored" data-anchor-id="glimpse-of-data">Glimpse of data</h3>
+<div id="71421c82" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2"><a href="#cb2-2"></a>college <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/collge_data_tenative.csv&quot;</span>)</span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="bu">print</span>(college.head())</span>
@@ -4920,12 +4923,10 @@ memory usage: 709.3+ KB
 None</code></pre>
 </div>
 </div>
-<ol start="2" type="1">
-<li>Massachusetts Public Schools 2017 Records</li>
-</ol>
 </section>
-<section id="introduction-and-data-1" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-and-data-1">Introduction and data</h2>
+</section>
+<section id="massachusetts-public-schools-2017-records" class="level2">
+<h2 class="anchored" data-anchor-id="massachusetts-public-schools-2017-records">2. Massachusetts Public Schools 2017 Records</h2>
 <p>Source: https://profiles.doe.mass.edu/</p>
 <p>This data was collected by the Massachusetts Department of Education in 2017 from school reports given by public elementary, middle and high schools.</p>
 <p>Observations include enrollment and graduation rates, class sizes, demographic and socioeconomic information of students, classes offered and AP testing records.</p>
@@ -4933,10 +4934,9 @@ None</code></pre>
 <p>Research Question: Is there a relationship between graduation rates and higher education preparation and a school’s demographic makeup, funding and class size?</p>
 <p>This question is important because the education quality for elementary through high school aged children is an important factor in their success in higher education, their careers and overall quality of life.</p>
 <p>Variables such as school type, location, and evaluation are qualitative variables. Variables such as demographic makeup, enrollment numbers, class size and expenditure are quantitative variables.</p>
-</section>
-<section id="glimpse-of-data-1" class="level2">
-<h2 class="anchored" data-anchor-id="glimpse-of-data-1">Glimpse of data</h2>
-<div id="45b6d734" class="cell" data-execution_count="4">
+<section id="glimpse-of-data-1" class="level3">
+<h3 class="anchored" data-anchor-id="glimpse-of-data-1">Glimpse of data</h3>
+<div id="3d444a18" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>MA_schools <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/MA_Public_Schools_2017.csv&quot;</span>)</span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="bu">print</span>(MA_schools.head())</span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="bu">print</span>(MA_schools.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5034,12 +5034,10 @@ memory usage: 4.3+ MB
 None</code></pre>
 </div>
 </div>
-<ol start="3" type="1">
-<li>Stroke Dataset</li>
-</ol>
 </section>
-<section id="introduction-and-data-2" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-and-data-2">Introduction and data</h2>
+</section>
+<section id="stroke-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="stroke-dataset">3. Stroke Dataset</h2>
 <p>Source: https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset</p>
 <p>This data comes from a study published in China in 2020: Pathan, Muhammad Salman &amp; Zhang, Jianbiao &amp; John, Deepu &amp; Nag, Avishek &amp; Dev, Soumyabrata. (2020). Identifying Stroke Indicators Using Rough Sets. IEEE Access. 8. 10.1109/ACCESS.2020.3039439.</p>
 <p>Observations include demographic information such as age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc.</p>
@@ -5047,10 +5045,9 @@ None</code></pre>
 <p>Research Question: is it possible to predict the possibility of an individual having a stroke based on their demographic information and medical history?</p>
 <p>This question is important because identifying key risk factors of a stroke can be used for prevention and more effective monitoring of patients.</p>
 <p>Variables such as gender, smoking status, employment status, and marital status are qualitative. Variables such as age, BMI, and glucose index are all quantitative.</p>
-</section>
-<section id="glimpse-of-data-2" class="level2">
-<h2 class="anchored" data-anchor-id="glimpse-of-data-2">Glimpse of data</h2>
-<div id="59969d6a" class="cell" data-execution_count="5">
+<section id="glimpse-of-data-2" class="level3">
+<h3 class="anchored" data-anchor-id="glimpse-of-data-2">Glimpse of data</h3>
+<div id="deaa69de" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>stroke <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/healthcare-dataset-stroke-data.csv&quot;</span>)</span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="bu">print</span>(stroke.head())</span>
 <span id="cb6-3"><a href="#cb6-3"></a><span class="bu">print</span>(stroke.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5101,6 +5098,7 @@ None</code></pre>
 
 <!-- -->
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -5391,7 +5389,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/INFO-511-F24\.github\.io\/final-project-CodingWildcats\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -5789,11 +5787,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb8-33"><a href="#cb8-33"></a><span class="co">#| message: false</span></span>
 <span id="cb8-34"><a href="#cb8-34"></a><span class="in">```</span></span>
 <span id="cb8-35"><a href="#cb8-35"></a></span>
-<span id="cb8-36"><a href="#cb8-36"></a><span class="fu">## Analysis plan</span></span>
+<span id="cb8-36"><a href="#cb8-36"></a><span class="fu">## Overview</span></span>
 <span id="cb8-37"><a href="#cb8-37"></a></span>
-<span id="cb8-38"><a href="#cb8-38"></a><span class="ss">1.  </span>College Scorecard Dataset</span>
+<span id="cb8-38"><a href="#cb8-38"></a>We have selected 3 datasets - namely 1) College Scorecard Dataset, 2) Massachusetts Public Schools 2017 Records, and 3) Stroke Dataset. </span>
 <span id="cb8-39"><a href="#cb8-39"></a></span>
-<span id="cb8-40"><a href="#cb8-40"></a><span class="fu">## Introduction and data</span></span>
+<span id="cb8-40"><a href="#cb8-40"></a><span class="fu">## 1. College Scorecard Dataset</span></span>
 <span id="cb8-41"><a href="#cb8-41"></a></span>
 <span id="cb8-42"><a href="#cb8-42"></a>Source: https://collegescorecard.ed.gov/data/</span>
 <span id="cb8-43"><a href="#cb8-43"></a></span>
@@ -5811,7 +5809,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb8-55"><a href="#cb8-55"></a></span>
 <span id="cb8-56"><a href="#cb8-56"></a>Variables such as school expenditure, student debt and graduate income are quantitative while variables such as degree type, institution name and city are qualitative.</span>
 <span id="cb8-57"><a href="#cb8-57"></a></span>
-<span id="cb8-58"><a href="#cb8-58"></a><span class="fu">## Glimpse of data</span></span>
+<span id="cb8-58"><a href="#cb8-58"></a><span class="fu">### Glimpse of data</span></span>
 <span id="cb8-59"><a href="#cb8-59"></a></span>
 <span id="cb8-62"><a href="#cb8-62"></a><span class="in">```{python}</span></span>
 <span id="cb8-63"><a href="#cb8-63"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -5820,57 +5818,55 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb8-66"><a href="#cb8-66"></a><span class="bu">print</span>(college.info())</span>
 <span id="cb8-67"><a href="#cb8-67"></a><span class="in">```</span></span>
 <span id="cb8-68"><a href="#cb8-68"></a></span>
-<span id="cb8-69"><a href="#cb8-69"></a><span class="ss">2.  </span>Massachusetts Public Schools 2017 Records</span>
-<span id="cb8-70"><a href="#cb8-70"></a></span>
-<span id="cb8-71"><a href="#cb8-71"></a><span class="fu">## Introduction and data</span></span>
-<span id="cb8-72"><a href="#cb8-72"></a></span>
-<span id="cb8-73"><a href="#cb8-73"></a>Source: https://profiles.doe.mass.edu/</span>
-<span id="cb8-74"><a href="#cb8-74"></a></span>
-<span id="cb8-75"><a href="#cb8-75"></a>This data was collected by the Massachusetts Department of Education in 2017 from school reports given by public elementary, middle and high schools.</span>
-<span id="cb8-76"><a href="#cb8-76"></a></span>
-<span id="cb8-77"><a href="#cb8-77"></a>Observations include enrollment and graduation rates, class sizes, demographic and socioeconomic information of students, classes offered and AP testing records.</span>
-<span id="cb8-78"><a href="#cb8-78"></a></span>
-<span id="cb8-79"><a href="#cb8-79"></a>No ethical concerns are present.</span>
-<span id="cb8-80"><a href="#cb8-80"></a></span>
-<span id="cb8-81"><a href="#cb8-81"></a>Research Question: Is there a relationship between graduation rates and higher education preparation and a school&#39;s demographic makeup, funding and class size?</span>
-<span id="cb8-82"><a href="#cb8-82"></a></span>
-<span id="cb8-83"><a href="#cb8-83"></a>This question is important because the education quality for elementary through high school aged children is an important factor in their success in higher education, their careers and overall quality of life.</span>
-<span id="cb8-84"><a href="#cb8-84"></a></span>
-<span id="cb8-85"><a href="#cb8-85"></a>Variables such as school type, location, and evaluation are qualitative variables. Variables such as demographic makeup, enrollment numbers, class size and expenditure are quantitative variables.</span>
-<span id="cb8-86"><a href="#cb8-86"></a></span>
-<span id="cb8-87"><a href="#cb8-87"></a><span class="fu">## Glimpse of data</span></span>
-<span id="cb8-88"><a href="#cb8-88"></a></span>
-<span id="cb8-91"><a href="#cb8-91"></a><span class="in">```{python}</span></span>
-<span id="cb8-92"><a href="#cb8-92"></a>MA_schools <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/MA_Public_Schools_2017.csv&quot;</span>)</span>
-<span id="cb8-93"><a href="#cb8-93"></a><span class="bu">print</span>(MA_schools.head())</span>
-<span id="cb8-94"><a href="#cb8-94"></a><span class="bu">print</span>(MA_schools.info())</span>
-<span id="cb8-95"><a href="#cb8-95"></a><span class="in">```</span></span>
+<span id="cb8-69"><a href="#cb8-69"></a></span>
+<span id="cb8-70"><a href="#cb8-70"></a><span class="fu">## 2. Massachusetts Public Schools 2017 Records</span></span>
+<span id="cb8-71"><a href="#cb8-71"></a></span>
+<span id="cb8-72"><a href="#cb8-72"></a>Source: https://profiles.doe.mass.edu/</span>
+<span id="cb8-73"><a href="#cb8-73"></a></span>
+<span id="cb8-74"><a href="#cb8-74"></a>This data was collected by the Massachusetts Department of Education in 2017 from school reports given by public elementary, middle and high schools.</span>
+<span id="cb8-75"><a href="#cb8-75"></a></span>
+<span id="cb8-76"><a href="#cb8-76"></a>Observations include enrollment and graduation rates, class sizes, demographic and socioeconomic information of students, classes offered and AP testing records.</span>
+<span id="cb8-77"><a href="#cb8-77"></a></span>
+<span id="cb8-78"><a href="#cb8-78"></a>No ethical concerns are present.</span>
+<span id="cb8-79"><a href="#cb8-79"></a></span>
+<span id="cb8-80"><a href="#cb8-80"></a>Research Question: Is there a relationship between graduation rates and higher education preparation and a school&#39;s demographic makeup, funding and class size?</span>
+<span id="cb8-81"><a href="#cb8-81"></a></span>
+<span id="cb8-82"><a href="#cb8-82"></a>This question is important because the education quality for elementary through high school aged children is an important factor in their success in higher education, their careers and overall quality of life.</span>
+<span id="cb8-83"><a href="#cb8-83"></a></span>
+<span id="cb8-84"><a href="#cb8-84"></a>Variables such as school type, location, and evaluation are qualitative variables. Variables such as demographic makeup, enrollment numbers, class size and expenditure are quantitative variables.</span>
+<span id="cb8-85"><a href="#cb8-85"></a></span>
+<span id="cb8-86"><a href="#cb8-86"></a><span class="fu">### Glimpse of data</span></span>
+<span id="cb8-87"><a href="#cb8-87"></a></span>
+<span id="cb8-90"><a href="#cb8-90"></a><span class="in">```{python}</span></span>
+<span id="cb8-91"><a href="#cb8-91"></a>MA_schools <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/MA_Public_Schools_2017.csv&quot;</span>)</span>
+<span id="cb8-92"><a href="#cb8-92"></a><span class="bu">print</span>(MA_schools.head())</span>
+<span id="cb8-93"><a href="#cb8-93"></a><span class="bu">print</span>(MA_schools.info())</span>
+<span id="cb8-94"><a href="#cb8-94"></a><span class="in">```</span></span>
+<span id="cb8-95"><a href="#cb8-95"></a></span>
 <span id="cb8-96"><a href="#cb8-96"></a></span>
-<span id="cb8-97"><a href="#cb8-97"></a><span class="ss">3.  </span>Stroke Dataset</span>
+<span id="cb8-97"><a href="#cb8-97"></a><span class="fu">## 3. Stroke Dataset</span></span>
 <span id="cb8-98"><a href="#cb8-98"></a></span>
-<span id="cb8-99"><a href="#cb8-99"></a><span class="fu">## Introduction and data</span></span>
+<span id="cb8-99"><a href="#cb8-99"></a>Source: https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset</span>
 <span id="cb8-100"><a href="#cb8-100"></a></span>
-<span id="cb8-101"><a href="#cb8-101"></a>Source: https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset</span>
+<span id="cb8-101"><a href="#cb8-101"></a>This data comes from a study published in China in 2020: Pathan, Muhammad Salman &amp; Zhang, Jianbiao &amp; John, Deepu &amp; Nag, Avishek &amp; Dev, Soumyabrata. (2020). Identifying Stroke Indicators Using Rough Sets. IEEE Access. 8. 10.1109/ACCESS.2020.3039439.</span>
 <span id="cb8-102"><a href="#cb8-102"></a></span>
-<span id="cb8-103"><a href="#cb8-103"></a>This data comes from a study published in China in 2020: Pathan, Muhammad Salman &amp; Zhang, Jianbiao &amp; John, Deepu &amp; Nag, Avishek &amp; Dev, Soumyabrata. (2020). Identifying Stroke Indicators Using Rough Sets. IEEE Access. 8. 10.1109/ACCESS.2020.3039439.</span>
+<span id="cb8-103"><a href="#cb8-103"></a>Observations include demographic information such as age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc.</span>
 <span id="cb8-104"><a href="#cb8-104"></a></span>
-<span id="cb8-105"><a href="#cb8-105"></a>Observations include demographic information such as age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc.</span>
+<span id="cb8-105"><a href="#cb8-105"></a>A possible ethical concern is if personal health information (PHI) could be traced to individual participants. However, data has been de-identified.</span>
 <span id="cb8-106"><a href="#cb8-106"></a></span>
-<span id="cb8-107"><a href="#cb8-107"></a>A possible ethical concern is if personal health information (PHI) could be traced to individual participants. However, data has been de-identified.</span>
+<span id="cb8-107"><a href="#cb8-107"></a>Research Question: is it possible to predict the possibility of an individual having a stroke based on their demographic information and medical history?</span>
 <span id="cb8-108"><a href="#cb8-108"></a></span>
-<span id="cb8-109"><a href="#cb8-109"></a>Research Question: is it possible to predict the possibility of an individual having a stroke based on their demographic information and medical history?</span>
+<span id="cb8-109"><a href="#cb8-109"></a>This question is important because identifying key risk factors of a stroke can be used for prevention and more effective monitoring of patients.</span>
 <span id="cb8-110"><a href="#cb8-110"></a></span>
-<span id="cb8-111"><a href="#cb8-111"></a>This question is important because identifying key risk factors of a stroke can be used for prevention and more effective monitoring of patients.</span>
+<span id="cb8-111"><a href="#cb8-111"></a>Variables such as gender, smoking status, employment status, and marital status are qualitative. Variables such as age, BMI, and glucose index are all quantitative.</span>
 <span id="cb8-112"><a href="#cb8-112"></a></span>
-<span id="cb8-113"><a href="#cb8-113"></a>Variables such as gender, smoking status, employment status, and marital status are qualitative. Variables such as age, BMI, and glucose index are all quantitative.</span>
+<span id="cb8-113"><a href="#cb8-113"></a><span class="fu">### Glimpse of data</span></span>
 <span id="cb8-114"><a href="#cb8-114"></a></span>
-<span id="cb8-115"><a href="#cb8-115"></a><span class="fu">## Glimpse of data</span></span>
-<span id="cb8-116"><a href="#cb8-116"></a></span>
-<span id="cb8-119"><a href="#cb8-119"></a><span class="in">```{python}</span></span>
-<span id="cb8-120"><a href="#cb8-120"></a>stroke <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/healthcare-dataset-stroke-data.csv&quot;</span>)</span>
-<span id="cb8-121"><a href="#cb8-121"></a><span class="bu">print</span>(stroke.head())</span>
-<span id="cb8-122"><a href="#cb8-122"></a><span class="bu">print</span>(stroke.info())</span>
-<span id="cb8-123"><a href="#cb8-123"></a><span class="in">```</span></span>
+<span id="cb8-117"><a href="#cb8-117"></a><span class="in">```{python}</span></span>
+<span id="cb8-118"><a href="#cb8-118"></a>stroke <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/healthcare-dataset-stroke-data.csv&quot;</span>)</span>
+<span id="cb8-119"><a href="#cb8-119"></a><span class="bu">print</span>(stroke.head())</span>
+<span id="cb8-120"><a href="#cb8-120"></a><span class="bu">print</span>(stroke.info())</span>
+<span id="cb8-121"><a href="#cb8-121"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
