@@ -1,8 +1,8 @@
 ---
-title: "Project Title"
+title: "College Characteristics and Student Success"
 subtitle: "INFO 511 - Fall 2024 - Final Project"
 author: 
-  - name: "Team name"
+  - name: "Coding Wildcats"
     affiliations:
       - name: "School of Information, University of Arizona"
 description: "Project description"
