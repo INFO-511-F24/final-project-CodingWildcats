@@ -26,7 +26,12 @@ Add project abstract here.
 Add introduction here.
 
 ## Data
+
 ```{python}
+#| label: load data
+#| eval: true
+#| echo: false
+import pandas as pd
 stroke = pd.read_csv("data/healthcare-dataset-stroke-data.csv")
 ```
 
@@ -40,8 +45,99 @@ Add methodology here.
 
 ## Results
 
-Add results here.
+The first step of our data cleaning is to evaluate how much of our data is missing. Of 12 variables, only BMI has missing values.
+```{python}
+#| label: import packages
+#| eval: true
+#| echo: false
+#| warning: false
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import accuracy_score
+```
+```{python}
+#| label: plot missing
+#| eval: true
+#| echo: false
+#| warning: false
 
+plt.figure(figsize=(10,6))
+
+sns.displot(
+    data=stroke.isna().melt(value_name="missing"),
+    y="variable",
+    hue="missing",
+    multiple="fill",
+    aspect=1.25
+).set(title='Proportion of Missing Values in Dataset')
+```
+
+```{python}
+#| label: clean data
+#| eval: true
+#| echo: false
+#| warning: false
+stroke = stroke.dropna()
+
+stroke['gender'] = LabelEncoder().fit_transform(stroke['gender'])
+stroke['ever_married'] = LabelEncoder().fit_transform(stroke['ever_married'])
+stroke['work_type'] = LabelEncoder().fit_transform(stroke['work_type'])
+stroke['Residence_type'] = LabelEncoder().fit_transform(stroke['Residence_type'])
+stroke['smoking_status'] = LabelEncoder().fit_transform(stroke['smoking_status'])
+
+stroke.drop(columns=['id'],axis=1,inplace=True) 
+```
+
+Missing values were dropped from the dataset and categorical variables (gender, marital status, work type, residence type and smoking status) were transformed into factors. The correlation matrix of all variables, minus the ID number, is displayed on the heatmap:
+
+```{python}
+#| label: plot correlation
+#| eval: true
+#| warning: false
+corr = stroke.corr()
+plt.figure(figsize=(10, 8))
+sns.heatmap(corr, annot=True)
+plt.title('Variable Correlation Heatmap')
+plt.show()
+```
+
+The data was split into training (70% of total data) and testing (30% of total data) datasets. A logistic regression model was fit to the training dataset. The model accuracy was then evaluated by comparing its predictions against the testing data.
+```{python}
+#| label: logistic regression
+#| warning: true
+#| eval: true
+X = stroke.drop(columns=['stroke'],axis=1) 
+Y = stroke['stroke']
+
+X_train, X_test, Y_train, Y_test = train_test_split(
+    X, Y, test_size=0.3, random_state=0)
+
+LR = LogisticRegression().fit(X_train,Y_train)
+
+pred_LR = LR.predict(X_test)
+logistic_accuracy = accuracy_score(Y_test, pred_LR)
+
+
+cm = confusion_matrix(Y_test, pred_LR)
+
+sns.heatmap(cm, 
+            annot=True,
+            fmt='g', 
+            xticklabels=['No Stroke','Stroke'],
+            yticklabels=['No Stroke','Stroke'])
+plt.ylabel('Actual', fontsize=13)
+plt.title('Confusion Matrix', fontsize=17, pad=20)
+plt.gca().xaxis.set_label_position('top') 
+plt.xlabel('Prediction', fontsize=13)
+plt.gca().xaxis.tick_top()
+
+print('The accuracy of the logistic regression model is ',logistic_accuracy*100,'%')
+```
 ## Discussion
 
 Add discussion here.
