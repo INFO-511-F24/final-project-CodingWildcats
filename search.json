@@ -109,14 +109,14 @@
     "href": "index.html",
     "title": "College Characteristics and Student Success",
     "section": "",
-    "text": "Add project abstract here."
+    "text": "In this project, we aimed to predict whether a person is at risk of having a stroke using machine learning models. We used a healthcare dataset containing information about individuals (like gender, age, health status, etc.). Our goal was to train multiple machine learning models and evaluate their classification accuracy."
   },
   {
     "objectID": "index.html#abstract",
     "href": "index.html#abstract",
     "title": "College Characteristics and Student Success",
     "section": "",
-    "text": "Add project abstract here."
+    "text": "In this project, we aimed to predict whether a person is at risk of having a stroke using machine learning models. We used a healthcare dataset containing information about individuals (like gender, age, health status, etc.). Our goal was to train multiple machine learning models and evaluate their classification accuracy."
   },
   {
     "objectID": "index.html#introduction",
@@ -130,21 +130,21 @@
     "href": "index.html#data",
     "title": "College Characteristics and Student Success",
     "section": "Data",
-    "text": "Data\nSource: https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset\nThis data comes from a study published in China in 2020: Pathan, Muhammad Salman & Zhang, Jianbiao & John, Deepu & Nag, Avishek & Dev, Soumyabrata. (2020). Identifying Stroke Indicators Using Rough Sets. IEEE Access. 8. 10.1109/ACCESS.2020.3039439."
+    "text": "Data\nSource: https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset\nThis data comes from a study published in China in 2020: Pathan, Muhammad Salman & Zhang, Jianbiao & John, Deepu & Nag, Avishek & Dev, Soumyabrata. (2020). Identifying Stroke Indicators Using Rough Sets. IEEE Access. 8. 10.1109/ACCESS.2020.3039439.\\"
   },
   {
     "objectID": "index.html#methodology",
     "href": "index.html#methodology",
     "title": "College Characteristics and Student Success",
     "section": "Methodology",
-    "text": "Methodology\nThe first step of our data cleaning is to evaluate how much of our data is missing. Of 12 variables, only BMI has missing values.\n\n\n&lt;Figure size 960x576 with 0 Axes&gt;\n\n\n\n\n\n\n\n\n\nMissing values were dropped from the dataset and categorical variables (gender, marital status, work type, residence type and smoking status) were transformed into factors. The correlation matrix of all variables, minus the ID number, is displayed on the heatmap:\n\n\n\n\n\n\n\n\n\nThe data was split into training (70% of total data) and testing (30% of total data) datasets. A logistic regression model was fit to the training dataset. The model accuracy was then evaluated by comparing its predictions against the testing data.\n\n\nThe accuracy of the logistic regression model is  96.33401221995926 %"
+    "text": "Methodology\nThe first step of our data cleaning is to evaluate how much of our data is missing. Of 12 variables, only BMI has missing values.\n\n\n&lt;Figure size 960x576 with 0 Axes&gt;\n\n\n\n\n\n\n\n\n\nMissing values were dropped from the dataset and categorical variables (gender, marital status, work type, residence type and smoking status) were transformed into factors. The correlation matrix of all variables, minus the ID number, is displayed on the heatmap:\n\n\n\n\n\n\n\n\n\nAfter preparing the dataset, we split it into training and testing sets. The training set, which comprises 80% of the data, is used to train our machine learning models, while the testing set, representing 20% of the data, is reserved for final evaluation. This approach ensures that we have unseen data to measure how well the models generalize.\nWe trained five different machine learning models on this dataset: Random Forest, Decision Tree, Support Vector Machine (SVM), Artificial Neural Network (ANN), and Logistic Regression. Each of these models uses a unique method to identify patterns in the data. The Random Forest model, for instance, builds multiple decision trees and combines their predictions to create a more stable and robust model. The Decision Tree model uses a single tree to make predictions, which is often more prone to overfitting. The Support Vector Machine works by finding the optimal hyperplane that separates classes in the feature space. The Artificial Neural Network mimics how neurons in the human brain process information, making it effective for complex relationships in the data. Finally, Logistic Regression is a linear model that is simple, interpretable, and computationally efficient.\nTo evaluate the performance of these models, we employed 5-fold cross-validation. This method splits the training data into five equally sized segments (folds). Each model is trained on four of these folds while the fifth fold is used as a validation set. This process is repeated five times, with each fold serving as a validation set once. Cross-validation provides a more reliable estimate of the model’s performance because it reduces the likelihood of overfitting to a single train-test split. For each model, we calculated the accuracy for each fold, as well as the average accuracy across all five folds.\n\n\n\nAccuracy for Each Fold and Average Accuracy for Each Model:\n\n\n\n\n\n\n\n\n\nModel\nFold 1\nFold 2\nFold 3\nFold 4\nFold 5\nAverage Accuracy\n\n\n\n\n0\nRandom Forest\n0.961832\n0.949109\n0.964331\n0.971975\n0.955414\n0.960532\n\n\n1\nDecision Tree\n0.924936\n0.913486\n0.926115\n0.927389\n0.918471\n0.922079\n\n\n2\nSupport Vector Machine\n0.963104\n0.949109\n0.964331\n0.970701\n0.954140\n0.960277\n\n\n3\nArtificial Neural Network\n0.963104\n0.946565\n0.961783\n0.970701\n0.954140\n0.959259\n\n\n4\nLogistic Regression\n0.963104\n0.949109\n0.965605\n0.970701\n0.954140\n0.960532"
   },
   {
     "objectID": "index.html#results",
     "href": "index.html#results",
     "title": "College Characteristics and Student Success",
     "section": "Results",
-    "text": "Results"
+    "text": "Results\nThe results indicate that the Random Forest model achieved the highest average accuracy at 96.05%, which was matched by Logistic Regression. The Support Vector Machine and Artificial Neural Network followed closely, with average accuracies of 96.03% and 95.93%, respectively. The Decision Tree model had the lowest performance, with an average accuracy of 92.21%. This is not surprising since Decision Trees are known to be sensitive to small changes in the training data, leading to higher variance. On the other hand, Random Forest, which combines multiple Decision Trees, reduces this variance and produces more stable predictions.\nThe consistency of model performance across the five folds highlights the robustness of the Random Forest, Logistic Regression, and SVM models. Their accuracies for each fold were relatively stable, with small deviations from the average, indicating that these models generalize well to new, unseen data. The Decision Tree model exhibited slightly higher variability across the folds, further supporting the observation that it is less stable than the other models.\nIn summary, the use of cross-validation allowed us to obtain a more accurate and unbiased assessment of model performance. Among the models, Random Forest and Logistic Regression showed the best overall performance in terms of both average accuracy and stability. Support Vector Machine and Artificial Neural Network also performed well but did not outperform Random Forest or Logistic Regression. The Decision Tree model had the lowest accuracy and was less stable, making it a less desirable choice for this problem. If model simplicity, speed, and interpretability are essential, Logistic Regression is an excellent option. However, if model robustness and predictive power are the priority, Random Forest would be the better choice."
   },
   {
     "objectID": "index.html#discussion",
