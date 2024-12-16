@@ -1,0 +1,212 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"College Characteristics and Student Success\"\n",
+        "subtitle: \"INFO 511 - Fall 2024 - Final Project\"\n",
+        "author: \n",
+        "  - name: \"Coding Wildcats\"\n",
+        "    affiliations:\n",
+        "      - name: \"School of Information, University of Arizona\"\n",
+        "format:\n",
+        "   html:\n",
+        "    code-tools: true\n",
+        "    code-overflow: wrap\n",
+        "    embed-resources: true\n",
+        "editor: visual\n",
+        "execute:\n",
+        "  warning: false\n",
+        "  echo: false\n",
+        "jupyter: python3\n",
+        "---\n",
+        "\n",
+        "\n",
+        "## Abstract\n",
+        "\n",
+        "Add project abstract here.\n",
+        "\n",
+        "## Introduction\n",
+        "\n",
+        "Add introduction here.\n",
+        "\n",
+        "## Data\n"
+      ],
+      "id": "a585932b"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: loaddata\n",
+        "#| echo: false\n",
+        "import pandas as pd\n",
+        "stroke = pd.read_csv(\"data/healthcare-dataset-stroke-data.csv\")"
+      ],
+      "id": "loaddata",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Source: https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset\n",
+        "\n",
+        "This data comes from a study published in China in 2020: Pathan, Muhammad Salman & Zhang, Jianbiao & John, Deepu & Nag, Avishek & Dev, Soumyabrata. (2020). Identifying Stroke Indicators Using Rough Sets. IEEE Access. 8. 10.1109/ACCESS.2020.3039439.\n",
+        "\n",
+        "## Methodology\n",
+        "\n",
+        "The first step of our data cleaning is to evaluate how much of our data is missing. Of 12 variables, only BMI has missing values.\n"
+      ],
+      "id": "02848aa9"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: importpackages\n",
+        "#| echo: false\n",
+        "import numpy as np\n",
+        "import matplotlib.pyplot as plt\n",
+        "import seaborn as sns\n",
+        "from sklearn.preprocessing import LabelEncoder\n",
+        "from sklearn.model_selection import train_test_split\n",
+        "from sklearn.linear_model import LogisticRegression\n",
+        "from sklearn.metrics import confusion_matrix\n",
+        "from sklearn.metrics import accuracy_score"
+      ],
+      "id": "importpackages",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: plotmissing\n",
+        "#| echo: false\n",
+        "plt.figure(figsize=(10,6))\n",
+        "sns.displot(\n",
+        "    data=stroke.isna().melt(value_name=\"missing\"),\n",
+        "    y=\"variable\",\n",
+        "    hue=\"missing\",\n",
+        "    multiple=\"fill\",\n",
+        "    aspect=1.25\n",
+        ").set(title='Proportion of Missing Values in Dataset')"
+      ],
+      "id": "plotmissing",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: cleandata\n",
+        "#| echo: false\n",
+        "stroke = stroke.dropna()\n",
+        "stroke['gender'] = LabelEncoder().fit_transform(stroke['gender'])\n",
+        "stroke['ever_married'] = LabelEncoder().fit_transform(stroke['ever_married'])\n",
+        "stroke['work_type'] = LabelEncoder().fit_transform(stroke['work_type'])\n",
+        "stroke['Residence_type'] = LabelEncoder().fit_transform(stroke['Residence_type'])\n",
+        "stroke['smoking_status'] = LabelEncoder().fit_transform(stroke['smoking_status'])\n",
+        "stroke.drop(columns=['id'],axis=1,inplace=True) "
+      ],
+      "id": "cleandata",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Missing values were dropped from the dataset and categorical variables (gender, marital status, work type, residence type and smoking status) were transformed into factors. The correlation matrix of all variables, minus the ID number, is displayed on the heatmap:\n"
+      ],
+      "id": "2a219ce6"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: plotcorrelation\n",
+        "#| echo: false\n",
+        "corr = stroke.corr()\n",
+        "plt.figure(figsize=(10, 8))\n",
+        "sns.heatmap(corr, annot=True)\n",
+        "plt.title('Variable Correlation Heatmap')\n",
+        "plt.show()"
+      ],
+      "id": "plotcorrelation",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "The data was split into training (70% of total data) and testing (30% of total data) datasets. A logistic regression model was fit to the training dataset. The model accuracy was then evaluated by comparing its predictions against the testing data.\n"
+      ],
+      "id": "0fa8a8bd"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: logisticregression\n",
+        "#| warning: false\n",
+        "#| echo: false\n",
+        "X = stroke.drop(columns=['stroke'],axis=1) \n",
+        "Y = stroke['stroke']\n",
+        "X_train, X_test, Y_train, Y_test = train_test_split(\n",
+        "    X, Y, test_size=0.3, random_state=0)\n",
+        "LR = LogisticRegression().fit(X_train,Y_train)\n",
+        "pred_LR = LR.predict(X_test)\n",
+        "logistic_accuracy = accuracy_score(Y_test, pred_LR)\n",
+        "cm = confusion_matrix(Y_test, pred_LR)\n",
+        "sns.heatmap(cm, \n",
+        "            annot=True,\n",
+        "            fmt='g', \n",
+        "            xticklabels=['No Stroke','Stroke'],\n",
+        "            yticklabels=['No Stroke','Stroke'])\n",
+        "plt.ylabel('Actual', fontsize=13)\n",
+        "plt.title('Confusion Matrix', fontsize=17, pad=20)\n",
+        "plt.gca().xaxis.set_label_position('top') \n",
+        "plt.xlabel('Prediction', fontsize=13)\n",
+        "plt.gca().xaxis.tick_top()\n",
+        "print('The accuracy of the logistic regression model is ',logistic_accuracy*100,'%')"
+      ],
+      "id": "logisticregression",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Results\n",
+        "\n",
+        "## Discussion\n",
+        "\n",
+        "Add discussion here.\n",
+        "\n",
+        "## References\n",
+        "\n",
+        "Add references here."
+      ],
+      "id": "16dc8e6f"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "C:\\Users\\ual-laptop\\AppData\\Roaming\\Python\\share\\jupyter\\kernels\\python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
