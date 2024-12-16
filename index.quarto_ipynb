@@ -1,0 +1,250 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"College Characteristics and Student Success\"\n",
+        "subtitle: \"INFO 511 - Fall 2024 - Final Project\"\n",
+        "author: \n",
+        "  - name: \"Coding Wildcats\"\n",
+        "    affiliations:\n",
+        "      - name: \"School of Information, University of Arizona\"\n",
+        "format:\n",
+        "   html:\n",
+        "    code-tools: true\n",
+        "    code-overflow: wrap\n",
+        "    embed-resources: true\n",
+        "editor: visual\n",
+        "execute:\n",
+        "  warning: false\n",
+        "  echo: false\n",
+        "jupyter: python3\n",
+        "---\n",
+        "\n",
+        "\n",
+        "## Abstract\n",
+        "\n",
+        "In this project, we aimed to predict whether a person is at risk of having a stroke using machine learning models. We used a healthcare dataset containing information about individuals (like gender, age, health status, etc.). Our goal was to train multiple machine learning models and evaluate their classification accuracy.\n",
+        "\n",
+        "## Introduction\n",
+        "\n",
+        "Add introduction here.\n",
+        "\n",
+        "## Data\n"
+      ],
+      "id": "ac28684f"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: loaddata\n",
+        "#| echo: false\n",
+        "import pandas as pd\n",
+        "stroke = pd.read_csv(\"data/healthcare-dataset-stroke-data.csv\")"
+      ],
+      "id": "loaddata",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Source: https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset\n",
+        "\n",
+        "This data comes from a study published in China in 2020: Pathan, Muhammad Salman & Zhang, Jianbiao & John, Deepu & Nag, Avishek & Dev, Soumyabrata. (2020). Identifying Stroke Indicators Using Rough Sets. IEEE Access. 8. 10.1109/ACCESS.2020.3039439.\\\\\n",
+        "\n",
+        "## Methodology\n",
+        "\n",
+        "The first step of our data cleaning is to evaluate how much of our data is missing. Of 12 variables, only BMI has missing values.\n"
+      ],
+      "id": "976e96eb"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: importpackages\n",
+        "#| echo: false\n",
+        "import numpy as np\n",
+        "import matplotlib.pyplot as plt\n",
+        "import seaborn as sns\n",
+        "from sklearn.preprocessing import LabelEncoder\n",
+        "from sklearn.model_selection import train_test_split\n",
+        "from sklearn.linear_model import LogisticRegression\n",
+        "from sklearn.metrics import confusion_matrix\n",
+        "from sklearn.metrics import accuracy_score\n",
+        "from sklearn.model_selection import train_test_split, cross_val_score, KFold\n",
+        "from sklearn.metrics import r2_score\n",
+        "from sklearn.ensemble import RandomForestClassifier\n",
+        "from sklearn.tree import DecisionTreeClassifier\n",
+        "from sklearn.svm import SVC\n",
+        "from sklearn.neural_network import MLPClassifier\n",
+        "from sklearn.linear_model import LogisticRegression\n",
+        "from sklearn.preprocessing import LabelEncoder"
+      ],
+      "id": "importpackages",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: plotmissing\n",
+        "#| echo: false\n",
+        "plt.figure(figsize=(10,6))\n",
+        "sns.displot(\n",
+        "    data=stroke.isna().melt(value_name=\"missing\"),\n",
+        "    y=\"variable\",\n",
+        "    hue=\"missing\",\n",
+        "    multiple=\"fill\",\n",
+        "    aspect=1.25\n",
+        ").set(title='Proportion of Missing Values in Dataset')"
+      ],
+      "id": "plotmissing",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: cleandata\n",
+        "#| echo: false\n",
+        "stroke = stroke.dropna()\n",
+        "stroke['gender'] = LabelEncoder().fit_transform(stroke['gender'])\n",
+        "stroke['ever_married'] = LabelEncoder().fit_transform(stroke['ever_married'])\n",
+        "stroke['work_type'] = LabelEncoder().fit_transform(stroke['work_type'])\n",
+        "stroke['Residence_type'] = LabelEncoder().fit_transform(stroke['Residence_type'])\n",
+        "stroke['smoking_status'] = LabelEncoder().fit_transform(stroke['smoking_status'])\n",
+        "stroke.drop(columns=['id'],axis=1,inplace=True) "
+      ],
+      "id": "cleandata",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Missing values were dropped from the dataset and categorical variables (gender, marital status, work type, residence type and smoking status) were transformed into factors. The correlation matrix of all variables, minus the ID number, is displayed on the heatmap:\n"
+      ],
+      "id": "2eed7127"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: plotcorrelation\n",
+        "#| echo: false\n",
+        "corr = stroke.corr()\n",
+        "plt.figure(figsize=(10, 8))\n",
+        "sns.heatmap(corr, annot=True)\n",
+        "plt.title('Variable Correlation Heatmap')\n",
+        "plt.show()"
+      ],
+      "id": "plotcorrelation",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "After preparing the dataset, we split it into training and testing sets. The training set, which comprises 80% of the data, is used to train our machine learning models, while the testing set, representing 20% of the data, is reserved for final evaluation. This approach ensures that we have unseen data to measure how well the models generalize.\n",
+        "\n",
+        "We trained five different machine learning models on this dataset: Random Forest, Decision Tree, Support Vector Machine (SVM), Artificial Neural Network (ANN), and Logistic Regression. Each of these models uses a unique method to identify patterns in the data. The Random Forest model, for instance, builds multiple decision trees and combines their predictions to create a more stable and robust model. The Decision Tree model uses a single tree to make predictions, which is often more prone to overfitting. The Support Vector Machine works by finding the optimal hyperplane that separates classes in the feature space. The Artificial Neural Network mimics how neurons in the human brain process information, making it effective for complex relationships in the data. Finally, Logistic Regression is a linear model that is simple, interpretable, and computationally efficient.\n",
+        "\n",
+        "To evaluate the performance of these models, we employed 5-fold cross-validation. This method splits the training data into five equally sized segments (folds). Each model is trained on four of these folds while the fifth fold is used as a validation set. This process is repeated five times, with each fold serving as a validation set once. Cross-validation provides a more reliable estimate of the model's performance because it reduces the likelihood of overfitting to a single train-test split. For each model, we calculated the accuracy for each fold, as well as the average accuracy across all five folds.\n"
+      ],
+      "id": "8825cab4"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: MLmodels\n",
+        "#| warning: false\n",
+        "#| echo: false\n",
+        "# Split the data (20/80)\n",
+        "X = stroke.drop(columns=['stroke'], axis=1) \n",
+        "Y = stroke['stroke']\n",
+        "X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=42)\n",
+        "\n",
+        "# Define the ML models\n",
+        "models = {\n",
+        "    'Random Forest': RandomForestClassifier(random_state=42),\n",
+        "    'Decision Tree': DecisionTreeClassifier(random_state=42),\n",
+        "    'Support Vector Machine': SVC(kernel='linear', random_state=42),\n",
+        "    'Artificial Neural Network': MLPClassifier(random_state=42, max_iter=500),\n",
+        "    'Logistic Regression': LogisticRegression(max_iter=500, random_state=42)\n",
+        "}\n",
+        "\n",
+        "# Set up cross-validation\n",
+        "kfold = KFold(n_splits=5, shuffle=True, random_state=42)\n",
+        "\n",
+        "# Store the results\n",
+        "results = {'Model': [], 'Fold 1': [], 'Fold 2': [], 'Fold 3': [], 'Fold 4': [], 'Fold 5': [], 'Average Accuracy': []}\n",
+        "\n",
+        "# Train each model, calculate cross-validation accuracy\n",
+        "for model_name, model in models.items():\n",
+        "    accuracy_scores = cross_val_score(model, X_train, Y_train, cv=kfold, scoring='accuracy')\n",
+        "    avg_accuracy = np.mean(accuracy_scores)\n",
+        "    # Add results to the results dictionary\n",
+        "    results['Model'].append(model_name)\n",
+        "    results['Fold 1'].append(accuracy_scores[0])\n",
+        "    results['Fold 2'].append(accuracy_scores[1])\n",
+        "    results['Fold 3'].append(accuracy_scores[2])\n",
+        "    results['Fold 4'].append(accuracy_scores[3])\n",
+        "    results['Fold 5'].append(accuracy_scores[4])\n",
+        "    results['Average Accuracy'].append(avg_accuracy)\n",
+        "\n",
+        "# Display the accuracy results in a DataFrame\n",
+        "results_df = pd.DataFrame(results)\n",
+        "\n",
+        "# Print the results DataFrame\n",
+        "print(\"\\nAccuracy for Each Fold and Average Accuracy for Each Model:\")\n",
+        "results_df"
+      ],
+      "id": "MLmodels",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Results\n",
+        "\n",
+        "The results indicate that the Random Forest model achieved the highest average accuracy at 96.05%, which was matched by Logistic Regression. The Support Vector Machine and Artificial Neural Network followed closely, with average accuracies of 96.03% and 95.93%, respectively. The Decision Tree model had the lowest performance, with an average accuracy of 92.21%. This is not surprising since Decision Trees are known to be sensitive to small changes in the training data, leading to higher variance. On the other hand, Random Forest, which combines multiple Decision Trees, reduces this variance and produces more stable predictions.\n",
+        "\n",
+        "The consistency of model performance across the five folds highlights the robustness of the Random Forest, Logistic Regression, and SVM models. Their accuracies for each fold were relatively stable, with small deviations from the average, indicating that these models generalize well to new, unseen data. The Decision Tree model exhibited slightly higher variability across the folds, further supporting the observation that it is less stable than the other models.\n",
+        "\n",
+        "In summary, the use of cross-validation allowed us to obtain a more accurate and unbiased assessment of model performance. Among the models, Random Forest and Logistic Regression showed the best overall performance in terms of both average accuracy and stability. Support Vector Machine and Artificial Neural Network also performed well but did not outperform Random Forest or Logistic Regression. The Decision Tree model had the lowest accuracy and was less stable, making it a less desirable choice for this problem. If model simplicity, speed, and interpretability are essential, Logistic Regression is an excellent option. However, if model robustness and predictive power are the priority, Random Forest would be the better choice.\n",
+        "\n",
+        "## Discussion\n",
+        "\n",
+        "Add discussion here.\n",
+        "\n",
+        "## References\n",
+        "\n",
+        "Add references here."
+      ],
+      "id": "1fa882a6"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/ella/Library/Python/3.12/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

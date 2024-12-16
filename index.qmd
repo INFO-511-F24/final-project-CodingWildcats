@@ -1,5 +1,5 @@
 ---
-title: "College Characteristics and Student Success"
+title: "Stroke Prediction Based on Demographics and Medical History"
 subtitle: "INFO 511 - Fall 2024 - Final Project"
 author: 
   - name: "Coding Wildcats"
