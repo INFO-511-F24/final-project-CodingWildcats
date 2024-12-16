@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "92e64453",
+   "id": "4dbfcb20",
    "metadata": {},
    "source": [
     "---\n",
@@ -87,7 +87,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "430b88a6",
+   "id": "c1de278d",
    "metadata": {},
    "source": [
     "The dataset includes variables such as gender, smoking status, employment status, and marital status which are qualitative variables. Other variables such as age, BMI, and glucose index are all quantitative.\n"
@@ -96,7 +96,7 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "8d7f2df8",
+   "id": "46efd177",
    "metadata": {},
    "outputs": [
     {
@@ -136,7 +136,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "dcb91469",
+   "id": "9d57724d",
    "metadata": {},
    "source": [
     "As mentioned this dataset has several demographic variables and then a variable that tracks if that patient had a stroke. From this, we hope to be able to create a model  to predict the possibility of an individual having a stroke based on their demographic information and medical history of an individual. Which is important because identifying key risk factors of a stroke can be used for prevention and more effective monitoring of patients.\n",
@@ -186,7 +186,7 @@
     {
      "data": {
       "text/plain": [
-       "<seaborn.axisgrid.FacetGrid at 0x1250ae970>"
+       "<seaborn.axisgrid.FacetGrid at 0x124aead60>"
       ]
      },
      "execution_count": 4,
@@ -251,7 +251,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "99f3c230",
+   "id": "9f1d11bd",
    "metadata": {},
    "source": [
     "Missing values were dropped from the dataset and categorical variables (gender, marital status, work type, residence type and smoking status) were transformed into factors. The correlation matrix of all variables, minus the ID number, is displayed on the heatmap:\n"
@@ -291,7 +291,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "ae029344",
+   "id": "8bdc9aa5",
    "metadata": {},
    "source": [
     "After preparing the dataset, we split it into training and testing sets. The training set, which comprises 80% of the data, is used to train our machine learning models, while the testing set, representing 20% of the data, is reserved for final evaluation. This approach ensures that we have unseen data to measure how well the models generalize.\n",
@@ -468,7 +468,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "f2945d5f",
+   "id": "70f2fea4",
    "metadata": {},
    "source": [
     "## Results\n",
