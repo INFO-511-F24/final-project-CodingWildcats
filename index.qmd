@@ -19,7 +19,7 @@ jupyter: python3
 
 ## Abstract
 
-Add project abstract here.
+In this project, we aimed to predict whether a person is at risk of having a stroke using machine learning models. We used a healthcare dataset containing information about individuals (like gender, age, health status, etc.). Our goal was to train multiple machine learning models and evaluate their classification accuracy.
 
 ## Introduction
 
@@ -36,7 +36,7 @@ stroke = pd.read_csv("data/healthcare-dataset-stroke-data.csv")
 
 Source: https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset
 
-This data comes from a study published in China in 2020: Pathan, Muhammad Salman & Zhang, Jianbiao & John, Deepu & Nag, Avishek & Dev, Soumyabrata. (2020). Identifying Stroke Indicators Using Rough Sets. IEEE Access. 8. 10.1109/ACCESS.2020.3039439.
+This data comes from a study published in China in 2020: Pathan, Muhammad Salman & Zhang, Jianbiao & John, Deepu & Nag, Avishek & Dev, Soumyabrata. (2020). Identifying Stroke Indicators Using Rough Sets. IEEE Access. 8. 10.1109/ACCESS.2020.3039439.\\
 
 ## Methodology
 
@@ -53,6 +53,14 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score
+from sklearn.model_selection import train_test_split, cross_val_score, KFold
+from sklearn.metrics import r2_score
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.svm import SVC
+from sklearn.neural_network import MLPClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import LabelEncoder
 ```
 
 ```{python}
@@ -118,6 +126,61 @@ plt.xlabel('Prediction', fontsize=13)
 plt.gca().xaxis.tick_top()
 print('The accuracy of the logistic regression model is ',logistic_accuracy*100,'%')
 ```
+
+After preparing the dataset, we split it into training and testing sets. The training set, which comprises 80% of the data, is used to train our machine learning models, while the testing set, representing 20% of the data, is reserved for final evaluation. This approach ensures that we have unseen data to measure how well the models generalize.
+
+We trained five different machine learning models on this dataset: Random Forest, Decision Tree, Support Vector Machine (SVM), Artificial Neural Network (ANN), and Logistic Regression. Each of these models uses a unique method to identify patterns in the data. The Random Forest model, for instance, builds multiple decision trees and combines their predictions to create a more stable and robust model. The Decision Tree model uses a single tree to make predictions, which is often more prone to overfitting. The Support Vector Machine works by finding the optimal hyperplane that separates classes in the feature space. The Artificial Neural Network mimics how neurons in the human brain process information, making it effective for complex relationships in the data. Finally, Logistic Regression is a linear model that is simple, interpretable, and computationally efficient.
+
+To evaluate the performance of these models, we employed 5-fold cross-validation. This method splits the training data into five equally sized segments (folds). Each model is trained on four of these folds while the fifth fold is used as a validation set. This process is repeated five times, with each fold serving as a validation set once. Cross-validation provides a more reliable estimate of the model's performance because it reduces the likelihood of overfitting to a single train-test split. For each model, we calculated the accuracy for each fold, as well as the average accuracy across all five folds.
+
+The results indicate that the Random Forest model achieved the highest average accuracy at 96.05%, which was matched by Logistic Regression. The Support Vector Machine and Artificial Neural Network followed closely, with average accuracies of 96.03% and 95.93%, respectively. The Decision Tree model had the lowest performance, with an average accuracy of 92.21%. This is not surprising since Decision Trees are known to be sensitive to small changes in the training data, leading to higher variance. On the other hand, Random Forest, which combines multiple Decision Trees, reduces this variance and produces more stable predictions.
+
+The consistency of model performance across the five folds highlights the robustness of the Random Forest, Logistic Regression, and SVM models. Their accuracies for each fold were relatively stable, with small deviations from the average, indicating that these models generalize well to new, unseen data. The Decision Tree model exhibited slightly higher variability across the folds, further supporting the observation that it is less stable than the other models.
+
+In summary, the use of cross-validation allowed us to obtain a more accurate and unbiased assessment of model performance. Among the models, Random Forest and Logistic Regression showed the best overall performance in terms of both average accuracy and stability. Support Vector Machine and Artificial Neural Network also performed well but did not outperform Random Forest or Logistic Regression. The Decision Tree model had the lowest accuracy and was less stable, making it a less desirable choice for this problem. If model simplicity, speed, and interpretability are essential, Logistic Regression is an excellent option. However, if model robustness and predictive power are the priority, Random Forest would be the better choice.
+
+```{python}
+# Split the data (20/80)
+X = stroke.drop(columns=['stroke'], axis=1) 
+Y = stroke['stroke']
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
+
+# Define the ML models
+models = {
+    'Random Forest': RandomForestClassifier(random_state=42),
+    'Decision Tree': DecisionTreeClassifier(random_state=42),
+    'Support Vector Machine': SVC(kernel='linear', random_state=42),
+    'Artificial Neural Network': MLPClassifier(random_state=42, max_iter=500),
+    'Logistic Regression': LogisticRegression(max_iter=500, random_state=42)
+}
+
+# Set up cross-validation
+kfold = KFold(n_splits=5, shuffle=True, random_state=42)
+
+# Store the results
+results = {'Model': [], 'Fold 1': [], 'Fold 2': [], 'Fold 3': [], 'Fold 4': [], 'Fold 5': [], 'Average Accuracy': []}
+
+# Train each model, calculate cross-validation accuracy
+for model_name, model in models.items():
+    accuracy_scores = cross_val_score(model, X_train, Y_train, cv=kfold, scoring='accuracy')
+    avg_accuracy = np.mean(accuracy_scores)
+    # Add results to the results dictionary
+    results['Model'].append(model_name)
+    results['Fold 1'].append(accuracy_scores[0])
+    results['Fold 2'].append(accuracy_scores[1])
+    results['Fold 3'].append(accuracy_scores[2])
+    results['Fold 4'].append(accuracy_scores[3])
+    results['Fold 5'].append(accuracy_scores[4])
+    results['Average Accuracy'].append(avg_accuracy)
+
+# Display the accuracy results in a DataFrame
+results_df = pd.DataFrame(results)
+
+# Print the results DataFrame
+print("\nAccuracy for Each Fold and Average Accuracy for Each Model:")
+results_df
+```
+
 
 ## Results
 
