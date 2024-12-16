@@ -23,16 +23,35 @@ In this project, we aimed to predict whether a person is at risk of having a str
 
 ## Introduction
 
-Add introduction here.
+
+Taking care of one’s health is an important consideration for anyone, but especially young adults who are just starting their own lives. For our project we wanted to do our analysis on data relating to strokes and the risk of strokes. Our models attempt to predict whether a number of factors can be correlated with the risk of strokes. It is important to understand the risk factors of strokes (and other illnesses) because it is much easier to change your lifestyle young but also be aware that family members may be at a high risk of having a stroke and be prepared by knowing the signs of a stroke. This project could help many people, young and old, so they know the risk factors that may contribute to the chance of them having a stroke. 
+
 
 ## Data
+
+The data set we have decided to use is from a study published in China in 2020: Pathan, Muhammad Salman & Zhang, Jianbiao & John, Deepu & Nag, Avishek & Dev, Soumyabrata. (2020). Identifying Stroke Indicators Using Rough Sets. IEEE Access. 8. 10.1109/ACCESS.2020.3039439.
+The data from this study was then taken and uploaded on Kaggle, which is where we first found it, though we also went directly to the source to determine validity. Since this data set does deal with patient information there are some ethical considerations, but the study that published this data has de-identified it, removing personal identifiers so the chances of being able to determine the identity of any one individual in this study from this data alone is quite small. 
+The data set has 12 columns, with observations including demographic information such as age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc. A glimpse at the dataset can be found below:
 
 ```{python}
 #| label: loaddata
 #| echo: false
 import pandas as pd
 stroke = pd.read_csv("data/healthcare-dataset-stroke-data.csv")
+print(stroke.head())
 ```
+
+The dataset includes variables such as gender, smoking status, employment status, and marital status which are qualitative variables. Other variables such as age, BMI, and glucose index are all quantitative.
+
+```{python}
+#| label: loaddata
+#| echo: false
+import pandas as pd
+stroke = pd.read_csv("data/healthcare-dataset-stroke-data.csv")
+print(stroke.info())
+```
+
+As mentioned this dataset has several demographic variables and then a variable that tracks if that patient had a stroke. From this, we hope to be able to create a model  to predict the possibility of an individual having a stroke based on their demographic information and medical history of an individual. Which is important because identifying key risk factors of a stroke can be used for prevention and more effective monitoring of patients.
 
 Source: https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset
 
