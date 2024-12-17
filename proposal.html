@@ -4805,15 +4805,15 @@ vertical-align: -.125em;
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#college-scorecard-dataset" id="toc-college-scorecard-dataset" class="nav-link" data-scroll-target="#college-scorecard-dataset">1. College Scorecard Dataset</a>
   <ul class="collapse">
-  <li><a href="#glimpse-of-data" id="toc-glimpse-of-data" class="nav-link" data-scroll-target="#glimpse-of-data">Glimpse of data</a></li>
+  <li><a href="#data-analysis" id="toc-data-analysis" class="nav-link" data-scroll-target="#data-analysis">Data Analysis</a></li>
   </ul></li>
   <li><a href="#massachusetts-public-schools-2017-records" id="toc-massachusetts-public-schools-2017-records" class="nav-link" data-scroll-target="#massachusetts-public-schools-2017-records">2. Massachusetts Public Schools 2017 Records</a>
   <ul class="collapse">
-  <li><a href="#glimpse-of-data-1" id="toc-glimpse-of-data-1" class="nav-link" data-scroll-target="#glimpse-of-data-1">Glimpse of data</a></li>
+  <li><a href="#data-analysis-1" id="toc-data-analysis-1" class="nav-link" data-scroll-target="#data-analysis-1">Data Analysis</a></li>
   </ul></li>
   <li><a href="#stroke-dataset" id="toc-stroke-dataset" class="nav-link" data-scroll-target="#stroke-dataset">3. Stroke Dataset</a>
   <ul class="collapse">
-  <li><a href="#glimpse-of-data-2" id="toc-glimpse-of-data-2" class="nav-link" data-scroll-target="#glimpse-of-data-2">Glimpse of data</a></li>
+  <li><a href="#data-analysis-2" id="toc-data-analysis-2" class="nav-link" data-scroll-target="#data-analysis-2">Data Analysis</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -4859,7 +4859,7 @@ vertical-align: -.125em;
 </div>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>We have selected 3 datasets - namely 1) College Scorecard Dataset, 2) Massachusetts Public Schools 2017 Records, and 3) Stroke Dataset.</p>
+<p>We have selected 3 datasets - namely the College Scorecard Dataset, the Massachusetts Public Schools 2017 Records, and the Stroke Dataset.</p>
 </section>
 <section id="college-scorecard-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="college-scorecard-dataset">1. College Scorecard Dataset</h2>
@@ -4871,9 +4871,9 @@ vertical-align: -.125em;
 <p>This question represents an overview of the higher education system and its effectiveness in the United States. We hypothesize that student aid and school spending are correlated with student outcomes.</p>
 <p>This question is important because student success is an important factor in determining their success in the workforce, as well as an indicator for future students for the quality of that education.</p>
 <p>Variables such as school expenditure, student debt and graduate income are quantitative while variables such as degree type, institution name and city are qualitative.</p>
-<section id="glimpse-of-data" class="level3">
-<h3 class="anchored" data-anchor-id="glimpse-of-data">Glimpse of data</h3>
-<div id="7dcd8534" class="cell" data-execution_count="3">
+<section id="data-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="data-analysis">Data Analysis</h3>
+<div id="27d378b9" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2"><a href="#cb2-2"></a>college <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/collge_data_tenative.csv&quot;</span>)</span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="bu">print</span>(college.head())</span>
@@ -4934,9 +4934,9 @@ None</code></pre>
 <p>Research Question: Is there a relationship between graduation rates and higher education preparation and a school’s demographic makeup, funding and class size?</p>
 <p>This question is important because the education quality for elementary through high school aged children is an important factor in their success in higher education, their careers and overall quality of life.</p>
 <p>Variables such as school type, location, and evaluation are qualitative variables. Variables such as demographic makeup, enrollment numbers, class size and expenditure are quantitative variables.</p>
-<section id="glimpse-of-data-1" class="level3">
-<h3 class="anchored" data-anchor-id="glimpse-of-data-1">Glimpse of data</h3>
-<div id="b48e1449" class="cell" data-execution_count="4">
+<section id="data-analysis-1" class="level3">
+<h3 class="anchored" data-anchor-id="data-analysis-1">Data Analysis</h3>
+<div id="61b50c2a" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>MA_schools <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/MA_Public_Schools_2017.csv&quot;</span>)</span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="bu">print</span>(MA_schools.head())</span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="bu">print</span>(MA_schools.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5046,9 +5046,9 @@ None</code></pre>
 <p>This question is important because identifying key risk factors of a stroke can be used for prevention and more effective monitoring of patients.</p>
 <p>Variables such as gender, smoking status, employment status, and marital status are qualitative. Variables such as age, BMI, and glucose index are all quantitative.</p>
 <p>Analysis Plan: Step 1: correlation plot/sensitivity analysis, choose variables Step 2: model testing and selection Step 3: model visualization Step 4: presentation</p>
-<section id="glimpse-of-data-2" class="level3">
-<h3 class="anchored" data-anchor-id="glimpse-of-data-2">Glimpse of data</h3>
-<div id="3518d640" class="cell" data-execution_count="5">
+<section id="data-analysis-2" class="level3">
+<h3 class="anchored" data-anchor-id="data-analysis-2">Data Analysis</h3>
+<div id="8bea6a97" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>stroke <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/healthcare-dataset-stroke-data.csv&quot;</span>)</span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="bu">print</span>(stroke.head())</span>
 <span id="cb6-3"><a href="#cb6-3"></a><span class="bu">print</span>(stroke.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5790,7 +5790,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb8-35"><a href="#cb8-35"></a></span>
 <span id="cb8-36"><a href="#cb8-36"></a><span class="fu">## Overview</span></span>
 <span id="cb8-37"><a href="#cb8-37"></a></span>
-<span id="cb8-38"><a href="#cb8-38"></a>We have selected 3 datasets - namely 1) College Scorecard Dataset, 2) Massachusetts Public Schools 2017 Records, and 3) Stroke Dataset.</span>
+<span id="cb8-38"><a href="#cb8-38"></a>We have selected 3 datasets - namely the College Scorecard Dataset, the Massachusetts Public Schools 2017 Records, and the Stroke Dataset.</span>
 <span id="cb8-39"><a href="#cb8-39"></a></span>
 <span id="cb8-40"><a href="#cb8-40"></a><span class="fu">## 1. College Scorecard Dataset</span></span>
 <span id="cb8-41"><a href="#cb8-41"></a></span>
@@ -5810,7 +5810,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb8-55"><a href="#cb8-55"></a></span>
 <span id="cb8-56"><a href="#cb8-56"></a>Variables such as school expenditure, student debt and graduate income are quantitative while variables such as degree type, institution name and city are qualitative.</span>
 <span id="cb8-57"><a href="#cb8-57"></a></span>
-<span id="cb8-58"><a href="#cb8-58"></a><span class="fu">### Glimpse of data</span></span>
+<span id="cb8-58"><a href="#cb8-58"></a><span class="fu">### Data Analysis</span></span>
 <span id="cb8-59"><a href="#cb8-59"></a></span>
 <span id="cb8-62"><a href="#cb8-62"></a><span class="in">```{python}</span></span>
 <span id="cb8-63"><a href="#cb8-63"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -5835,7 +5835,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb8-82"><a href="#cb8-82"></a></span>
 <span id="cb8-83"><a href="#cb8-83"></a>Variables such as school type, location, and evaluation are qualitative variables. Variables such as demographic makeup, enrollment numbers, class size and expenditure are quantitative variables.</span>
 <span id="cb8-84"><a href="#cb8-84"></a></span>
-<span id="cb8-85"><a href="#cb8-85"></a><span class="fu">### Glimpse of data</span></span>
+<span id="cb8-85"><a href="#cb8-85"></a><span class="fu">### Data Analysis</span></span>
 <span id="cb8-86"><a href="#cb8-86"></a></span>
 <span id="cb8-89"><a href="#cb8-89"></a><span class="in">```{python}</span></span>
 <span id="cb8-90"><a href="#cb8-90"></a>MA_schools <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/MA_Public_Schools_2017.csv&quot;</span>)</span>
@@ -5861,7 +5861,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb8-110"><a href="#cb8-110"></a></span>
 <span id="cb8-111"><a href="#cb8-111"></a>Analysis Plan: Step 1: correlation plot/sensitivity analysis, choose variables Step 2: model testing and selection Step 3: model visualization Step 4: presentation</span>
 <span id="cb8-112"><a href="#cb8-112"></a></span>
-<span id="cb8-113"><a href="#cb8-113"></a><span class="fu">### Glimpse of data</span></span>
+<span id="cb8-113"><a href="#cb8-113"></a><span class="fu">### Data Analysis</span></span>
 <span id="cb8-114"><a href="#cb8-114"></a></span>
 <span id="cb8-117"><a href="#cb8-117"></a><span class="in">```{python}</span></span>
 <span id="cb8-118"><a href="#cb8-118"></a>stroke <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/healthcare-dataset-stroke-data.csv&quot;</span>)</span>
