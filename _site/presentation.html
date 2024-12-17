@@ -338,11 +338,6 @@ Danielle Stea, Erika Kirkpatrick, Kai Shuen Neo, Sahand Motamenim, Rohit Kalakal
 </div>
 
 </section>
-<section>
-<section id="stroke-prediction-with-machine-learning" class="title-slide slide level1 center">
-<h1>Stroke Prediction with Machine Learning</h1>
-
-</section>
 <section id="introduction" class="slide level2">
 <h2>Introduction</h2>
 <ul>
@@ -359,7 +354,7 @@ Danielle Stea, Erika Kirkpatrick, Kai Shuen Neo, Sahand Motamenim, Rohit Kalakal
 <section id="data" class="slide level2">
 <h2>Data</h2>
 <ul>
-<li>The dataset included observations like age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc.</li>
+<li>Observations include age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc.</li>
 </ul>
 <div id="loaddata" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-stdout">
@@ -416,52 +411,70 @@ memory usage: 479.2+ KB
 None</code></pre>
 </div>
 </div>
-</section></section>
+</section>
 <section>
 <section id="methods-and-results" class="title-slide slide level1 center">
 <h1><strong>Methods and Results</strong></h1>
 
 </section>
-<section id="eda" class="slide level2">
-<h2>EDA</h2>
+<section id="exploratory-data-analysis" class="slide level2">
+<h2>Exploratory Data Analysis</h2>
 <ul>
 <li>Missing values were dropped from the dataset and categorical variables (gender, marital status, work type, residence type and smoking status) were transformed into factors.</li>
 </ul>
 
-<img data-src="images/proportion_of_missing_values.png" class="r-stretch"></section>
+<img data-src="images/proportion_of_missing_values.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="variable-correlation-heatmap" class="slide level2">
 <h2>Variable Correlation Heatmap</h2>
 <ul>
-<li>The correlation matrix of all variables, minus the ID number, is displayed on the heatmap.</li>
+<li>The correlation matrix of all variables, other the ID, is displayed on the heatmap.</li>
 </ul>
 
-<img data-src="images/variable_correlation_heatmap.png" class="r-stretch"></section>
+<img data-src="images/variable_correlation_heatmap.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="machine-learning" class="slide level2">
 <h2><strong>Machine Learning</strong></h2>
 <ul>
 <li>After preparing the dataset, we split it into training (80%) and testing (20%) sets.</li>
-<li>We trained five different machine learning models on this dataset: Random Forest, Decision Tree, Support Vector Machine (SVM), Artificial Neural Network (ANN), and Logistic Regression.</li>
+<li>We trained 5 different machine learning models on this dataset
+<ul>
+<li>Random Forest</li>
+<li>Decision Tree</li>
+<li>Support Vector Machine (SVM)</li>
+<li>Artificial Neural Network (ANN)</li>
+<li>Logistic Regression</li>
+</ul></li>
 <li>To evaluate the performance of these models, we employed 5-fold cross-validation.</li>
 </ul>
 </section>
 <section id="results" class="slide level2">
 <h2><strong>Results</strong></h2>
 
-<img data-src="images/model_performance.png" class="r-stretch"></section>
+<img data-src="images/model_performance.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="analysis-of-results" class="slide level2">
 <h2><strong>Analysis of results</strong></h2>
 <ul>
-<li>Random Forest model achieved the highest average accuracy at 96.05%, which was matched by Logistic Regression. The Support Vector Machine and Artificial Neural Network followed closely, with average accuracies of 96.03% and 95.93%, respectively. The Decision Tree model had the lowest performance, with an average accuracy of 92.21%.</li>
+<li>Random Forest model achieved the highest average accuracy at 96.05%, which was matched by Logistic Regression.</li>
+<li>The Support Vector Machine and Artificial Neural Network followed closely, with average accuracies of 96.03% and 95.93%, respectively. T</li>
+<li>The Decision Tree model had the lowest performance, with an average accuracy of 92.21%.</li>
+</ul>
+</section>
+<section id="model-performance" class="slide level2">
+<h2><strong>Model Performance</strong></h2>
+<ul>
 <li>In summary, the use of cross-validation allowed us to obtain a more accurate and unbiased assessment of model performance.</li>
-<li>Among the models, Random Forest and Logistic Regression showed the best overall performance in terms of both average accuracy and stability. Support Vector Machine and Artificial Neural Network also performed well but did not outperform Random Forest or Logistic Regression. The Decision Tree model had the lowest accuracy and was less stable, making it a less desirable choice for this problem. If model simplicity, speed, and interpretability are essential, Logistic Regression is an excellent option. However, if model robustness and predictive power are the priority, Random Forest would be the better choice.</li>
+<li>Among the models, Random Forest and Logistic Regression showed the best overall performance in terms of both average accuracy and stability.</li>
+<li>Support Vector Machine and Artificial Neural Network also performed well but did not outperform Random Forest or Logistic Regression.</li>
+<li>The Decision Tree model had the lowest accuracy and was less stable, making it a less desirable choice for this problem.</li>
+<li>If model simplicity, speed, and interpretability are essential, Logistic Regression is an excellent option.</li>
+<li>However, if model robustness and predictive power are the priority, Random Forest would be the better choice.</li>
 </ul>
 </section></section>
 <section>
-<section id="conclusions" class="title-slide slide level1 center">
-<h1><strong>Conclusions</strong></h1>
+<section id="conclusion" class="title-slide slide level1 center">
+<h1><strong>Conclusion</strong></h1>
 
 </section>
-<section id="conclusion" class="slide level2">
+<section id="conclusion-1" class="slide level2">
 <h2>Conclusion</h2>
 <ul>
 <li>There was not a particularly strong correlation between the stroke outcome and the covariates listed in the dataset. The strongest correlation to a stroke outcome was with age at 0.23. Other notable correlations to a stroke outcome were hypertension, heart disease and glucose level, all at 0.14. It appears that the strongest correlations to a stroke outcome occur with participants’ physical properties rather than their demographics or living status.</li>
@@ -471,8 +484,15 @@ None</code></pre>
 <section id="future-work" class="slide level2">
 <h2>Future work</h2>
 <ul>
-<li>One of the limitations we encountered with this dataset is that there was actually a very small proportion of people who had a stroke compared to those that did not: 4.87% (N=249) of individuals had a stroke, while 95.1% (N=4861) did not. This created an unequal distribution within both the training and testing dataset, which may have artificially boosted the classification accuracy. Future work could be to increase the population of people being surveyed.</li>
-<li>The context upon which the study was conducted was not able to return insights that we could consider to be generalizable across the general public internationally. The dataset was from a study that was conducted in China, with its funding agency being the National Natural Science Foundation of China and ADAPT Centre for Digital Content Technology funded through the SFI Research Centres Programme. The population studied was mainly the Chinese population. As such, observations gathered from the study would be considered more applicable towards the Asian population instead of the international population.&nbsp;Future work could be to increase the diversity of the population of people being surveyed.</li>
+<li><p>To increase the population of people being surveyed as one of the limitations we encountered with this dataset is that there was actually a very small proportion of people who had a stroke compared to those that did not: 4.87% (N=249) of individuals had a stroke, while 95.1% (N=4861) did not.</p></li>
+<li><p>This created an unequal distribution within both the training and testing dataset, which may have artificially boosted the classification accuracy.</p></li>
+</ul>
+</section>
+<section id="future-work-1" class="slide level2">
+<h2>Future work</h2>
+<ul>
+<li>To increase the diversity of the population of people being surveyed as the context upon which the study was conducted was not able to return insights that we could consider to be generalizable across the general public internationally.</li>
+<li>The dataset was from a study that was conducted in China, with its funding agency being the National Natural Science Foundation of China and ADAPT Centre for Digital Content Technology funded through the SFI Research Centres Programme. The population studied was mainly the Chinese population. As such, observations gathered from the study would be considered more applicable towards the Asian population instead of the international population.&nbsp;</li>
 </ul>
 </section>
 <section id="references" class="slide level2">

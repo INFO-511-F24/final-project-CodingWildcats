@@ -70,7 +70,8 @@ stroke = pd.read_csv("data/healthcare-dataset-stroke-data.csv")
 
 ## Dataset
 
--   The dataset used is from a study published in China in 2020. It represents a case group of individuals who had a stroke, and a control group of those who did not.
+-   The dataset used is from a study published in China in 2020.
+-   It represents a case group of individuals who had a stroke, and a control group of those who did not.
 
 ## Data
 
@@ -86,8 +87,8 @@ print(stroke.head())
 
 ## Data
 
--   Qualitative variables: gender, smoking status, employment status, marital status
--   Quantitative variables: age, BMI, glucose index
+-   Qualitative variables: gender, smoking status, employment status, marital status.
+-   Quantitative variables: age, BMI, glucose index.
 
 ```{python}
 #| label: loaddatainfo
@@ -101,7 +102,8 @@ print(stroke.info())
 
 ## Exploratory Data Analysis
 
--   Missing values were dropped from the dataset and categorical variables (gender, marital status, work type, residence type and smoking status) were transformed into factors.
+-   Missing values were dropped from the dataset.
+-   Categorical variables were transformed into factors.
 
 ![](images/proportion_of_missing_values.png){fig-align="center"}
 
@@ -129,7 +131,7 @@ print(stroke.info())
 ## **Analysis of results**
 
 -   Random Forest model achieved the highest average accuracy at 96.05%, which was matched by Logistic Regression.
--   The Support Vector Machine and Artificial Neural Network followed closely, with average accuracies of 96.03% and 95.93%, respectively. T
+-   The Support Vector Machine and Artificial Neural Network followed closely, with average accuracies of 96.03% and 95.93%, respectively.
 -   The Decision Tree model had the lowest performance, with an average accuracy of 92.21%.
 
 ## **Model Performance**
