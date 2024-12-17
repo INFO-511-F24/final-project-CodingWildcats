@@ -79,7 +79,7 @@ stroke = pd.read_csv("data/healthcare-dataset-stroke-data.csv")
 #| label: preview_data
 #| include: true
 #| echo: false
-print(stroke.describe())
+print(stroke.head())
 ```
 
 # Methods and Results
@@ -100,7 +100,7 @@ stroke['Residence_type'] = LabelEncoder().fit_transform(stroke['Residence_type']
 stroke['smoking_status'] = LabelEncoder().fit_transform(stroke['smoking_status'])
 stroke.drop(columns=['id'],axis=1,inplace=True) 
 corr = stroke.corr()
-plt.figure(figsize=(4, 4))
+plt.figure(figsize=(1, 0.8))
 sns.heatmap(corr, annot=True)
 plt.title('Variable Correlation Heatmap')
 plt.show()
@@ -108,7 +108,7 @@ plt.show()
 :::
 :::::
 ## Machine Learning
-
+- For this analysis we created several models, and compared them against each other to see which one performs the best. 
 
 ## Results
 
