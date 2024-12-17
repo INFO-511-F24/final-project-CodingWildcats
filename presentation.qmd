@@ -1,7 +1,7 @@
 ---
-title: "Project title"
+title: "Stroke Prediction Based on Demographics and Medical History"
 subtitle: "INFO 511 - Fall 2024 - Final Project"
-author: "Author names"
+author: "Danielle Stea, Erika Kirkpatrick, Kai Shuen Neo, Sahand Motamenim, Rohit Kalakala"
 title-slide-attributes:
   data-background-image: images/watercolour_sys02_img34_teacup-ocean.jpg
   data-background-size: stretch
@@ -24,7 +24,21 @@ jupyter: python3
 # Load packages here
 import pandas as pd
 import seaborn as sns
-
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import accuracy_score
+from sklearn.model_selection import train_test_split, cross_val_score, KFold
+from sklearn.metrics import r2_score
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.svm import SVC
+from sklearn.neural_network import MLPClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import LabelEncoder
 ```
 
 ```{python}
@@ -45,19 +59,19 @@ plt.rcParams['figure.figsize'] = (6, 6 * 0.618)
 #| label: load-data
 #| include: false
 # Load data in Python
-mtcars = sns.load_dataset('mpg').dropna()  # mtcars dataset is similar to the mpg dataset from seaborn
-mtcars['speed'] = mtcars['horsepower'] / mtcars['weight']
-
-penguins = sns.load_dataset('penguins').dropna()
+stroke = pd.read_csv("data/healthcare-dataset-stroke-data.csv")
 ```
 
-# Using Quarto for presentations
+# Stroke Prediction with Machine Learning
 
-## Quarto
+## Introduction
 
--   The presentation is created using the Quarto CLI
+-   The data set we have decided to use is from a study published in China in 2020. It represents a case group of individuals who had a stroke, and a control group of those who did not.
 
--   `##` sets the start of a new slide
+-   The data set has 12 columns, with observations including demographic information such as age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc.
+```{python}
+print(stroke.head())
+```
 
 ## Layouts
 
@@ -82,20 +96,8 @@ or in two columns
 ## Code
 
 ```{python}
-from sklearn.linear_model import LinearRegression
-import statsmodels.api as sm
-import pandas as pd
 
-# Fit a linear regression model
-X = mtcars[['speed']]
-y = mtcars['mpg']
-model = LinearRegression().fit(X, y)
-
-# Summary of the model
-X2 = sm.add_constant(X)
-est = sm.OLS(y, X2)
-est2 = est.fit()
-print(est2.summary())
+print(stroke.head())
 ```
 
 ## Plots
