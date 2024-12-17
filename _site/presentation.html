@@ -159,25 +159,26 @@ Danielle Stea, Erika Kirkpatrick, Kai Shuen Neo, Sahand Motamenim, Rohit Kalakal
 </ul>
 <div id="preview_data" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-stdout">
-<pre><code>                 id          age  hypertension  heart_disease  \
-count   5110.000000  5110.000000   5110.000000    5110.000000   
-mean   36517.829354    43.226614      0.097456       0.054012   
-std    21161.721625    22.612647      0.296607       0.226063   
-min       67.000000     0.080000      0.000000       0.000000   
-25%    17741.250000    25.000000      0.000000       0.000000   
-50%    36932.000000    45.000000      0.000000       0.000000   
-75%    54682.000000    61.000000      0.000000       0.000000   
-max    72940.000000    82.000000      1.000000       1.000000   
+<pre><code>      id  gender   age  hypertension  heart_disease ever_married  \
+0   9046    Male  67.0             0              1          Yes   
+1  51676  Female  61.0             0              0          Yes   
+2  31112    Male  80.0             0              1          Yes   
+3  60182  Female  49.0             0              0          Yes   
+4   1665  Female  79.0             1              0          Yes   
 
-       avg_glucose_level          bmi       stroke  
-count        5110.000000  4909.000000  5110.000000  
-mean          106.147677    28.893237     0.048728  
-std            45.283560     7.854067     0.215320  
-min            55.120000    10.300000     0.000000  
-25%            77.245000    23.500000     0.000000  
-50%            91.885000    28.100000     0.000000  
-75%           114.090000    33.100000     0.000000  
-max           271.740000    97.600000     1.000000  </code></pre>
+       work_type Residence_type  avg_glucose_level   bmi   smoking_status  \
+0        Private          Urban             228.69  36.6  formerly smoked   
+1  Self-employed          Rural             202.21   NaN     never smoked   
+2        Private          Rural             105.92  32.5     never smoked   
+3        Private          Urban             171.23  34.4           smokes   
+4  Self-employed          Rural             174.12  24.0     never smoked   
+
+   stroke  
+0       1  
+1       1  
+2       1  
+3       1  
+4       1  </code></pre>
 </div>
 </div>
 </section></section>
@@ -198,7 +199,7 @@ max           271.740000    97.600000     1.000000  </code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="presentation_files/figure-revealjs/eda-output-1.png" id="eda" width="1490" height="1503"></p>
+<p><img data-src="presentation_files/figure-revealjs/eda-output-1.png" id="eda" width="779" height="291"></p>
 </figure>
 </div>
 </div>
@@ -207,6 +208,9 @@ max           271.740000    97.600000     1.000000  </code></pre>
 </section>
 <section id="machine-learning" class="slide level2">
 <h2>Machine Learning</h2>
+<ul>
+<li>For this analysis we created several models, and compared them against each other to see which one performs the best.</li>
+</ul>
 </section>
 <section id="results" class="slide level2">
 <h2>Results</h2>
