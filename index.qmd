@@ -115,7 +115,7 @@ plt.title('Distribution for Marital Status')
 plt.show()
 ```
 
-As for the distribution of work type across the population, a majority of the people surveyed worked in private, with lesser distribution of the population working as self-employed, looking after children, or working government jobs. There is a small proportion of the population who have never worked.
+As for the distribution for work type across the population, a majority of the people surveyed worked in private, with lesser distribution of the population working as self-employed, looking after children, or working government jobs. There is a small proportion of the population who have never worked.
 
 ```{python}
 #| label: visualization_5
@@ -129,7 +129,7 @@ count_never_worked = (stroke['work_type'] == 'Never_worked').sum()
 temp = [count_private,count_self_employed, count_children, count_govt_job, count_never_worked]
 textprops = {"fontsize":12}
 plt.pie(temp,labels=['Private','Self employed', 'Children','Govt Job','Never Worked'], autopct='%1.2f%%',textprops=textprops)
-plt.title('Distribution of Work Type')
+plt.title('Distribution for Work Type')
 plt.show()
 ```
 
