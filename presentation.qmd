@@ -84,7 +84,7 @@ print(stroke.head())
 
 # Methods and Results
 ## EDA
--   Missing values (primarily BMI) were dropped from the dataset and categorical variables (gender, marital status, work type, residence type and smoking status) were transformed into factors. 
+
 ```{python}
 #| label: eda
 #| include: true
