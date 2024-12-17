@@ -70,23 +70,104 @@ stroke = pd.read_csv("data/healthcare-dataset-stroke-data.csv")
 
 -   This is why we wanted to look into a dataset that may allow us to help predict the risk factors that cause a stroke.
 
+## Dataset
+
+-   The dataset used is from a study published in China in 2020. It represents a case group of individuals who had a stroke, and a control group of those who did not.
+
 ## Data
 
--   The data set used is from a study published in China in 2020. It represents a case group of individuals who had a stroke, and a control group of those who did not.
-
--   The dataset has observations including age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc.
+-   The dataset included observations like age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc.
 
 ```{python}
-print(stroke.head().to_html())
+#| label: loaddata
+#| echo: false
+import pandas as pd
+stroke = pd.read_csv("data/healthcare-dataset-stroke-data.csv")
+print(stroke.head())
+```
+
+## Data
+
+-   The dataset includes variables such as gender, smoking status, employment status, and marital status which are qualitative variables.
+-   Other variables such as age, BMI, and glucose index are all quantitative.
+
+```{python}
+#| label: loaddatainfo
+#| echo: false
+import pandas as pd
+stroke = pd.read_csv("data/healthcare-dataset-stroke-data.csv")
+print(stroke.info())
 ```
 
 # **Methods and Results**
 
 ## EDA
 
+-   Missing values were dropped from the dataset and categorical variables (gender, marital status, work type, residence type and smoking status) were transformed into factors.
+
+```{python}
+#| label: importpackages
+#| echo: false
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import accuracy_score
+from sklearn.model_selection import train_test_split, cross_val_score, KFold
+from sklearn.metrics import r2_score
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.svm import SVC
+from sklearn.neural_network import MLPClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import LabelEncoder
+```
+
+```{python}
+#| label: plotmissing
+#| echo: false
+plt.figure(figsize=(10,6))
+sns.displot(
+    data=stroke.isna().melt(value_name="missing"),
+    y="variable",
+    hue="missing",
+    multiple="fill",
+    aspect=1.25
+).set(title='Proportion of Missing Values in Dataset')
+```
+
+## Variable Correlation Heatmap
+
+```{python}
+#| label: cleandata
+#| echo: false
+stroke = stroke.dropna()
+stroke['gender'] = LabelEncoder().fit_transform(stroke['gender'])
+stroke['ever_married'] = LabelEncoder().fit_transform(stroke['ever_married'])
+stroke['work_type'] = LabelEncoder().fit_transform(stroke['work_type'])
+stroke['Residence_type'] = LabelEncoder().fit_transform(stroke['Residence_type'])
+stroke['smoking_status'] = LabelEncoder().fit_transform(stroke['smoking_status'])
+stroke.drop(columns=['id'],axis=1,inplace=True) 
+```
+
+```{python}
+#| label: plotcorrelation
+#| echo: false
+corr = stroke.corr()
+plt.figure(figsize=(10, 8))
+sns.heatmap(corr, annot=True)
+plt.title('Variable Correlation Heatmap')
+plt.show()
+```
+
 ## **Machine Learning**
 
 For this analysis we created several models, and compared them against each other to see which one performs the best.
+
+## **Results**
 
 # **Conclusions**
 

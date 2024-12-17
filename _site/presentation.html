@@ -350,110 +350,70 @@ Danielle Stea, Erika Kirkpatrick, Kai Shuen Neo, Sahand Motamenim, Rohit Kalakal
 <li><p>This is why we wanted to look into a dataset that may allow us to help predict the risk factors that cause a stroke.</p></li>
 </ul>
 </section>
+<section id="dataset" class="slide level2">
+<h2>Dataset</h2>
+<ul>
+<li>The dataset used is from a study published in China in 2020. It represents a case group of individuals who had a stroke, and a control group of those who did not.</li>
+</ul>
+</section>
 <section id="data" class="slide level2">
 <h2>Data</h2>
 <ul>
-<li><p>The data set used is from a study published in China in 2020. It represents a case group of individuals who had a stroke, and a control group of those who did not.</p></li>
-<li><p>The dataset has observations including age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc.</p></li>
+<li>The dataset included observations like age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc.</li>
 </ul>
-<div id="89ab6017" class="cell" data-execution_count="4">
+<div id="loaddata" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;table border="1" class="dataframe"&gt;
-  &lt;thead&gt;
-    &lt;tr style="text-align: right;"&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;id&lt;/th&gt;
-      &lt;th&gt;gender&lt;/th&gt;
-      &lt;th&gt;age&lt;/th&gt;
-      &lt;th&gt;hypertension&lt;/th&gt;
-      &lt;th&gt;heart_disease&lt;/th&gt;
-      &lt;th&gt;ever_married&lt;/th&gt;
-      &lt;th&gt;work_type&lt;/th&gt;
-      &lt;th&gt;Residence_type&lt;/th&gt;
-      &lt;th&gt;avg_glucose_level&lt;/th&gt;
-      &lt;th&gt;bmi&lt;/th&gt;
-      &lt;th&gt;smoking_status&lt;/th&gt;
-      &lt;th&gt;stroke&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;0&lt;/th&gt;
-      &lt;td&gt;9046&lt;/td&gt;
-      &lt;td&gt;Male&lt;/td&gt;
-      &lt;td&gt;67.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;Yes&lt;/td&gt;
-      &lt;td&gt;Private&lt;/td&gt;
-      &lt;td&gt;Urban&lt;/td&gt;
-      &lt;td&gt;228.69&lt;/td&gt;
-      &lt;td&gt;36.6&lt;/td&gt;
-      &lt;td&gt;formerly smoked&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;1&lt;/th&gt;
-      &lt;td&gt;51676&lt;/td&gt;
-      &lt;td&gt;Female&lt;/td&gt;
-      &lt;td&gt;61.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;Yes&lt;/td&gt;
-      &lt;td&gt;Self-employed&lt;/td&gt;
-      &lt;td&gt;Rural&lt;/td&gt;
-      &lt;td&gt;202.21&lt;/td&gt;
-      &lt;td&gt;NaN&lt;/td&gt;
-      &lt;td&gt;never smoked&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;2&lt;/th&gt;
-      &lt;td&gt;31112&lt;/td&gt;
-      &lt;td&gt;Male&lt;/td&gt;
-      &lt;td&gt;80.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;Yes&lt;/td&gt;
-      &lt;td&gt;Private&lt;/td&gt;
-      &lt;td&gt;Rural&lt;/td&gt;
-      &lt;td&gt;105.92&lt;/td&gt;
-      &lt;td&gt;32.5&lt;/td&gt;
-      &lt;td&gt;never smoked&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;3&lt;/th&gt;
-      &lt;td&gt;60182&lt;/td&gt;
-      &lt;td&gt;Female&lt;/td&gt;
-      &lt;td&gt;49.0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;Yes&lt;/td&gt;
-      &lt;td&gt;Private&lt;/td&gt;
-      &lt;td&gt;Urban&lt;/td&gt;
-      &lt;td&gt;171.23&lt;/td&gt;
-      &lt;td&gt;34.4&lt;/td&gt;
-      &lt;td&gt;smokes&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;4&lt;/th&gt;
-      &lt;td&gt;1665&lt;/td&gt;
-      &lt;td&gt;Female&lt;/td&gt;
-      &lt;td&gt;79.0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;Yes&lt;/td&gt;
-      &lt;td&gt;Self-employed&lt;/td&gt;
-      &lt;td&gt;Rural&lt;/td&gt;
-      &lt;td&gt;174.12&lt;/td&gt;
-      &lt;td&gt;24.0&lt;/td&gt;
-      &lt;td&gt;never smoked&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</code></pre>
+<pre><code>      id  gender   age  hypertension  heart_disease ever_married  \
+0   9046    Male  67.0             0              1          Yes   
+1  51676  Female  61.0             0              0          Yes   
+2  31112    Male  80.0             0              1          Yes   
+3  60182  Female  49.0             0              0          Yes   
+4   1665  Female  79.0             1              0          Yes   
+
+       work_type Residence_type  avg_glucose_level   bmi   smoking_status  \
+0        Private          Urban             228.69  36.6  formerly smoked   
+1  Self-employed          Rural             202.21   NaN     never smoked   
+2        Private          Rural             105.92  32.5     never smoked   
+3        Private          Urban             171.23  34.4           smokes   
+4  Self-employed          Rural             174.12  24.0     never smoked   
+
+   stroke  
+0       1  
+1       1  
+2       1  
+3       1  
+4       1  </code></pre>
+</div>
+</div>
+</section>
+<section id="data-1" class="slide level2">
+<h2>Data</h2>
+<ul>
+<li>The dataset includes variables such as gender, smoking status, employment status, and marital status which are qualitative variables.</li>
+<li>Other variables such as age, BMI, and glucose index are all quantitative.</li>
+</ul>
+<div id="loaddatainfo" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 5110 entries, 0 to 5109
+Data columns (total 12 columns):
+ #   Column             Non-Null Count  Dtype  
+---  ------             --------------  -----  
+ 0   id                 5110 non-null   int64  
+ 1   gender             5110 non-null   object 
+ 2   age                5110 non-null   float64
+ 3   hypertension       5110 non-null   int64  
+ 4   heart_disease      5110 non-null   int64  
+ 5   ever_married       5110 non-null   object 
+ 6   work_type          5110 non-null   object 
+ 7   Residence_type     5110 non-null   object 
+ 8   avg_glucose_level  5110 non-null   float64
+ 9   bmi                4909 non-null   float64
+ 10  smoking_status     5110 non-null   object 
+ 11  stroke             5110 non-null   int64  
+dtypes: float64(3), int64(4), object(5)
+memory usage: 479.2+ KB
+None</code></pre>
 </div>
 </div>
 </section></section>
@@ -464,10 +424,40 @@ Danielle Stea, Erika Kirkpatrick, Kai Shuen Neo, Sahand Motamenim, Rohit Kalakal
 </section>
 <section id="eda" class="slide level2">
 <h2>EDA</h2>
+<ul>
+<li>Missing values were dropped from the dataset and categorical variables (gender, marital status, work type, residence type and smoking status) were transformed into factors.</li>
+</ul>
+<div id="plotmissing" class="cell" data-execution_count="7">
+<div id="plotmissing-1" class="cell-output cell-output-display">
+<pre><code>&lt;Figure size 3000x1800 with 0 Axes&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="presentation_files/figure-revealjs/plotmissing-output-2.png" id="plotmissing-2" width="2155" height="1506"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="variable-correlation-heatmap" class="slide level2">
+<h2>Variable Correlation Heatmap</h2>
+<div id="cell-plotcorrelation" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="presentation_files/figure-revealjs/plotcorrelation-output-1.png" id="plotcorrelation" width="2722" height="2427"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="machine-learning" class="slide level2">
 <h2><strong>Machine Learning</strong></h2>
 <p>For this analysis we created several models, and compared them against each other to see which one performs the best.</p>
+</section>
+<section id="results" class="slide level2">
+<h2><strong>Results</strong></h2>
 </section></section>
 <section>
 <section id="conclusions" class="title-slide slide level1 center">
