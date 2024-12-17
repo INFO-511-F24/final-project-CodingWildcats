@@ -116,12 +116,7 @@ print(stroke.info())
 ## **Machine Learning**
 
 -   After preparing the dataset, we split it into training (80%) and testing (20%) sets.
--   We trained 5 different machine learning models on this dataset
-    -   Random Forest
-    -   Decision Tree
-    -   Support Vector Machine (SVM)
-    -   Artificial Neural Network (ANN)
-    -   Logistic Regression
+-   We trained 5 different machine learning models on this dataset: Random Forest, Decision Tree, Support Vector Machine (SVM), Artificial Neural Network (ANN), Logistic Regression.
 -   To evaluate the performance of these models, we employed 5-fold cross-validation.
 
 ## **Results**
@@ -131,24 +126,36 @@ print(stroke.info())
 ## **Analysis of results**
 
 -   Random Forest model achieved the highest average accuracy at 96.05%, which was matched by Logistic Regression.
--   The Support Vector Machine and Artificial Neural Network followed closely, with average accuracies of 96.03% and 95.93%, respectively.
--   The Decision Tree model had the lowest performance, with an average accuracy of 92.21%.
+-   Support Vector Machine and Artificial Neural Network followed closely, with average accuracies of 96.03% and 95.93%, respectively.
+-   Decision Tree model had the lowest performance, with an average accuracy of 92.21%.
 
 ## **Model Performance**
 
--   In summary, the use of cross-validation allowed us to obtain a more accurate and unbiased assessment of model performance.
+-   Cross-validation allowed us to obtain a more accurate and unbiased assessment of model performance.
 -   Among the models, Random Forest and Logistic Regression showed the best overall performance in terms of both average accuracy and stability.
 -   Support Vector Machine and Artificial Neural Network also performed well but did not outperform Random Forest or Logistic Regression.
 -   The Decision Tree model had the lowest accuracy and was less stable, making it a less desirable choice for this problem.
+
+## **Model Performance Evaluation**
+
 -   If model simplicity, speed, and interpretability are essential, Logistic Regression is an excellent option.
 -   However, if model robustness and predictive power are the priority, Random Forest would be the better choice.
 
 # **Conclusion**
 
+## Summary
+
+-   There was not a particularly strong correlation between the stroke outcome and the covariates listed in the dataset.
+
+-   The strongest correlation to a stroke outcome was with age at 0.23.
+
+-   Other notable correlations to a stroke outcome were hypertension, heart disease and glucose level, all at 0.14.
+
 ## Conclusion
 
--   There was not a particularly strong correlation between the stroke outcome and the covariates listed in the dataset. The strongest correlation to a stroke outcome was with age at 0.23. Other notable correlations to a stroke outcome were hypertension, heart disease and glucose level, all at 0.14. It appears that the strongest correlations to a stroke outcome occur with participants’ physical properties rather than their demographics or living status.
--   The model results show that individuals in this dataset could be classified by their stroke outcome based on the covariates age, gender, marital status, and employment status, BMI, glucose levels, and smoking history with a high degree of accuracy. Since there did not appear to be a particularly strong correlation to any one covariate, it was likely a combination of these factors associated with a stroke outcome.
+-   It appears that the strongest correlations to a stroke outcome occur with participants’ physical properties rather than their demographics or living status.
+-   The model results show that individuals in this dataset could be classified by their stroke outcome based on the covariates age, gender, marital status, and employment status, BMI, glucose levels, and smoking history with a high degree of accuracy.
+-   Since there did not appear to be a particularly strong correlation to any one covariate, it was likely a combination of these factors associated with a stroke outcome.
 
 ## Future work
 
@@ -159,7 +166,8 @@ print(stroke.info())
 ## Future work
 
 -   To increase the diversity of the population of people being surveyed as the context upon which the study was conducted was not able to return insights that we could consider to be generalizable across the general public internationally.
--   The dataset was from a study that was conducted in China, with its funding agency being the National Natural Science Foundation of China and ADAPT Centre for Digital Content Technology funded through the SFI Research Centres Programme. The population studied was mainly the Chinese population. As such, observations gathered from the study would be considered more applicable towards the Asian population instead of the international population. 
+
+-   The dataset was from a study that was conducted in China, with the population studied mainly being the Chinese population. As such, observations gathered from the study would be considered more applicable towards the Asian population instead of the international population. 
 
 ## **References**
 
