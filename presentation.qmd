@@ -88,8 +88,8 @@ print(stroke.head())
 
 ## Data
 
--   The dataset includes variables such as gender, smoking status, employment status, and marital status which are qualitative variables.
--   Other variables such as age, BMI, and glucose index are all quantitative.
+-   Qualitative variables: gender, smoking status, employment status, marital status
+-   Quantitative variables: age, BMI, glucose index
 
 ```{python}
 #| label: loaddatainfo
@@ -129,7 +129,7 @@ from sklearn.preprocessing import LabelEncoder
 ```{python}
 #| label: plotmissing
 #| echo: false
-plt.figure(figsize=(10,6))
+plt.figure(figsize=(100,100))
 sns.displot(
     data=stroke.isna().melt(value_name="missing"),
     y="variable",
@@ -140,6 +140,8 @@ sns.displot(
 ```
 
 ## Variable Correlation Heatmap
+
+-   The correlation matrix of all variables, minus the ID number, is displayed on the heatmap.
 
 ```{python}
 #| label: cleandata
@@ -157,7 +159,7 @@ stroke.drop(columns=['id'],axis=1,inplace=True)
 #| label: plotcorrelation
 #| echo: false
 corr = stroke.corr()
-plt.figure(figsize=(10, 8))
+plt.figure(figsize=(10,8))
 sns.heatmap(corr, annot=True)
 plt.title('Variable Correlation Heatmap')
 plt.show()
@@ -165,13 +167,74 @@ plt.show()
 
 ## **Machine Learning**
 
-For this analysis we created several models, and compared them against each other to see which one performs the best.
+-   After preparing the dataset, we split it into training (80%) and testing (20%) sets.
+-   We trained five different machine learning models on this dataset: Random Forest, Decision Tree, Support Vector Machine (SVM), Artificial Neural Network (ANN), and Logistic Regression.
+-   To evaluate the performance of these models, we employed 5-fold cross-validation.
 
 ## **Results**
 
+```{python}
+#| label: MLmodels
+#| warning: false
+#| echo: false
+# Split the data (20/80)
+X = stroke.drop(columns=['stroke'], axis=1) 
+Y = stroke['stroke']
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
+
+# Define the ML models
+models = {
+    'Random Forest': RandomForestClassifier(random_state=42),
+    'Decision Tree': DecisionTreeClassifier(random_state=42),
+    'Support Vector Machine': SVC(kernel='linear', random_state=42),
+    'Artificial Neural Network': MLPClassifier(random_state=42, max_iter=500),
+    'Logistic Regression': LogisticRegression(max_iter=500, random_state=42)
+}
+
+# Set up cross-validation
+kfold = KFold(n_splits=5, shuffle=True, random_state=42)
+
+# Store the results
+results = {'Model': [], 'Fold 1': [], 'Fold 2': [], 'Fold 3': [], 'Fold 4': [], 'Fold 5': [], 'Average Accuracy': []}
+
+# Train each model, calculate cross-validation accuracy
+for model_name, model in models.items():
+    accuracy_scores = cross_val_score(model, X_train, Y_train, cv=kfold, scoring='accuracy')
+    avg_accuracy = np.mean(accuracy_scores)
+    # Add results to the results dictionary
+    results['Model'].append(model_name)
+    results['Fold 1'].append(accuracy_scores[0])
+    results['Fold 2'].append(accuracy_scores[1])
+    results['Fold 3'].append(accuracy_scores[2])
+    results['Fold 4'].append(accuracy_scores[3])
+    results['Fold 5'].append(accuracy_scores[4])
+    results['Average Accuracy'].append(avg_accuracy)
+
+# Display the accuracy results in a DataFrame
+results_df = pd.DataFrame(results)
+
+# Print the results DataFrame
+print("\nAccuracy for Each Fold and Average Accuracy for Each Model:")
+results_df
+```
+
+## **Analysis of results**
+
+-   Random Forest model achieved the highest average accuracy at 96.05%, which was matched by Logistic Regression. The Support Vector Machine and Artificial Neural Network followed closely, with average accuracies of 96.03% and 95.93%, respectively. The Decision Tree model had the lowest performance, with an average accuracy of 92.21%.
+-   In summary, the use of cross-validation allowed us to obtain a more accurate and unbiased assessment of model performance.
+-   Among the models, Random Forest and Logistic Regression showed the best overall performance in terms of both average accuracy and stability. Support Vector Machine and Artificial Neural Network also performed well but did not outperform Random Forest or Logistic Regression. The Decision Tree model had the lowest accuracy and was less stable, making it a less desirable choice for this problem. If model simplicity, speed, and interpretability are essential, Logistic Regression is an excellent option. However, if model robustness and predictive power are the priority, Random Forest would be the better choice.
+
 # **Conclusions**
 
-## Conclusion and Future work
+## Conclusion
+
+-   There was not a particularly strong correlation between the stroke outcome and the covariates listed in the dataset. The strongest correlation to a stroke outcome was with age at 0.23. Other notable correlations to a stroke outcome were hypertension, heart disease and glucose level, all at 0.14. It appears that the strongest correlations to a stroke outcome occur with participants’ physical properties rather than their demographics or living status.
+-   The model results show that individuals in this dataset could be classified by their stroke outcome based on the covariates age, gender, marital status, and employment status, BMI, glucose levels, and smoking history with a high degree of accuracy. Since there did not appear to be a particularly strong correlation to any one covariate, it was likely a combination of these factors associated with a stroke outcome.
+
+## Future work
+
+-   One of the limitations we encountered with this dataset is that there was actually a very small proportion of people who had a stroke compared to those that did not: 4.87% (N=249) of individuals had a stroke, while 95.1% (N=4861) did not. This created an unequal distribution within both the training and testing dataset, which may have artificially boosted the classification accuracy. Future work could be to increase the population of people being surveyed.
+-   The context upon which the study was conducted was not able to return insights that we could consider to be generalizable across the general public internationally. The dataset was from a study that was conducted in China, with its funding agency being the National Natural Science Foundation of China and ADAPT Centre for Digital Content Technology funded through the SFI Research Centres Programme. The population studied was mainly the Chinese population. As such, observations gathered from the study would be considered more applicable towards the Asian population instead of the international population. Future work could be to increase the diversity of the population of people being surveyed.
 
 ## **References**
 
