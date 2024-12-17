@@ -124,16 +124,9 @@ print(stroke.info())
 
 ## Visualization for Work Type Distribution
 
--   As for the distribution for work type across the population, a majority of the people surveyed worked in private, with lesser distribution of the population working as self-employed, looking after children, or working government jobs.
--   There is a small proportion of the population who have never worked.
-
 ![](images/work_type.png){fig-align="center"}
 
 ## Visualization for Smoking Status Distribution
-
--   While for the distribution of smoking status, there is a higher proportion of the population who have never smoked.
--   Followed by a smaller proportion of the population with smoking status being unknown and formerly smoked.
--   Only about 15% of the population surveyed smokes.
 
 ![](images/smoking.png){fig-align="center"}
 
