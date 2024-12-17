@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/tabby.min.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -320,6 +320,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -389,8 +392,8 @@ Danielle Stea, Erika Kirkpatrick, Kai Shuen Neo, Sahand Motamenim, Rohit Kalakal
 <section id="data-1" class="slide level2">
 <h2>Data</h2>
 <ul>
-<li>The dataset includes variables such as gender, smoking status, employment status, and marital status which are qualitative variables.</li>
-<li>Other variables such as age, BMI, and glucose index are all quantitative.</li>
+<li>Qualitative variables: gender, smoking status, employment status, marital status</li>
+<li>Quantitative variables: age, BMI, glucose index</li>
 </ul>
 <div id="loaddatainfo" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-stdout">
@@ -429,7 +432,7 @@ None</code></pre>
 </ul>
 <div id="plotmissing" class="cell" data-execution_count="7">
 <div id="plotmissing-1" class="cell-output cell-output-display">
-<pre><code>&lt;Figure size 3000x1800 with 0 Axes&gt;</code></pre>
+<pre><code>&lt;Figure size 30000x30000 with 0 Axes&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
@@ -442,6 +445,9 @@ None</code></pre>
 </section>
 <section id="variable-correlation-heatmap" class="slide level2">
 <h2>Variable Correlation Heatmap</h2>
+<ul>
+<li>The correlation matrix of all variables, minus the ID number, is displayed on the heatmap.</li>
+</ul>
 <div id="cell-plotcorrelation" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div>
@@ -454,18 +460,132 @@ None</code></pre>
 </section>
 <section id="machine-learning" class="slide level2">
 <h2><strong>Machine Learning</strong></h2>
-<p>For this analysis we created several models, and compared them against each other to see which one performs the best.</p>
+<ul>
+<li>After preparing the dataset, we split it into training (80%) and testing (20%) sets.</li>
+<li>We trained five different machine learning models on this dataset: Random Forest, Decision Tree, Support Vector Machine (SVM), Artificial Neural Network (ANN), and Logistic Regression.</li>
+<li>To evaluate the performance of these models, we employed 5-fold cross-validation.</li>
+</ul>
 </section>
 <section id="results" class="slide level2">
 <h2><strong>Results</strong></h2>
+<div id="cell-MLmodels" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Accuracy for Each Fold and Average Accuracy for Each Model:</code></pre>
+</div>
+<div id="mlmodels" class="cell-output cell-output-display" data-execution_count="10">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Model</th>
+<th data-quarto-table-cell-role="th">Fold 1</th>
+<th data-quarto-table-cell-role="th">Fold 2</th>
+<th data-quarto-table-cell-role="th">Fold 3</th>
+<th data-quarto-table-cell-role="th">Fold 4</th>
+<th data-quarto-table-cell-role="th">Fold 5</th>
+<th data-quarto-table-cell-role="th">Average Accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Random Forest</td>
+<td>0.961832</td>
+<td>0.949109</td>
+<td>0.964331</td>
+<td>0.971975</td>
+<td>0.955414</td>
+<td>0.960532</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Decision Tree</td>
+<td>0.924936</td>
+<td>0.913486</td>
+<td>0.926115</td>
+<td>0.927389</td>
+<td>0.918471</td>
+<td>0.922079</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Support Vector Machine</td>
+<td>0.963104</td>
+<td>0.949109</td>
+<td>0.964331</td>
+<td>0.970701</td>
+<td>0.954140</td>
+<td>0.960277</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Artificial Neural Network</td>
+<td>0.963104</td>
+<td>0.946565</td>
+<td>0.961783</td>
+<td>0.970701</td>
+<td>0.954140</td>
+<td>0.959259</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Logistic Regression</td>
+<td>0.963104</td>
+<td>0.949109</td>
+<td>0.965605</td>
+<td>0.970701</td>
+<td>0.954140</td>
+<td>0.960532</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="analysis-of-results" class="slide level2">
+<h2><strong>Analysis of results</strong></h2>
+<ul>
+<li>Random Forest model achieved the highest average accuracy at 96.05%, which was matched by Logistic Regression. The Support Vector Machine and Artificial Neural Network followed closely, with average accuracies of 96.03% and 95.93%, respectively. The Decision Tree model had the lowest performance, with an average accuracy of 92.21%.</li>
+<li>In summary, the use of cross-validation allowed us to obtain a more accurate and unbiased assessment of model performance.</li>
+<li>Among the models, Random Forest and Logistic Regression showed the best overall performance in terms of both average accuracy and stability. Support Vector Machine and Artificial Neural Network also performed well but did not outperform Random Forest or Logistic Regression. The Decision Tree model had the lowest accuracy and was less stable, making it a less desirable choice for this problem. If model simplicity, speed, and interpretability are essential, Logistic Regression is an excellent option. However, if model robustness and predictive power are the priority, Random Forest would be the better choice.</li>
+</ul>
 </section></section>
 <section>
 <section id="conclusions" class="title-slide slide level1 center">
 <h1><strong>Conclusions</strong></h1>
 
 </section>
-<section id="conclusion-and-future-work" class="slide level2">
-<h2>Conclusion and Future work</h2>
+<section id="conclusion" class="slide level2">
+<h2>Conclusion</h2>
+<ul>
+<li>There was not a particularly strong correlation between the stroke outcome and the covariates listed in the dataset. The strongest correlation to a stroke outcome was with age at 0.23. Other notable correlations to a stroke outcome were hypertension, heart disease and glucose level, all at 0.14. It appears that the strongest correlations to a stroke outcome occur with participants’ physical properties rather than their demographics or living status.</li>
+<li>The model results show that individuals in this dataset could be classified by their stroke outcome based on the covariates age, gender, marital status, and employment status, BMI, glucose levels, and smoking history with a high degree of accuracy. Since there did not appear to be a particularly strong correlation to any one covariate, it was likely a combination of these factors associated with a stroke outcome.</li>
+</ul>
+</section>
+<section id="future-work" class="slide level2">
+<h2>Future work</h2>
+<ul>
+<li>One of the limitations we encountered with this dataset is that there was actually a very small proportion of people who had a stroke compared to those that did not: 4.87% (N=249) of individuals had a stroke, while 95.1% (N=4861) did not. This created an unequal distribution within both the training and testing dataset, which may have artificially boosted the classification accuracy. Future work could be to increase the population of people being surveyed.</li>
+<li>The context upon which the study was conducted was not able to return insights that we could consider to be generalizable across the general public internationally. The dataset was from a study that was conducted in China, with its funding agency being the National Natural Science Foundation of China and ADAPT Centre for Digital Content Technology funded through the SFI Research Centres Programme. The population studied was mainly the Chinese population. As such, observations gathered from the study would be considered more applicable towards the Asian population instead of the international population.&nbsp;Future work could be to increase the diversity of the population of people being surveyed.</li>
+</ul>
 </section>
 <section id="references" class="slide level2">
 <h2><strong>References</strong></h2>
