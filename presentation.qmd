@@ -155,18 +155,6 @@ print(stroke.info())
 
 ![](images/model_performance.png){fig-align="center"}
 
-## **Analysis of results**
-
--   Random Forest model achieved the highest average accuracy at 96.05%, which was matched by Logistic Regression.
--   Support Vector Machine and Artificial Neural Network followed closely, with average accuracies of 96.03% and 95.93%, respectively.
--   Decision Tree model had the lowest performance, with an average accuracy of 92.21%.
-
-## **Model Performance**
-
--   Cross-validation allowed us to obtain a more accurate and unbiased assessment of model performance.
--   Among the models, Random Forest and Logistic Regression showed the best overall performance in terms of both average accuracy and stability.
--   Support Vector Machine and Artificial Neural Network also performed well but did not outperform Random Forest or Logistic Regression.
--   The Decision Tree model had the lowest accuracy and was less stable, making it a less desirable choice for this problem.
 
 ## **Model Performance Evaluation**
 
