@@ -1,7 +1,7 @@
 ---
 title: "Stroke Prediction Based on Demographics and Medical History"
 subtitle: "INFO 511 - Fall 2024 - Final Project"
-author: "Danielle Stea, Erika Kirkpatrick, Kai Shuen Neo, Sahand Motamenim, Rohit Kalakala"
+author: "Danielle Stea, Erika Kirkpatrick, Kai Shuen Neo, Sahand Motameni, Rohit Kalakala"
 title-slide-attributes:
   data-background-image: images/watercolour_sys02_img34_teacup-ocean.jpg
   data-background-size: stretch
