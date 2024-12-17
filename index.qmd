@@ -40,7 +40,7 @@ print(stroke.head())
 The dataset includes variables such as gender, smoking status, employment status, and marital status which are qualitative variables. Other variables such as age, BMI, and glucose index are all quantitative.
 
 ```{python}
-#| label: loaddata
+#| label: loaddatainfo
 #| echo: false
 import pandas as pd
 stroke = pd.read_csv("data/healthcare-dataset-stroke-data.csv")
