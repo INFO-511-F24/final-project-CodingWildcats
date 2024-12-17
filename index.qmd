@@ -146,7 +146,8 @@ count_unknown = (stroke['smoking_status'] == 'Unknown').sum()
 temp = [count_never_smoked,count_formerly_smoked,count_smokes,count_unknown]
 labels = ['Never smoked','Formerly smoked', 'Smokes','Unknown']
 textprops = {"fontsize":12}
-plt.pie(temp,labels=labels,autopct='%1.2f%%',textprops=textprops)
+colors = ['red', '#orange', '#green', '#blue']
+plt.pie(temp,labels=labels,autopct='%1.2f%%',textprops=textprops, colors=colors)
 plt.title('Distribution for smoking status')
 plt.show()
 ```
