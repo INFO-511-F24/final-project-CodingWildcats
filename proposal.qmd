@@ -31,7 +31,7 @@ import seaborn as sns
 
 ## Overview
 
-We have selected 3 datasets - namely 1) College Scorecard Dataset, 2) Massachusetts Public Schools 2017 Records, and 3) Stroke Dataset.
+We have selected 3 datasets - namely the College Scorecard Dataset, the Massachusetts Public Schools 2017 Records, and the Stroke Dataset.
 
 ## 1. College Scorecard Dataset
 
@@ -51,7 +51,7 @@ This question is important because student success is an important factor in det
 
 Variables such as school expenditure, student debt and graduate income are quantitative while variables such as degree type, institution name and city are qualitative.
 
-### Glimpse of data
+### Data Analysis
 
 ```{python}
 import pandas as pd
@@ -76,7 +76,7 @@ This question is important because the education quality for elementary through 
 
 Variables such as school type, location, and evaluation are qualitative variables. Variables such as demographic makeup, enrollment numbers, class size and expenditure are quantitative variables.
 
-### Glimpse of data
+### Data Analysis
 
 ```{python}
 MA_schools = pd.read_csv("data/MA_Public_Schools_2017.csv")
@@ -102,7 +102,7 @@ Variables such as gender, smoking status, employment status, and marital status 
 
 Analysis Plan: Step 1: correlation plot/sensitivity analysis, choose variables Step 2: model testing and selection Step 3: model visualization Step 4: presentation
 
-### Glimpse of data
+### Data Analysis
 
 ```{python}
 stroke = pd.read_csv("data/healthcare-dataset-stroke-data.csv")
