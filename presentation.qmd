@@ -103,9 +103,9 @@ print(stroke.head())
 ## Plots
 
 ```{python}
-penguins['species'] = penguins['species'].apply(lambda x: "Adelie" if x == "Adelie" else "Other")
-sns.scatterplot(data=penguins, x='flipper_length_mm', y='body_mass_g', hue='species')
-plt.show()
+#penguins['species'] = penguins['species'].apply(lambda x: "Adelie" if x == "Adelie" else "Other")
+#sns.scatterplot(data=penguins, x='flipper_length_mm', y='body_mass_g', hue='species')
+#plt.show()
 ```
 
 ## Plot and text
@@ -135,7 +135,7 @@ plt.show()
 If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
 
 ```{python}
-penguins.head().to_html()
+#penguins.head().to_html()
 ```
 
 ## Images
