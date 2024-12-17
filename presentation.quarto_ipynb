@@ -1,0 +1,170 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Stroke Prediction Based on Demographics and Medical History\"\n",
+        "subtitle: \"INFO 511 - Fall 2024 - Final Project\"\n",
+        "author: \"Danielle Stea, Erika Kirkpatrick, Kai Shuen Neo, Sahand Motamenim, Rohit Kalakala\"\n",
+        "title-slide-attributes:\n",
+        "  data-background-image: images/watercolour_sys02_img34_teacup-ocean.jpg\n",
+        "  data-background-size: stretch\n",
+        "  data-background-opacity: \"0.7\"\n",
+        "  data-slide-number: none\n",
+        "format:\n",
+        "  revealjs:\n",
+        "    theme:  ['data/customtheming.scss']\n",
+        "  \n",
+        "editor: visual\n",
+        "execute:\n",
+        "  echo: false\n",
+        "jupyter: python3\n",
+        "---"
+      ],
+      "id": "087bccde"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: load-packages\n",
+        "#| include: false\n",
+        "\n",
+        "# Load packages here\n",
+        "import pandas as pd\n",
+        "import seaborn as sns\n",
+        "import numpy as np\n",
+        "import matplotlib.pyplot as plt\n",
+        "from sklearn.preprocessing import LabelEncoder\n",
+        "from sklearn.model_selection import train_test_split\n",
+        "from sklearn.linear_model import LogisticRegression\n",
+        "from sklearn.metrics import confusion_matrix\n",
+        "from sklearn.metrics import accuracy_score\n",
+        "from sklearn.model_selection import train_test_split, cross_val_score, KFold\n",
+        "from sklearn.metrics import r2_score\n",
+        "from sklearn.ensemble import RandomForestClassifier\n",
+        "from sklearn.tree import DecisionTreeClassifier\n",
+        "from sklearn.svm import SVC\n",
+        "from sklearn.neural_network import MLPClassifier\n",
+        "from sklearn.linear_model import LogisticRegression\n",
+        "from sklearn.preprocessing import LabelEncoder"
+      ],
+      "id": "load-packages",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: setup\n",
+        "#| include: false\n",
+        "# Set up plot theme and figure resolution\n",
+        "sns.set_theme(style=\"whitegrid\")\n",
+        "sns.set_context(\"notebook\", font_scale=1.1)\n",
+        "\n",
+        "import matplotlib.pyplot as plt\n",
+        "plt.rcParams['figure.dpi'] = 300\n",
+        "plt.rcParams['savefig.dpi'] = 300\n",
+        "plt.rcParams['figure.figsize'] = (6, 6 * 0.618)"
+      ],
+      "id": "setup",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: load-data\n",
+        "#| include: false\n",
+        "# Load data in Python\n",
+        "stroke = pd.read_csv(\"data/healthcare-dataset-stroke-data.csv\")"
+      ],
+      "id": "load-data",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Stroke Prediction with Machine Learning\n",
+        "\n",
+        "## Introduction\n",
+        "\n",
+        "-   Strokes can be a deadly medical condition, and even if the patient survives there can be life long consequences as a result of the stroke.\n",
+        "\n",
+        "-   This is why we wanted to look into a dataset that may allow us to help predict the risk factors that cause a stroke.\n",
+        "\n",
+        "## Data\n",
+        "\n",
+        "-   The data set used is from a study published in China in 2020. It represents a case group of individuals who had a stroke, and a control group of those who did not.\n",
+        "\n",
+        "-   The dataset has observations including age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc.\n"
+      ],
+      "id": "fbf9ce24"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: preview_data\n",
+        "#| include: true\n",
+        "#| echo: false\n",
+        "print(stroke.head()).to_html()"
+      ],
+      "id": "preview_data",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Methods and Results\n",
+        "\n",
+        "## EDA\n",
+        "\n",
+        "::::: columns\n",
+        "::: {.column width=\"50%\"}\n",
+        "-   Missing values were dropped from the dataset and categorical variables (gender, marital status, work type, residence type and smoking status) were transformed into factors.\n",
+        ":::\n",
+        "\n",
+        "::: {.column width=\"50%\"}\n",
+        "![Stroke Correlation Heatmap.](images/Stroke_Correlation_Heatmap.png){fig-align=\"center\" width=\"200\", height=\"200\"}\n",
+        ":::\n",
+        ":::::\n",
+        "\n",
+        "## Machine Learning\n",
+        "\n",
+        "-   For this analysis we created several models, and compared them against each other to see which one performs the best.\n",
+        "\n",
+        "## Results\n",
+        "\n",
+        "# Conclusions\n",
+        "\n",
+        "## Conclusion and Future Work\n",
+        "\n",
+        "If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,\n",
+        "\n",
+        "## References\n",
+        "\n",
+        "-   2020: Pathan, Muhammad Salman & Zhang, Jianbiao & John, Deepu & Nag, Avishek & Dev, Soumyabrata. (2020). Identifying Stroke Indicators Using Rough Sets. IEEE Access. 8. 10.1109/ACCESS.2020.3039439."
+      ],
+      "id": "91eb88c7"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/ella/Library/Python/3.12/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
