@@ -140,20 +140,6 @@
     "text": "Results"
   },
   {
-    "objectID": "presentation.html#analysis-of-results",
-    "href": "presentation.html#analysis-of-results",
-    "title": "Stroke Prediction Based on Demographics and Medical History",
-    "section": "Analysis of results",
-    "text": "Analysis of results\n\nRandom Forest model achieved the highest average accuracy at 96.05%, which was matched by Logistic Regression.\nSupport Vector Machine and Artificial Neural Network followed closely, with average accuracies of 96.03% and 95.93%, respectively.\nDecision Tree model had the lowest performance, with an average accuracy of 92.21%."
-  },
-  {
-    "objectID": "presentation.html#model-performance",
-    "href": "presentation.html#model-performance",
-    "title": "Stroke Prediction Based on Demographics and Medical History",
-    "section": "Model Performance",
-    "text": "Model Performance\n\nCross-validation allowed us to obtain a more accurate and unbiased assessment of model performance.\nAmong the models, Random Forest and Logistic Regression showed the best overall performance in terms of both average accuracy and stability.\nSupport Vector Machine and Artificial Neural Network also performed well but did not outperform Random Forest or Logistic Regression.\nThe Decision Tree model had the lowest accuracy and was less stable, making it a less desirable choice for this problem."
-  },
-  {
     "objectID": "presentation.html#model-performance-evaluation",
     "href": "presentation.html#model-performance-evaluation",
     "title": "Stroke Prediction Based on Demographics and Medical History",
