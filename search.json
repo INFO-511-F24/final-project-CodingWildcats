@@ -74,7 +74,7 @@
     "href": "presentation.html#eda",
     "title": "Stroke Prediction Based on Demographics and Medical History",
     "section": "EDA",
-    "text": "EDA\n\nMissing values were dropped from the dataset and categorical variables (gender, marital status, work type, residence type and smoking status) were transformed into factors.\n\n\n\n&lt;Figure size 30000x30000 with 0 Axes&gt;"
+    "text": "EDA\n\nMissing values were dropped from the dataset and categorical variables (gender, marital status, work type, residence type and smoking status) were transformed into factors."
   },
   {
     "objectID": "presentation.html#variable-correlation-heatmap",
@@ -95,7 +95,7 @@
     "href": "presentation.html#results",
     "title": "Stroke Prediction Based on Demographics and Medical History",
     "section": "Results",
-    "text": "Results\n\n\n\nAccuracy for Each Fold and Average Accuracy for Each Model:\n\n\n\n\n\n\n\n\n\nModel\nFold 1\nFold 2\nFold 3\nFold 4\nFold 5\nAverage Accuracy\n\n\n\n\n0\nRandom Forest\n0.961832\n0.949109\n0.964331\n0.971975\n0.955414\n0.960532\n\n\n1\nDecision Tree\n0.924936\n0.913486\n0.926115\n0.927389\n0.918471\n0.922079\n\n\n2\nSupport Vector Machine\n0.963104\n0.949109\n0.964331\n0.970701\n0.954140\n0.960277\n\n\n3\nArtificial Neural Network\n0.963104\n0.946565\n0.961783\n0.970701\n0.954140\n0.959259\n\n\n4\nLogistic Regression\n0.963104\n0.949109\n0.965605\n0.970701\n0.954140\n0.960532"
+    "text": "Results"
   },
   {
     "objectID": "presentation.html#analysis-of-results",
