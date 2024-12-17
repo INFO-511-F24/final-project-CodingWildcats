@@ -23,15 +23,11 @@ In this project, we aimed to predict whether a person is at risk of having a str
 
 ## Introduction
 
-
-Taking care of one’s health is an important consideration for anyone, but especially young adults who are just starting their own lives. For our project we wanted to do our analysis on data relating to strokes and the risk of strokes. Our models attempt to predict whether a number of factors can be correlated with the risk of strokes. It is important to understand the risk factors of strokes (and other illnesses) because it is much easier to change your lifestyle young but also be aware that family members may be at a high risk of having a stroke and be prepared by knowing the signs of a stroke. This project could help many people, young and old, so they know the risk factors that may contribute to the chance of them having a stroke. 
-
+Taking care of one’s health is an important consideration for anyone, but especially young adults who are just starting their own lives. For our project we wanted to do our analysis on data relating to strokes and the risk of strokes. Our models attempt to predict whether a number of factors can be correlated with the risk of strokes. It is important to understand the risk factors of strokes (and other illnesses) because it is much easier to change your lifestyle young but also be aware that family members may be at a high risk of having a stroke and be prepared by knowing the signs of a stroke. This project could help many people, young and old, so they know the risk factors that may contribute to the chance of them having a stroke.
 
 ## Data
 
-The data set we have decided to use is from a study published in China in 2020: Pathan, Muhammad Salman & Zhang, Jianbiao & John, Deepu & Nag, Avishek & Dev, Soumyabrata. (2020). Identifying Stroke Indicators Using Rough Sets. IEEE Access. 8. 10.1109/ACCESS.2020.3039439.
-The data from this study was then taken and uploaded on Kaggle, which is where we first found it, though we also went directly to the source to determine validity. Since this data set does deal with patient information there are some ethical considerations, but the study that published this data has de-identified it, removing personal identifiers so the chances of being able to determine the identity of any one individual in this study from this data alone is quite small. 
-The data set has 12 columns, with observations including demographic information such as age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc. A glimpse at the dataset can be found below:
+The data set we have decided to use is from a study published in China in 2020: Pathan, Muhammad Salman & Zhang, Jianbiao & John, Deepu & Nag, Avishek & Dev, Soumyabrata. (2020). Identifying Stroke Indicators Using Rough Sets. IEEE Access. 8. 10.1109/ACCESS.2020.3039439. The data from this study was then taken and uploaded on Kaggle, which is where we first found it, though we also went directly to the source to determine validity. Since this data set does deal with patient information there are some ethical considerations, but the study that published this data has de-identified it, removing personal identifiers so the chances of being able to determine the identity of any one individual in this study from this data alone is quite small. The data set has 12 columns, with observations including demographic information such as age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc. A glimpse at the dataset can be found below:
 
 ```{python}
 #| label: loaddata
@@ -51,7 +47,7 @@ stroke = pd.read_csv("data/healthcare-dataset-stroke-data.csv")
 print(stroke.info())
 ```
 
-As mentioned this dataset has several demographic variables and then a variable that tracks if that patient had a stroke. From this, we hope to be able to create a model  to predict the possibility of an individual having a stroke based on their demographic information and medical history of an individual. Which is important because identifying key risk factors of a stroke can be used for prevention and more effective monitoring of patients.
+As mentioned this dataset has several demographic variables and then a variable that tracks if that patient had a stroke. From this, we hope to be able to create a model to predict the possibility of an individual having a stroke based on their demographic information and medical history of an individual. Which is important because identifying key risk factors of a stroke can be used for prevention and more effective monitoring of patients.
 
 Source: https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset
 
@@ -180,8 +176,14 @@ In summary, the use of cross-validation allowed us to obtain a more accurate and
 
 ## Discussion
 
-Add discussion here.
+We noted in this analysis that there was not a particularly strong correlation between the stroke outcome and the covariates listed in the dataset. The strongest correlation to a stroke outcome was with age at 0.23. Other notable correlations to a stroke outcome were hypertension, heart disease and glucose level, all at 0.14. It appears that the strongest correlations to a stroke outcome occur with participants’ physical properties rather than their demographics or living status.
+
+The model results show that individuals in this dataset could be classified by their stroke outcome based on the covariates age, gender, marital status, and employment status, BMI, glucose levels, and smoking history with a high degree of accuracy. Since there did not appear to be a particularly strong correlation to any one covariate, it was likely a combination of these factors associated with a stroke outcome.
+
+One of the limitations we encountered with this dataset is that there was actually a very small proportion of people who had a stroke compared to those that did not: 4.87% (N=249) of individuals had a stroke, while 95.1% (N=4861) did not. This created an unequal distribution within both the training and testing dataset, which may have artificially boosted the classification accuracy.
+
+In addition, although high average accuracy was obtained across the 5 models that we have analyzed upon, the context upon which the study was conducted was not able to return insights that we could consider to be generalizable across the general public internationally. The dataset was from a study that was conducted in China, with its funding agency being the National Natural Science Foundation of China and ADAPT Centre for Digital Content Technology funded through the SFI Research Centres Programme. The population studied was mainly the Chinese population. As such, observations gathered from the study would be considered more applicable towards the Asian population instead of the international population. 
 
 ## References
 
-Add references here.
+2020: Pathan, Muhammad Salman & Zhang, Jianbiao & John, Deepu & Nag, Avishek & Dev, Soumyabrata. (2020). Identifying Stroke Indicators Using Rough Sets. IEEE Access. 8. 10.1109/ACCESS.2020.3039439.
