@@ -437,14 +437,7 @@ None</code></pre>
 <h2><strong>Machine Learning</strong></h2>
 <ul>
 <li>After preparing the dataset, we split it into training (80%) and testing (20%) sets.</li>
-<li>We trained 5 different machine learning models on this dataset
-<ul>
-<li>Random Forest</li>
-<li>Decision Tree</li>
-<li>Support Vector Machine (SVM)</li>
-<li>Artificial Neural Network (ANN)</li>
-<li>Logistic Regression</li>
-</ul></li>
+<li>We trained 5 different machine learning models on this dataset: Random Forest, Decision Tree, Support Vector Machine (SVM), Artificial Neural Network (ANN), Logistic Regression.</li>
 <li>To evaluate the performance of these models, we employed 5-fold cross-validation.</li>
 </ul>
 </section>
@@ -456,17 +449,22 @@ None</code></pre>
 <h2><strong>Analysis of results</strong></h2>
 <ul>
 <li>Random Forest model achieved the highest average accuracy at 96.05%, which was matched by Logistic Regression.</li>
-<li>The Support Vector Machine and Artificial Neural Network followed closely, with average accuracies of 96.03% and 95.93%, respectively.</li>
-<li>The Decision Tree model had the lowest performance, with an average accuracy of 92.21%.</li>
+<li>Support Vector Machine and Artificial Neural Network followed closely, with average accuracies of 96.03% and 95.93%, respectively.</li>
+<li>Decision Tree model had the lowest performance, with an average accuracy of 92.21%.</li>
 </ul>
 </section>
 <section id="model-performance" class="slide level2">
 <h2><strong>Model Performance</strong></h2>
 <ul>
-<li>In summary, the use of cross-validation allowed us to obtain a more accurate and unbiased assessment of model performance.</li>
+<li>Cross-validation allowed us to obtain a more accurate and unbiased assessment of model performance.</li>
 <li>Among the models, Random Forest and Logistic Regression showed the best overall performance in terms of both average accuracy and stability.</li>
 <li>Support Vector Machine and Artificial Neural Network also performed well but did not outperform Random Forest or Logistic Regression.</li>
 <li>The Decision Tree model had the lowest accuracy and was less stable, making it a less desirable choice for this problem.</li>
+</ul>
+</section>
+<section id="model-performance-evaluation" class="slide level2">
+<h2><strong>Model Performance Evaluation</strong></h2>
+<ul>
 <li>If model simplicity, speed, and interpretability are essential, Logistic Regression is an excellent option.</li>
 <li>However, if model robustness and predictive power are the priority, Random Forest would be the better choice.</li>
 </ul>
@@ -476,11 +474,20 @@ None</code></pre>
 <h1><strong>Conclusion</strong></h1>
 
 </section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<ul>
+<li><p>There was not a particularly strong correlation between the stroke outcome and the covariates listed in the dataset.</p></li>
+<li><p>The strongest correlation to a stroke outcome was with age at 0.23.</p></li>
+<li><p>Other notable correlations to a stroke outcome were hypertension, heart disease and glucose level, all at 0.14.</p></li>
+</ul>
+</section>
 <section id="conclusion-1" class="slide level2">
 <h2>Conclusion</h2>
 <ul>
-<li>There was not a particularly strong correlation between the stroke outcome and the covariates listed in the dataset. The strongest correlation to a stroke outcome was with age at 0.23. Other notable correlations to a stroke outcome were hypertension, heart disease and glucose level, all at 0.14. It appears that the strongest correlations to a stroke outcome occur with participants’ physical properties rather than their demographics or living status.</li>
-<li>The model results show that individuals in this dataset could be classified by their stroke outcome based on the covariates age, gender, marital status, and employment status, BMI, glucose levels, and smoking history with a high degree of accuracy. Since there did not appear to be a particularly strong correlation to any one covariate, it was likely a combination of these factors associated with a stroke outcome.</li>
+<li>It appears that the strongest correlations to a stroke outcome occur with participants’ physical properties rather than their demographics or living status.</li>
+<li>The model results show that individuals in this dataset could be classified by their stroke outcome based on the covariates age, gender, marital status, and employment status, BMI, glucose levels, and smoking history with a high degree of accuracy.</li>
+<li>Since there did not appear to be a particularly strong correlation to any one covariate, it was likely a combination of these factors associated with a stroke outcome.</li>
 </ul>
 </section>
 <section id="future-work" class="slide level2">
@@ -493,8 +500,8 @@ None</code></pre>
 <section id="future-work-1" class="slide level2">
 <h2>Future work</h2>
 <ul>
-<li>To increase the diversity of the population of people being surveyed as the context upon which the study was conducted was not able to return insights that we could consider to be generalizable across the general public internationally.</li>
-<li>The dataset was from a study that was conducted in China, with its funding agency being the National Natural Science Foundation of China and ADAPT Centre for Digital Content Technology funded through the SFI Research Centres Programme. The population studied was mainly the Chinese population. As such, observations gathered from the study would be considered more applicable towards the Asian population instead of the international population.&nbsp;</li>
+<li><p>To increase the diversity of the population of people being surveyed as the context upon which the study was conducted was not able to return insights that we could consider to be generalizable across the general public internationally.</p></li>
+<li><p>The dataset was from a study that was conducted in China, with the population studied mainly being the Chinese population. As such, observations gathered from the study would be considered more applicable towards the Asian population instead of the international population.&nbsp;</p></li>
 </ul>
 </section>
 <section id="references" class="slide level2">
