@@ -53,7 +53,7 @@
     "href": "presentation.html#data",
     "title": "Stroke Prediction Based on Demographics and Medical History",
     "section": "Data",
-    "text": "Data\n\nThe data set used is from a study published in China in 2020. It represents a case group of individuals who had a stroke, and a control group of those who did not.\nThe dataset has observations including age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc.\n\n\n\n      id  gender   age  hypertension  heart_disease ever_married  \\\n0   9046    Male  67.0             0              1          Yes   \n1  51676  Female  61.0             0              0          Yes   \n2  31112    Male  80.0             0              1          Yes   \n3  60182  Female  49.0             0              0          Yes   \n4   1665  Female  79.0             1              0          Yes   \n\n       work_type Residence_type  avg_glucose_level   bmi   smoking_status  \\\n0        Private          Urban             228.69  36.6  formerly smoked   \n1  Self-employed          Rural             202.21   NaN     never smoked   \n2        Private          Rural             105.92  32.5     never smoked   \n3        Private          Urban             171.23  34.4           smokes   \n4  Self-employed          Rural             174.12  24.0     never smoked   \n\n   stroke  \n0       1  \n1       1  \n2       1  \n3       1  \n4       1"
+    "text": "Data\n\nThe data set used is from a study published in China in 2020. It represents a case group of individuals who had a stroke, and a control group of those who did not.\nThe dataset has observations including age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc.\n\n\n\n&lt;table border=\"1\" class=\"dataframe\"&gt;\n  &lt;thead&gt;\n    &lt;tr style=\"text-align: right;\"&gt;\n      &lt;th&gt;&lt;/th&gt;\n      &lt;th&gt;id&lt;/th&gt;\n      &lt;th&gt;gender&lt;/th&gt;\n      &lt;th&gt;age&lt;/th&gt;\n      &lt;th&gt;hypertension&lt;/th&gt;\n      &lt;th&gt;heart_disease&lt;/th&gt;\n      &lt;th&gt;ever_married&lt;/th&gt;\n      &lt;th&gt;work_type&lt;/th&gt;\n      &lt;th&gt;Residence_type&lt;/th&gt;\n      &lt;th&gt;avg_glucose_level&lt;/th&gt;\n      &lt;th&gt;bmi&lt;/th&gt;\n      &lt;th&gt;smoking_status&lt;/th&gt;\n      &lt;th&gt;stroke&lt;/th&gt;\n    &lt;/tr&gt;\n  &lt;/thead&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;\n      &lt;th&gt;0&lt;/th&gt;\n      &lt;td&gt;9046&lt;/td&gt;\n      &lt;td&gt;Male&lt;/td&gt;\n      &lt;td&gt;67.0&lt;/td&gt;\n      &lt;td&gt;0&lt;/td&gt;\n      &lt;td&gt;1&lt;/td&gt;\n      &lt;td&gt;Yes&lt;/td&gt;\n      &lt;td&gt;Private&lt;/td&gt;\n      &lt;td&gt;Urban&lt;/td&gt;\n      &lt;td&gt;228.69&lt;/td&gt;\n      &lt;td&gt;36.6&lt;/td&gt;\n      &lt;td&gt;formerly smoked&lt;/td&gt;\n      &lt;td&gt;1&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;th&gt;1&lt;/th&gt;\n      &lt;td&gt;51676&lt;/td&gt;\n      &lt;td&gt;Female&lt;/td&gt;\n      &lt;td&gt;61.0&lt;/td&gt;\n      &lt;td&gt;0&lt;/td&gt;\n      &lt;td&gt;0&lt;/td&gt;\n      &lt;td&gt;Yes&lt;/td&gt;\n      &lt;td&gt;Self-employed&lt;/td&gt;\n      &lt;td&gt;Rural&lt;/td&gt;\n      &lt;td&gt;202.21&lt;/td&gt;\n      &lt;td&gt;NaN&lt;/td&gt;\n      &lt;td&gt;never smoked&lt;/td&gt;\n      &lt;td&gt;1&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;th&gt;2&lt;/th&gt;\n      &lt;td&gt;31112&lt;/td&gt;\n      &lt;td&gt;Male&lt;/td&gt;\n      &lt;td&gt;80.0&lt;/td&gt;\n      &lt;td&gt;0&lt;/td&gt;\n      &lt;td&gt;1&lt;/td&gt;\n      &lt;td&gt;Yes&lt;/td&gt;\n      &lt;td&gt;Private&lt;/td&gt;\n      &lt;td&gt;Rural&lt;/td&gt;\n      &lt;td&gt;105.92&lt;/td&gt;\n      &lt;td&gt;32.5&lt;/td&gt;\n      &lt;td&gt;never smoked&lt;/td&gt;\n      &lt;td&gt;1&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;th&gt;3&lt;/th&gt;\n      &lt;td&gt;60182&lt;/td&gt;\n      &lt;td&gt;Female&lt;/td&gt;\n      &lt;td&gt;49.0&lt;/td&gt;\n      &lt;td&gt;0&lt;/td&gt;\n      &lt;td&gt;0&lt;/td&gt;\n      &lt;td&gt;Yes&lt;/td&gt;\n      &lt;td&gt;Private&lt;/td&gt;\n      &lt;td&gt;Urban&lt;/td&gt;\n      &lt;td&gt;171.23&lt;/td&gt;\n      &lt;td&gt;34.4&lt;/td&gt;\n      &lt;td&gt;smokes&lt;/td&gt;\n      &lt;td&gt;1&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;th&gt;4&lt;/th&gt;\n      &lt;td&gt;1665&lt;/td&gt;\n      &lt;td&gt;Female&lt;/td&gt;\n      &lt;td&gt;79.0&lt;/td&gt;\n      &lt;td&gt;1&lt;/td&gt;\n      &lt;td&gt;0&lt;/td&gt;\n      &lt;td&gt;Yes&lt;/td&gt;\n      &lt;td&gt;Self-employed&lt;/td&gt;\n      &lt;td&gt;Rural&lt;/td&gt;\n      &lt;td&gt;174.12&lt;/td&gt;\n      &lt;td&gt;24.0&lt;/td&gt;\n      &lt;td&gt;never smoked&lt;/td&gt;\n      &lt;td&gt;1&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/tbody&gt;\n&lt;/table&gt;"
   },
   {
     "objectID": "presentation.html#eda",
@@ -74,7 +74,7 @@
     "href": "presentation.html#results",
     "title": "Stroke Prediction Based on Demographics and Medical History",
     "section": "Results",
-    "text": "Results\n\n\n\nSome text\ngoes here"
+    "text": "Results"
   },
   {
     "objectID": "presentation.html#conclusion-and-future-work",
@@ -89,20 +89,6 @@
     "title": "Stroke Prediction Based on Demographics and Medical History",
     "section": "References",
     "text": "References\n\n2020: Pathan, Muhammad Salman & Zhang, Jianbiao & John, Deepu & Nag, Avishek & Dev, Soumyabrata. (2020). Identifying Stroke Indicators Using Rough Sets. IEEE Access. 8. 10.1109/ACCESS.2020.3039439."
-  },
-  {
-    "objectID": "presentation.html#math-expressions",
-    "href": "presentation.html#math-expressions",
-    "title": "Stroke Prediction Based on Demographics and Medical History",
-    "section": "Math Expressions",
-    "text": "Math Expressions\nYou can write LaTeX math expressions inside a pair of dollar signs, e.g. $\\alpha+\\beta$ renders \\(\\alpha + \\beta\\). You can use the display style with double dollar signs:\n$$\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i$$\nLimitations:\n\nThe source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting $$ must appear in the very beginning of a line, followed immediately by a non-space character, and the ending $$ must be at the end of a line, led by a non-space character;\nThere should not be spaces after the opening $ or before the closing $."
-  },
-  {
-    "objectID": "presentation.html#feeling-adventurous",
-    "href": "presentation.html#feeling-adventurous",
-    "title": "Stroke Prediction Based on Demographics and Medical History",
-    "section": "Feeling adventurous?",
-    "text": "Feeling adventurous?\n\nYou are welcomed to use the default styling of the slides. In fact, that’s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.\nBut some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
   },
   {
     "objectID": "index.html",
