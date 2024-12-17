@@ -98,6 +98,45 @@ stroke = pd.read_csv("data/healthcare-dataset-stroke-data.csv")
 print(stroke.info())
 ```
 
+## Visualization for Stroke Distribution
+
+-   Across the population, there is a higher proportion of people who do not suffer from stroke as compared to those who do suffer from stroke.
+
+![](images/stroke.png){fig-align="center"}
+
+## Visualization for Gender Distribution
+
+-   As for gender analysis, there is a higher proportion of females as compared to males surveyed.
+
+![](images/gender.png){fig-align="center"}
+
+## Visualization for Residence Type Distribution
+
+-   In terms of residence type, the distribution for rural vs urban are highly equivalent.
+
+![](images/residence.png){fig-align="center"}
+
+## Visualization for Marital Status Distribution
+
+-   As for marital status, there is a higher proportion of people surveyed who are married, as compared to those who are not married.
+
+![](images/marital_status.png){fig-align="center"}
+
+## Visualization for Work Type Distribution
+
+-   As for the distribution for work type across the population, a majority of the people surveyed worked in private, with lesser distribution of the population working as self-employed, looking after children, or working government jobs.
+-   There is a small proportion of the population who have never worked.
+
+![](images/work_type.png){fig-align="center"}
+
+## Visualization for Smoking Status Distribution
+
+-   While for the distribution of smoking status, there is a higher proportion of the population who have never smoked.
+-   Followed by a smaller proportion of the population with smoking status being unknown and formerly smoked.
+-   Only about 15% of the population surveyed smokes.
+
+![](images/smoking.png){fig-align="center"}
+
 # **Methods and Results**
 
 ## Exploratory Data Analysis
