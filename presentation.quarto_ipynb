@@ -23,7 +23,7 @@
         "jupyter: python3\n",
         "---"
       ],
-      "id": "55eed980"
+      "id": "d45a2174"
     },
     {
       "cell_type": "code",
@@ -97,9 +97,9 @@
         "\n",
         "-   The data set we have decided to use is from a study published in China in 2020. It represents a case group of individuals who had a stroke, and a control group of those who did not.\n",
         "\n",
-        "-   The data set has 12 columns, with observations including demographic information such as age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc.\n"
+        "-   The data set has 12 columns, with observations including demographic information such as age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc."
       ],
-      "id": "2c90d574"
+      "id": "290dec71"
     },
     {
       "cell_type": "code",
@@ -107,7 +107,7 @@
       "source": [
         "print(stroke.head())"
       ],
-      "id": "56ae85ac",
+      "id": "0ecf39d5",
       "execution_count": null,
       "outputs": []
     },
@@ -137,7 +137,7 @@
         "\n",
         "## Code\n"
       ],
-      "id": "0954a356"
+      "id": "32d46719"
     },
     {
       "cell_type": "code",
@@ -145,7 +145,7 @@
       "source": [
         "print(stroke.head())"
       ],
-      "id": "4b9ae7df",
+      "id": "403da753",
       "execution_count": null,
       "outputs": []
     },
@@ -155,7 +155,7 @@
       "source": [
         "## Plots\n"
       ],
-      "id": "5a0b2c51"
+      "id": "bc95aba3"
     },
     {
       "cell_type": "code",
@@ -165,7 +165,7 @@
         "#sns.scatterplot(data=penguins, x='flipper_length_mm', y='body_mass_g', hue='species')\n",
         "#plt.show()"
       ],
-      "id": "6dd91211",
+      "id": "9bfaa358",
       "execution_count": null,
       "outputs": []
     },
@@ -182,9 +182,9 @@
         "-   goes here\n",
         ":::\n",
         "\n",
-        "::: {.column width=\"50%\"}\n"
+        "::: {.column width=\"50%\"}"
       ],
-      "id": "09d6b33c"
+      "id": "351b799b"
     },
     {
       "cell_type": "code",
@@ -197,7 +197,7 @@
         "sns.boxplot(data=penguins, x='bill_length_mm', y='species', hue='species', ax=ax)\n",
         "plt.show()"
       ],
-      "id": "801ae04a",
+      "id": "b2daf09a",
       "execution_count": null,
       "outputs": []
     },
@@ -214,7 +214,7 @@
         "\n",
         "If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,\n"
       ],
-      "id": "b70e63f6"
+      "id": "a89411f3"
     },
     {
       "cell_type": "code",
@@ -222,7 +222,7 @@
       "source": [
         "#penguins.head().to_html()"
       ],
-      "id": "1a6b3c4f",
+      "id": "349610a9",
       "execution_count": null,
       "outputs": []
     },
@@ -260,7 +260,7 @@
         "\n",
         "-   But some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
       ],
-      "id": "416faba9"
+      "id": "9af3a868"
     }
   ],
   "metadata": {
