@@ -83,6 +83,56 @@ plt.title('Gender Distribution')
 plt.show()
 ```
 
+In terms of residence type, the distribution for rural vs urban are highly equivalent.
+
+```{python}
+#| label: visualization_3
+#| echo: false
+plt.figure(figsize = (6, 6))
+count_urban = (stroke['Residence_type'] == 'Urban').sum()
+count_rural = (stroke['Residence_type'] == 'Rural').sum()
+temp = [count_urban,count_rural]
+labels = ['Urban','Rural']
+textprops = {"fontsize":13}
+plt.pie(temp,labels=labels,autopct='%1.2f%%', textprops=textprops)
+plt.title('Distribution for Residence Type')
+plt.show()
+```
+
+As for marital status, there is a higher proportion of people surveyed who are married, as compared to those who are not married.
+
+```{python}
+#| label: visualization_4
+#| echo: false
+plt.figure(figsize = (6, 6))
+count_yes = (stroke['ever_married'] == 'Yes').sum()
+count_no = (stroke['ever_married'] == 'No').sum()
+temp = [count_yes,count_no]
+labels = ['Married','Not Married']
+textprops = {"fontsize":13}
+plt.pie(temp,labels=labels,autopct='%1.2f%%',textprops=textprops)
+plt.title('Distribution for Marital Status')
+plt.show()
+```
+
+As for the distribution of work type across the population, a majority of the people surveyed worked in private, with lesser distribution of the population working as self-employed, looking after children, or working government jobs. There is a small proportion of the population who have never worked.
+
+```{python}
+#| label: visualization_5
+#| echo: false
+plt.figure(figsize=(6,6))
+count_private = (stroke['work_type'] == 'Private').sum()
+count_self_employed = (stroke['work_type'] == 'Self-employed').sum()
+count_children = (stroke['work_type'] == 'children').sum()
+count_govt_job = (stroke['work_type'] == 'Govt_job').sum()
+count_never_worked = (stroke['work_type'] == 'Never_worked').sum()
+temp = [count_private,count_self_employed, count_children, count_govt_job, count_never_worked]
+textprops = {"fontsize":12}
+plt.pie(temp,labels=['Private','Self employed', 'Children','Govt Job','Never Worked'], autopct='%1.2f%%',textprops=textprops)
+plt.title('Distribution of Work Type')
+plt.show()
+```
+
 ## Methodology
 
 The first step of our data cleaning is to evaluate how much of our data is missing. Of 12 variables, only BMI has missing values.
