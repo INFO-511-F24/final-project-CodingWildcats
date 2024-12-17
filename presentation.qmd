@@ -79,12 +79,16 @@ stroke = pd.read_csv("data/healthcare-dataset-stroke-data.csv")
 #| label: preview_data
 #| include: true
 #| echo: false
-print(stroke.head())
+print(stroke.describe())
 ```
 
 # Methods and Results
 ## EDA
-
+::::: columns
+::: {.column width="50%"}
+-   Missing values were dropped from the dataset and categorical variables (gender, marital status, work type, residence type and smoking status) were transformed into factors. 
+:::
+::: {.column width="50%"}
 ```{python}
 #| label: eda
 #| include: true
@@ -101,7 +105,8 @@ sns.heatmap(corr, annot=True)
 plt.title('Variable Correlation Heatmap')
 plt.show()
 ```
-
+:::
+:::::
 ## Machine Learning
 
 
