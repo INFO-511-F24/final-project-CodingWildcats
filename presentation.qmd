@@ -72,12 +72,13 @@ stroke = pd.read_csv("data/healthcare-dataset-stroke-data.csv")
 
 ## Data
 
--   The data set we have decided to use is from a study published in China in 2020. It represents a case group of individuals who had a stroke, and a control group of those who did not.
+-   The data set used is from a study published in China in 2020. It represents a case group of individuals who had a stroke, and a control group of those who did not.
 
--   The data set has 12 columns, with observations including demographic information such as age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc.
+-   The dataset has observations including age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc.
 ```{python}
 #| label: preview_data
-#| include: false
+#| include: true
+#| echo: false
 print(stroke.head())
 ```
 
@@ -86,7 +87,7 @@ print(stroke.head())
 -   Missing values (primarily BMI) were dropped from the dataset and categorical variables (gender, marital status, work type, residence type and smoking status) were transformed into factors. 
 ```{python}
 #| label: eda
-#| include: false
+#| include: true
 stroke = stroke.dropna()
 stroke['gender'] = LabelEncoder().fit_transform(stroke['gender'])
 stroke['ever_married'] = LabelEncoder().fit_transform(stroke['ever_married'])
@@ -95,7 +96,7 @@ stroke['Residence_type'] = LabelEncoder().fit_transform(stroke['Residence_type']
 stroke['smoking_status'] = LabelEncoder().fit_transform(stroke['smoking_status'])
 stroke.drop(columns=['id'],axis=1,inplace=True) 
 corr = stroke.corr()
-plt.figure(figsize=(10, 8))
+plt.figure(figsize=(4, 4))
 sns.heatmap(corr, annot=True)
 plt.title('Variable Correlation Heatmap')
 plt.show()
