@@ -93,7 +93,7 @@ count_urban = (stroke['Residence_type'] == 'Urban').sum()
 count_rural = (stroke['Residence_type'] == 'Rural').sum()
 temp = [count_urban,count_rural]
 labels = ['Urban','Rural']
-textprops = {"fontsize":13}
+textprops = {"fontsize":12}
 plt.pie(temp,labels=labels,autopct='%1.2f%%', textprops=textprops)
 plt.title('Distribution for Residence Type')
 plt.show()
@@ -109,7 +109,7 @@ count_yes = (stroke['ever_married'] == 'Yes').sum()
 count_no = (stroke['ever_married'] == 'No').sum()
 temp = [count_yes,count_no]
 labels = ['Married','Not Married']
-textprops = {"fontsize":13}
+textprops = {"fontsize":12}
 plt.pie(temp,labels=labels,autopct='%1.2f%%',textprops=textprops)
 plt.title('Distribution for Marital Status')
 plt.show()
@@ -130,6 +130,24 @@ temp = [count_private,count_self_employed, count_children, count_govt_job, count
 textprops = {"fontsize":12}
 plt.pie(temp,labels=['Private','Self employed', 'Children','Govt Job','Never Worked'], autopct='%1.2f%%',textprops=textprops)
 plt.title('Distribution for Work Type')
+plt.show()
+```
+
+While for the distribution of smoking status, there is a higher proportion of the population who have never smoked. Followed by a smaller proportion of the population with smoking status being unknown and formerly smoked. Only about 15% of the population surveyed smokes.
+
+```{python}
+#| label: visualization_6
+#| echo: false
+plt.figure(figsize = (6, 6))
+count_never_smoked = (stroke['smoking_status'] == 'never smoked').sum()
+count_formerly_smoked = (stroke['smoking_status'] == 'formerly smoked').sum()
+count_smokes = (stroke['smoking_status'] == 'smokes').sum()
+count_unknown = (stroke['smoking_status'] == 'Unknown').sum()
+temp = [count_never_smoked,count_formerly_smoked,count_smokes,count_unknown]
+labels = ['Never smoked','Formerly smoked', 'Smokes','Unknown']
+textprops = {"fontsize":12}
+plt.pie(temp,labels=labels,autopct='%1.2f%%',textprops=textprops)
+plt.title('Distribution for smoking status')
 plt.show()
 ```
 
