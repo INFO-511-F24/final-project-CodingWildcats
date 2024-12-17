@@ -60,7 +60,7 @@
     "href": "presentation.html#eda",
     "title": "Stroke Prediction Based on Demographics and Medical History",
     "section": "EDA",
-    "text": "EDA\n\nMissing values (primarily BMI) were dropped from the dataset and categorical variables (gender, marital status, work type, residence type and smoking status) were transformed into factors."
+    "text": "EDA"
   },
   {
     "objectID": "presentation.html#machine-learning",
