@@ -51,7 +51,37 @@ As mentioned this dataset has several demographic variables and then a variable 
 
 Source: https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset
 
-This data comes from a study published in China in 2020: Pathan, Muhammad Salman & Zhang, Jianbiao & John, Deepu & Nag, Avishek & Dev, Soumyabrata. (2020). Identifying Stroke Indicators Using Rough Sets. IEEE Access. 8. 10.1109/ACCESS.2020.3039439.\\
+This data comes from a study published in China in 2020: Pathan, Muhammad Salman & Zhang, Jianbiao & John, Deepu & Nag, Avishek & Dev, Soumyabrata. (2020). Identifying Stroke Indicators Using Rough Sets. IEEE Access. 8. 10.1109/ACCESS.2020.3039439.
+
+## Visualizations
+
+Across the population, there is a higher proportion of people who do not suffer from stroke as compared to those who do suffer from stroke.
+
+```{python}
+#| label: visualization_1
+#| echo: false
+import matplotlib.pyplot as plt
+import seaborn as sns
+plt.figure(figsize=(5,3))
+ax = sns.countplot(x='stroke', data=stroke)
+plt.title('Distribution of stroke')
+```
+
+As for gender analysis, there is a higher proportion of females as compared to males surveyed.
+
+```{python}
+#| label: visualization_2
+#| echo: false
+plt.figure(figsize = (6, 6))
+count_female = (stroke['gender'] == 'Female').sum()
+count_male = (stroke['gender'] == 'Male').sum()
+temp = [count_female,count_male]
+labels = ['Female','Male']
+textprops = {"fontsize":12}
+plt.pie(temp,labels=labels,autopct='%1.2f%%',textprops=textprops)
+plt.title('Gender Distribution')
+plt.show()
+```
 
 ## Methodology
 
