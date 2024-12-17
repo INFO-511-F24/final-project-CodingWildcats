@@ -88,7 +88,7 @@
     "href": "presentation.html#machine-learning",
     "title": "Stroke Prediction Based on Demographics and Medical History",
     "section": "Machine Learning",
-    "text": "Machine Learning\n\nAfter preparing the dataset, we split it into training (80%) and testing (20%) sets.\nWe trained 5 different machine learning models on this dataset\n\nRandom Forest\nDecision Tree\nSupport Vector Machine (SVM)\nArtificial Neural Network (ANN)\nLogistic Regression\n\nTo evaluate the performance of these models, we employed 5-fold cross-validation."
+    "text": "Machine Learning\n\nAfter preparing the dataset, we split it into training (80%) and testing (20%) sets.\nWe trained 5 different machine learning models on this dataset: Random Forest, Decision Tree, Support Vector Machine (SVM), Artificial Neural Network (ANN), Logistic Regression.\nTo evaluate the performance of these models, we employed 5-fold cross-validation."
   },
   {
     "objectID": "presentation.html#results",
@@ -102,21 +102,35 @@
     "href": "presentation.html#analysis-of-results",
     "title": "Stroke Prediction Based on Demographics and Medical History",
     "section": "Analysis of results",
-    "text": "Analysis of results\n\nRandom Forest model achieved the highest average accuracy at 96.05%, which was matched by Logistic Regression.\nThe Support Vector Machine and Artificial Neural Network followed closely, with average accuracies of 96.03% and 95.93%, respectively.\nThe Decision Tree model had the lowest performance, with an average accuracy of 92.21%."
+    "text": "Analysis of results\n\nRandom Forest model achieved the highest average accuracy at 96.05%, which was matched by Logistic Regression.\nSupport Vector Machine and Artificial Neural Network followed closely, with average accuracies of 96.03% and 95.93%, respectively.\nDecision Tree model had the lowest performance, with an average accuracy of 92.21%."
   },
   {
     "objectID": "presentation.html#model-performance",
     "href": "presentation.html#model-performance",
     "title": "Stroke Prediction Based on Demographics and Medical History",
     "section": "Model Performance",
-    "text": "Model Performance\n\nIn summary, the use of cross-validation allowed us to obtain a more accurate and unbiased assessment of model performance.\nAmong the models, Random Forest and Logistic Regression showed the best overall performance in terms of both average accuracy and stability.\nSupport Vector Machine and Artificial Neural Network also performed well but did not outperform Random Forest or Logistic Regression.\nThe Decision Tree model had the lowest accuracy and was less stable, making it a less desirable choice for this problem.\nIf model simplicity, speed, and interpretability are essential, Logistic Regression is an excellent option.\nHowever, if model robustness and predictive power are the priority, Random Forest would be the better choice."
+    "text": "Model Performance\n\nCross-validation allowed us to obtain a more accurate and unbiased assessment of model performance.\nAmong the models, Random Forest and Logistic Regression showed the best overall performance in terms of both average accuracy and stability.\nSupport Vector Machine and Artificial Neural Network also performed well but did not outperform Random Forest or Logistic Regression.\nThe Decision Tree model had the lowest accuracy and was less stable, making it a less desirable choice for this problem."
+  },
+  {
+    "objectID": "presentation.html#model-performance-evaluation",
+    "href": "presentation.html#model-performance-evaluation",
+    "title": "Stroke Prediction Based on Demographics and Medical History",
+    "section": "Model Performance Evaluation",
+    "text": "Model Performance Evaluation\n\nIf model simplicity, speed, and interpretability are essential, Logistic Regression is an excellent option.\nHowever, if model robustness and predictive power are the priority, Random Forest would be the better choice."
+  },
+  {
+    "objectID": "presentation.html#summary",
+    "href": "presentation.html#summary",
+    "title": "Stroke Prediction Based on Demographics and Medical History",
+    "section": "Summary",
+    "text": "Summary\n\nThere was not a particularly strong correlation between the stroke outcome and the covariates listed in the dataset.\nThe strongest correlation to a stroke outcome was with age at 0.23.\nOther notable correlations to a stroke outcome were hypertension, heart disease and glucose level, all at 0.14."
   },
   {
     "objectID": "presentation.html#conclusion-1",
     "href": "presentation.html#conclusion-1",
     "title": "Stroke Prediction Based on Demographics and Medical History",
     "section": "Conclusion",
-    "text": "Conclusion\n\nThere was not a particularly strong correlation between the stroke outcome and the covariates listed in the dataset. The strongest correlation to a stroke outcome was with age at 0.23. Other notable correlations to a stroke outcome were hypertension, heart disease and glucose level, all at 0.14. It appears that the strongest correlations to a stroke outcome occur with participants’ physical properties rather than their demographics or living status.\nThe model results show that individuals in this dataset could be classified by their stroke outcome based on the covariates age, gender, marital status, and employment status, BMI, glucose levels, and smoking history with a high degree of accuracy. Since there did not appear to be a particularly strong correlation to any one covariate, it was likely a combination of these factors associated with a stroke outcome."
+    "text": "Conclusion\n\nIt appears that the strongest correlations to a stroke outcome occur with participants’ physical properties rather than their demographics or living status.\nThe model results show that individuals in this dataset could be classified by their stroke outcome based on the covariates age, gender, marital status, and employment status, BMI, glucose levels, and smoking history with a high degree of accuracy.\nSince there did not appear to be a particularly strong correlation to any one covariate, it was likely a combination of these factors associated with a stroke outcome."
   },
   {
     "objectID": "presentation.html#future-work",
@@ -130,7 +144,7 @@
     "href": "presentation.html#future-work-1",
     "title": "Stroke Prediction Based on Demographics and Medical History",
     "section": "Future work",
-    "text": "Future work\n\nTo increase the diversity of the population of people being surveyed as the context upon which the study was conducted was not able to return insights that we could consider to be generalizable across the general public internationally.\nThe dataset was from a study that was conducted in China, with its funding agency being the National Natural Science Foundation of China and ADAPT Centre for Digital Content Technology funded through the SFI Research Centres Programme. The population studied was mainly the Chinese population. As such, observations gathered from the study would be considered more applicable towards the Asian population instead of the international population."
+    "text": "Future work\n\nTo increase the diversity of the population of people being surveyed as the context upon which the study was conducted was not able to return insights that we could consider to be generalizable across the general public internationally.\nThe dataset was from a study that was conducted in China, with the population studied mainly being the Chinese population. As such, observations gathered from the study would be considered more applicable towards the Asian population instead of the international population."
   },
   {
     "objectID": "presentation.html#references",
