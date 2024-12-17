@@ -448,6 +448,7 @@ None</code></pre>
 <ul>
 <li>The correlation matrix of all variables, minus the ID number, is displayed on the heatmap.</li>
 </ul>
+<p><img data-src="images/variable_correlation_heatmap.png"></p>
 <div id="cell-plotcorrelation" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div>
@@ -559,14 +560,33 @@ Accuracy for Each Fold and Average Accuracy for Each Model:</code></pre>
 </div>
 </div>
 </div>
+</section>
+<section id="analysis-of-results" class="slide level2">
+<h2><strong>Analysis of results</strong></h2>
+<ul>
+<li>Random Forest model achieved the highest average accuracy at 96.05%, which was matched by Logistic Regression. The Support Vector Machine and Artificial Neural Network followed closely, with average accuracies of 96.03% and 95.93%, respectively. The Decision Tree model had the lowest performance, with an average accuracy of 92.21%.</li>
+<li>In summary, the use of cross-validation allowed us to obtain a more accurate and unbiased assessment of model performance.</li>
+<li>Among the models, Random Forest and Logistic Regression showed the best overall performance in terms of both average accuracy and stability. Support Vector Machine and Artificial Neural Network also performed well but did not outperform Random Forest or Logistic Regression. The Decision Tree model had the lowest accuracy and was less stable, making it a less desirable choice for this problem. If model simplicity, speed, and interpretability are essential, Logistic Regression is an excellent option. However, if model robustness and predictive power are the priority, Random Forest would be the better choice.</li>
+</ul>
 </section></section>
 <section>
 <section id="conclusions" class="title-slide slide level1 center">
 <h1><strong>Conclusions</strong></h1>
 
 </section>
-<section id="conclusion-and-future-work" class="slide level2">
-<h2>Conclusion and Future work</h2>
+<section id="conclusion" class="slide level2">
+<h2>Conclusion</h2>
+<ul>
+<li>There was not a particularly strong correlation between the stroke outcome and the covariates listed in the dataset. The strongest correlation to a stroke outcome was with age at 0.23. Other notable correlations to a stroke outcome were hypertension, heart disease and glucose level, all at 0.14. It appears that the strongest correlations to a stroke outcome occur with participants’ physical properties rather than their demographics or living status.</li>
+<li>The model results show that individuals in this dataset could be classified by their stroke outcome based on the covariates age, gender, marital status, and employment status, BMI, glucose levels, and smoking history with a high degree of accuracy. Since there did not appear to be a particularly strong correlation to any one covariate, it was likely a combination of these factors associated with a stroke outcome.</li>
+</ul>
+</section>
+<section id="future-work" class="slide level2">
+<h2>Future work</h2>
+<ul>
+<li>One of the limitations we encountered with this dataset is that there was actually a very small proportion of people who had a stroke compared to those that did not: 4.87% (N=249) of individuals had a stroke, while 95.1% (N=4861) did not. This created an unequal distribution within both the training and testing dataset, which may have artificially boosted the classification accuracy. Future work could be to increase the population of people being surveyed.</li>
+<li>The context upon which the study was conducted was not able to return insights that we could consider to be generalizable across the general public internationally. The dataset was from a study that was conducted in China, with its funding agency being the National Natural Science Foundation of China and ADAPT Centre for Digital Content Technology funded through the SFI Research Centres Programme. The population studied was mainly the Chinese population. As such, observations gathered from the study would be considered more applicable towards the Asian population instead of the international population.&nbsp;Future work could be to increase the diversity of the population of people being surveyed.</li>
+</ul>
 </section>
 <section id="references" class="slide level2">
 <h2><strong>References</strong></h2>
