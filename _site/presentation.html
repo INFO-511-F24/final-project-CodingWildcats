@@ -10,8 +10,8 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <meta name="author" content="Danielle Stea, Erika Kirkpatrick, Kai Shuen Neo, Sahand Motamenim, Rohit Kalakala">
-  <title>Coding Wildcats – Stroke Prediction Based on Demographics and Medical History</title>
+  <meta name="author" content="Author names">
+  <title>Coding Wildcats – Project title</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -326,101 +326,385 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="images/watercolour_sys02_img34_teacup-ocean.jpg" data-background-opacity="0.7" data-background-size="stretch" data-slide-number="none" class="quarto-title-block center">
-  <h1 class="title">Stroke Prediction Based on Demographics and Medical History</h1>
+  <h1 class="title">Project title</h1>
   <p class="subtitle">INFO 511 - Fall 2024 - Final Project</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Danielle Stea, Erika Kirkpatrick, Kai Shuen Neo, Sahand Motamenim, Rohit Kalakala 
+Author names 
 </div>
 </div>
 </div>
 
 </section>
 <section>
-<section id="stroke-prediction-with-machine-learning" class="title-slide slide level1 center">
-<h1>Stroke Prediction with Machine Learning</h1>
+<section id="using-quarto-for-presentations" class="title-slide slide level1 center">
+<h1>Using Quarto for presentations</h1>
 
 </section>
-<section id="introduction" class="slide level2">
-<h2>Introduction</h2>
+<section id="quarto" class="slide level2">
+<h2>Quarto</h2>
 <ul>
-<li><p>The data set we have decided to use is from a study published in China in 2020. It represents a case group of individuals who had a stroke, and a control group of those who did not.</p></li>
-<li><p>The data set has 12 columns, with observations including demographic information such as age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc.</p></li>
+<li><p>The presentation is created using the Quarto CLI</p></li>
+<li><p><code>##</code> sets the start of a new slide</p></li>
 </ul>
-<div id="a4fd6977" class="cell" data-execution_count="4">
-<div class="cell-output cell-output-stdout">
-<pre><code>      id  gender   age  hypertension  heart_disease ever_married  \
-0   9046    Male  67.0             0              1          Yes   
-1  51676  Female  61.0             0              0          Yes   
-2  31112    Male  80.0             0              1          Yes   
-3  60182  Female  49.0             0              0          Yes   
-4   1665  Female  79.0             1              0          Yes   
-
-       work_type Residence_type  avg_glucose_level   bmi   smoking_status  \
-0        Private          Urban             228.69  36.6  formerly smoked   
-1  Self-employed          Rural             202.21   NaN     never smoked   
-2        Private          Rural             105.92  32.5     never smoked   
-3        Private          Urban             171.23  34.4           smokes   
-4  Self-employed          Rural             174.12  24.0     never smoked   
-
-   stroke  
-0       1  
-1       1  
-2       1  
-3       1  
-4       1  </code></pre>
-</div>
-</div>
 </section>
-<section id="introduce-the-data" class="slide level2">
-<h2>Introduce the data</h2>
+<section id="layouts" class="slide level2">
+<h2>Layouts</h2>
 <p>You can use plain text</p>
-</section>
-<section id="highlights-from-eda" class="slide level2">
-<h2>Highlights from EDA</h2>
-<div id="f7bf9b1b" class="cell" data-execution_count="5">
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>or bullet points<sup>1</sup></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p>or in two columns</p>
+</div></div>
+<ul>
+<li><p>like</p></li>
+<li><p>this</p></li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>And add footnotes</p></li></ol></aside></section>
+<section id="code" class="slide level2">
+<h2>Code</h2>
+<div id="e2633902" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-stdout">
-<pre><code>      id  gender   age  hypertension  heart_disease ever_married  \
-0   9046    Male  67.0             0              1          Yes   
-1  51676  Female  61.0             0              0          Yes   
-2  31112    Male  80.0             0              1          Yes   
-3  60182  Female  49.0             0              0          Yes   
-4   1665  Female  79.0             1              0          Yes   
+<pre><code>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                    mpg   R-squared:                       0.073
+Model:                            OLS   Adj. R-squared:                  0.070
+Method:                 Least Squares   F-statistic:                     30.59
+Date:                Fri, 13 Dec 2024   Prob (F-statistic):           5.84e-08
+Time:                        13:45:31   Log-Likelihood:                -1346.4
+No. Observations:                 392   AIC:                             2697.
+Df Residuals:                     390   BIC:                             2705.
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         35.8015      2.266     15.800      0.000      31.347      40.257
+speed       -354.7055     64.129     -5.531      0.000    -480.788    -228.623
+==============================================================================
+Omnibus:                       27.687   Durbin-Watson:                   0.589
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               18.976
+Skew:                           0.420   Prob(JB):                     7.57e-05
+Kurtosis:                       2.323   Cond. No.                         169.
+==============================================================================
 
-       work_type Residence_type  avg_glucose_level   bmi   smoking_status  \
-0        Private          Urban             228.69  36.6  formerly smoked   
-1  Self-employed          Rural             202.21   NaN     never smoked   
-2        Private          Rural             105.92  32.5     never smoked   
-3        Private          Urban             171.23  34.4           smokes   
-4  Self-employed          Rural             174.12  24.0     never smoked   
-
-   stroke  
-0       1  
-1       1  
-2       1  
-3       1  
-4       1  </code></pre>
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
 </div>
 </div>
 </section>
-<section id="inferencemodelingother-analysis" class="slide level2">
-<h2>Inference/modeling/other analysis</h2>
+<section id="plots" class="slide level2">
+<h2>Plots</h2>
+<div id="f361b96a" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="presentation_files/figure-revealjs/cell-6-output-1.png" width="1673" height="1070"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="conclusion-future-work" class="slide level2">
-<h2>Conclusion + Future work</h2>
+<section id="plot-and-text" class="slide level2">
+<h2>Plot and text</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>Some text</p></li>
+<li><p>goes here</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div id="02c7b624" class="cell" data-fig.width="5.5" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="presentation_files/figure-revealjs/cell-7-output-1.png" width="1585" height="998"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section></section>
+<section>
+<section id="a-new-section" class="title-slide slide level1 center">
+<h1>A new section…</h1>
+
+</section>
+<section id="tables" class="slide level2">
+<h2>Tables</h2>
+<p>If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,</p>
+<div id="746314ab" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="7">
+<table border="1" class="dataframe">
+
+<thead>
+
+<tr style="text-align: right;">
+
+<th>
+</th>
+
+<th>
+species
+</th>
+
+<th>
+island
+</th>
+
+<th>
+bill_length_mm
+</th>
+
+<th>
+bill_depth_mm
+</th>
+
+<th>
+flipper_length_mm
+</th>
+
+<th>
+body_mass_g
+</th>
+
+<th>
+sex
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<th>
+0
+</th>
+
+<td>
+Adelie
+</td>
+
+<td>
+Torgersen
+</td>
+
+<td>
+39.1
+</td>
+
+<td>
+18.7
+</td>
+
+<td>
+181.0
+</td>
+
+<td>
+3750.0
+</td>
+
+<td>
+Male
+</td>
+
+</tr>
+
+<tr>
+
+<th>
+1
+</th>
+
+<td>
+Adelie
+</td>
+
+<td>
+Torgersen
+</td>
+
+<td>
+39.5
+</td>
+
+<td>
+17.4
+</td>
+
+<td>
+186.0
+</td>
+
+<td>
+3800.0
+</td>
+
+<td>
+Female
+</td>
+
+</tr>
+
+<tr>
+
+<th>
+2
+</th>
+
+<td>
+Adelie
+</td>
+
+<td>
+Torgersen
+</td>
+
+<td>
+40.3
+</td>
+
+<td>
+18.0
+</td>
+
+<td>
+195.0
+</td>
+
+<td>
+3250.0
+</td>
+
+<td>
+Female
+</td>
+
+</tr>
+
+<tr>
+
+<th>
+4
+</th>
+
+<td>
+Adelie
+</td>
+
+<td>
+Torgersen
+</td>
+
+<td>
+36.7
+</td>
+
+<td>
+19.3
+</td>
+
+<td>
+193.0
+</td>
+
+<td>
+3450.0
+</td>
+
+<td>
+Female
+</td>
+
+</tr>
+
+<tr>
+
+<th>
+5
+</th>
+
+<td>
+Adelie
+</td>
+
+<td>
+Torgersen
+</td>
+
+<td>
+39.3
+</td>
+
+<td>
+20.6
+</td>
+
+<td>
+190.0
+</td>
+
+<td>
+3650.0
+</td>
+
+<td>
+Male
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+</div>
+</div>
 </section>
 <section id="images" class="slide level2">
 <h2>Images</h2>
 
+<img data-src="images/watercolour_sys02_img34_teacup-ocean.png" width="500" class="r-stretch quarto-figure-center"><p class="caption">Image credit: Danielle Navarro, Percolate.</p></section>
+<section id="math-expressions" class="slide level2 smaller">
+<h2>Math Expressions</h2>
+<p>You can write LaTeX math expressions inside a pair of dollar signs, e.g.&nbsp;$\alpha+\beta$ renders <span class="math inline">\(\alpha + \beta\)</span>. You can use the display style with double dollar signs:</p>
+<pre><code>$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$</code></pre>
+<p><span class="math display">\[
+\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i
+\]</span></p>
+<p>Limitations:</p>
+<ol type="1">
+<li><p>The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting <code>$$</code> must appear in the very beginning of a line, followed immediately by a non-space character, and the ending <code>$$</code> must be at the end of a line, led by a non-space character;</p></li>
+<li><p>There should not be spaces after the opening <code>$</code> or before the closing <code>$</code>.</p></li>
+</ol>
+</section></section>
+<section>
+<section id="wrap-up" class="title-slide slide level1 center">
+<h1>Wrap up</h1>
 
-<img data-src="images/watercolour_sys02_img34_teacup-ocean.png" width="500" class="r-stretch quarto-figure-center"><p class="caption">Image credit: Danielle Navarro, Percolate.</p><div class="quarto-auto-generated-content">
+</section>
+<section id="feeling-adventurous" class="slide level2">
+<h2>Feeling adventurous?</h2>
+<ul>
+<li><p>You are welcomed to use the default styling of the slides. In fact, that’s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.</p></li>
+<li><p>But some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs.</p></li>
+</ul>
+
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
 </section></section>
+
     </div>
   </div>
 
@@ -720,7 +1004,7 @@ Danielle Stea, Erika Kirkpatrick, Kai Shuen Neo, Sahand Motamenim, Rohit Kalakal
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
+          var filterRegex = new RegExp("https:\/\/INFO-511-F24\.github\.io\/final-project-CodingWildcats\/");
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
