@@ -23,7 +23,7 @@
         "jupyter: python3\n",
         "---"
       ],
-      "id": "b565a903"
+      "id": "55eed980"
     },
     {
       "cell_type": "code",
@@ -99,7 +99,7 @@
         "\n",
         "-   The data set has 12 columns, with observations including demographic information such as age, gender, marital status, and employment status, as well as medical information such as BMI, glucose levels, smoking history, etc.\n"
       ],
-      "id": "3b42d596"
+      "id": "2c90d574"
     },
     {
       "cell_type": "code",
@@ -107,7 +107,7 @@
       "source": [
         "print(stroke.head())"
       ],
-      "id": "c494e9d8",
+      "id": "56ae85ac",
       "execution_count": null,
       "outputs": []
     },
@@ -137,7 +137,7 @@
         "\n",
         "## Code\n"
       ],
-      "id": "7c8b2ad0"
+      "id": "0954a356"
     },
     {
       "cell_type": "code",
@@ -145,7 +145,7 @@
       "source": [
         "print(stroke.head())"
       ],
-      "id": "aa86bc2f",
+      "id": "4b9ae7df",
       "execution_count": null,
       "outputs": []
     },
@@ -155,17 +155,17 @@
       "source": [
         "## Plots\n"
       ],
-      "id": "b50348fd"
+      "id": "5a0b2c51"
     },
     {
       "cell_type": "code",
       "metadata": {},
       "source": [
-        "penguins['species'] = penguins['species'].apply(lambda x: \"Adelie\" if x == \"Adelie\" else \"Other\")\n",
-        "sns.scatterplot(data=penguins, x='flipper_length_mm', y='body_mass_g', hue='species')\n",
-        "plt.show()"
+        "#penguins['species'] = penguins['species'].apply(lambda x: \"Adelie\" if x == \"Adelie\" else \"Other\")\n",
+        "#sns.scatterplot(data=penguins, x='flipper_length_mm', y='body_mass_g', hue='species')\n",
+        "#plt.show()"
       ],
-      "id": "e8b18480",
+      "id": "6dd91211",
       "execution_count": null,
       "outputs": []
     },
@@ -184,7 +184,7 @@
         "\n",
         "::: {.column width=\"50%\"}\n"
       ],
-      "id": "b7875fe8"
+      "id": "09d6b33c"
     },
     {
       "cell_type": "code",
@@ -197,7 +197,7 @@
         "sns.boxplot(data=penguins, x='bill_length_mm', y='species', hue='species', ax=ax)\n",
         "plt.show()"
       ],
-      "id": "52257513",
+      "id": "801ae04a",
       "execution_count": null,
       "outputs": []
     },
@@ -214,15 +214,15 @@
         "\n",
         "If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,\n"
       ],
-      "id": "2f895a28"
+      "id": "b70e63f6"
     },
     {
       "cell_type": "code",
       "metadata": {},
       "source": [
-        "penguins.head().to_html()"
+        "#penguins.head().to_html()"
       ],
-      "id": "4c087cbc",
+      "id": "1a6b3c4f",
       "execution_count": null,
       "outputs": []
     },
@@ -260,7 +260,7 @@
         "\n",
         "-   But some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
       ],
-      "id": "1e128830"
+      "id": "416faba9"
     }
   ],
   "metadata": {
